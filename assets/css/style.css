@@ -1994,8 +1994,24 @@ a.next-slide.nav-active {
     text-transform: uppercase;
 }
 /* 23. partner */
+.partner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    height: 90px;
+}
+.partner img {
+    max-height: 55px;
+    max-width: 150px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
 .partner img:hover {
-    filter: opacity(0.5);
+    filter: opacity(0.7);
+    transform: scale(1.05);
 }
 /* 24. footer */
 footer {
