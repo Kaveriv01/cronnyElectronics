@@ -182,6 +182,21 @@ jQuery(function($) {
     $('.accordion-item .content').not($content).slideUp('fast');
   });
 
+  // Smooth Crony FAQ Accordion Toggle
+  $(document).on('click', '.crony-faq-header', function(e) {
+    e.preventDefault();
+    var $item = $(this).closest('.crony-faq-item');
+    if ($item.hasClass('active')) {
+      $item.removeClass('active');
+      $item.find('.crony-faq-body').slideUp(250);
+    } else {
+      $('.crony-faq-item').removeClass('active');
+      $('.crony-faq-body').slideUp(250);
+      $item.addClass('active');
+      $item.find('.crony-faq-body').slideDown(250);
+    }
+  });
+
 // end
 /*-------------------- 05. progress ----------------------------*/ 
 var bars = document.querySelectorAll('.meter > span');
