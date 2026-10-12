@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Crony Electronics Pvt Ltd - 30+ Years Energy Saving Solutions</title>
-  <meta name="description" content="Crony Electronics Pvt Ltd was established in 1993, pioneering energy-saving solutions, Elastoclad HR heat coatings, removable thermal jackets, and serving 500+ corporate clients including ONGC, Railways, and L&T.">
+  <title>About Us | Crony Electronics Pvt Ltd - Energy Saving Since 1993</title>
+  <meta name="description" content="Crony Electronics Pvt Ltd is involved into energy saving products & activities since 1993. Learn about our history, our aim, quality assurances, strengths, and patronage.">
   <link rel="icon" href="assets/img/favicon.png">
   <!-- CSS only -->
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
@@ -23,57 +23,126 @@
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/preloader.js"></script>
   <style>
-    .our-aim-quote {
-      background: #fff8f5;
-      border-left: 4px solid #f05a28;
-      border-radius: 8px;
-      padding: 22px 28px;
-      margin: 25px 0;
-      box-shadow: 0 4px 15px rgba(240, 90, 40, 0.06);
+    .about-sec-heading {
+      margin-bottom: 25px;
     }
-    .our-aim-quote h5 {
+    .about-sec-heading h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1a1a1a;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    .about-sec-heading h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      background: #f05a28;
+    }
+    .about-sec-heading.text-center h2::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .lead-paragraph {
+      font-size: 16px;
+      line-height: 1.85;
+      color: #4a4a4a;
+      margin-bottom: 16px;
+    }
+    .our-aim-quote-box {
+      background: #fff8f5;
+      border-left: 5px solid #f05a28;
+      border-radius: 8px;
+      padding: 26px 32px;
+      margin: 30px 0;
+      box-shadow: 0 5px 20px rgba(240, 90, 40, 0.07);
+    }
+    .our-aim-quote-box h3 {
       color: #1a1a1a;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 16px;
+      gap: 10px;
+      font-size: 22px;
     }
-    .our-aim-quote p {
+    .our-aim-quote-box p {
       font-style: italic;
-      color: #333;
-      font-size: 15px;
-      line-height: 1.65;
+      color: #2b2b2b;
+      font-size: 17px;
+      line-height: 1.7;
       margin-bottom: 0;
+      font-weight: 500;
     }
-    .about-feature-card {
+    .content-card {
       background: #ffffff;
       border: 1px solid #eef0f3;
       border-radius: 10px;
-      padding: 30px 24px;
+      padding: 30px 26px;
       height: 100%;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
       transition: all 0.3s ease;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
     }
-    .about-feature-card:hover {
+    .content-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
       border-color: #f05a28;
     }
-    .about-feature-icon {
-      width: 56px;
-      height: 56px;
+    .content-card-icon {
+      width: 52px;
+      height: 52px;
       background: rgba(240, 90, 40, 0.1);
       color: #f05a28;
-      border-radius: 10px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 22px;
       margin-bottom: 20px;
     }
-    .patron-card {
+    .content-card h4 {
+      font-size: 19px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+    }
+    .content-card p {
+      font-size: 14.5px;
+      color: #666;
+      line-height: 1.65;
+      margin-bottom: 0;
+    }
+    .product-list-card {
+      background: #ffffff;
+      border: 1px solid #eaedf1;
+      border-radius: 8px;
+      padding: 22px 20px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.25s ease;
+    }
+    .product-list-card:hover {
+      border-color: #f05a28;
+      transform: translateX(6px);
+      box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+    }
+    .product-list-card i {
+      font-size: 22px;
+      color: #f05a28;
+      min-width: 26px;
+    }
+    .product-list-card h5 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 0;
+    }
+    .patron-badge {
       background: #ffffff;
       border: 1px solid #eaedf1;
       border-radius: 8px;
@@ -86,88 +155,64 @@
       justify-content: center;
       transition: all 0.25s ease;
     }
-    .patron-card:hover {
+    .patron-badge:hover {
       border-color: #f05a28;
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      transform: translateY(-3px);
+      transform: translateY(-4px);
     }
-    .patron-card img {
-      max-height: 50px;
+    .patron-badge img {
+      max-height: 48px;
       max-width: 140px;
       object-fit: contain;
       margin-bottom: 12px;
     }
-    .patron-card h6 {
-      font-size: 14px;
+    .patron-badge h5 {
+      font-size: 15px;
       font-weight: 700;
       color: #222;
       margin-bottom: 4px;
     }
-    .patron-card span {
-      font-size: 12px;
+    .patron-badge span {
+      font-size: 12.5px;
       color: #777;
     }
-    .strength-item {
+    .strength-box {
       display: flex;
       align-items: flex-start;
-      gap: 16px;
-      padding: 18px 20px;
+      gap: 18px;
+      padding: 20px 22px;
       background: #ffffff;
       border: 1px solid #edf0f2;
       border-radius: 8px;
       margin-bottom: 16px;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
       box-shadow: 0 3px 12px rgba(0,0,0,0.02);
     }
-    .strength-item:hover {
+    .strength-box:hover {
       border-color: #f05a28;
       box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-      transform: translateX(4px);
+      transform: translateX(6px);
     }
-    .strength-item i {
-      font-size: 20px;
+    .strength-box i {
+      font-size: 22px;
       color: #f05a28;
-      margin-top: 3px;
+      margin-top: 2px;
+      min-width: 26px;
     }
-    .strength-item h5 {
-      font-size: 16px;
+    .strength-box h5 {
+      font-size: 17px;
       font-weight: 700;
       color: #1a1a1a;
       margin-bottom: 4px;
     }
-    .strength-item p {
-      font-size: 13.5px;
+    .strength-box p {
+      font-size: 14px;
       color: #666;
       margin-bottom: 0;
-      line-height: 1.5;
+      line-height: 1.55;
     }
-    .product-range-card {
-      background: #ffffff;
-      border: 1px solid #eaedf1;
-      border-radius: 8px;
-      padding: 24px;
-      height: 100%;
-      transition: all 0.25s ease;
-    }
-    .product-range-card:hover {
-      border-color: #f05a28;
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-    }
-    .product-range-card h4 {
-      font-size: 17px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .product-range-card p {
-      font-size: 13.5px;
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 0;
+    .bg-light-soft {
+      background-color: #fbfbfc;
     }
   </style>
 </head>
@@ -175,6 +220,8 @@
   <div class="preloader">
     <div id="loader"></div> 
   </div> 
+
+  <!-- Header -->
   <header>
     <div class="top-bar">
       <div class="container">
@@ -183,12 +230,15 @@
             <div class="phone-data">
               <div class="phone">
                 <i class="fa-solid fa-phone" style="display:inline-flex; align-items:center; justify-content:center; color:#fff;"></i>
-                <span>Call Us:</span><a href="tel:+912222032030">+91-22-22032030</a>
+                <span>Phone:</span><a href="tel:+912222032030">91-22-22032030</a>
               </div>
               <div class="phone d-flex align-items-center">
-                <i class="fa-solid fa-envelope" style="display:inline-flex; align-items:center; justify-content:center; color:#fff;"></i>
-                <span>Email: </span>
-                <a class="me-3" href="mailto:info@cronyelectronics.com">info@cronyelectronics.com</a>
+                <i class="fa-solid fa-mobile-screen" style="display:inline-flex; align-items:center; justify-content:center; color:#fff;"></i>
+                <span>Mobile:</span><a href="tel:+919323566600">91-9323566600</a>
+              </div>
+              <div class="phone d-flex align-items-center">
+                <i class="fa-solid fa-globe" style="display:inline-flex; align-items:center; justify-content:center; color:#fff;"></i>
+                <span>Website:</span><a href="https://cronyelectronics.com">www.cronyelectronics.com</a>
               </div>
             </div>
           </div>
@@ -203,7 +253,7 @@
     <div class="bottom-bar">
       <div class="container">
         <div class="bottom-bar-text">
-          <a href="index.html"><img src="assets/img/logo.png" alt="Crony Electronics" style="height: 60px; width: auto; object-fit: contain;"></a>
+          <a href="index.html"><img src="assets/img/logo.png" alt="Crony Electronics Logo" style="height: 60px; width: auto; object-fit: contain;"></a>
           <nav class="navbar">
             <ul class="navbar-links">
               <li class="navbar-dropdown"><a href="index.html">Home</a></li>
@@ -211,12 +261,12 @@
               <li class="navbar-dropdown menu-item-children">
                 <a href="index.html#services">Products</a>
                 <ul class="sub-menu">
+                  <li><a href="index.html#sleeves">Insulation Cover</a></li>
+                  <li><a href="index.html#thermal">Elastoclad HR</a></li>
                   <li><a href="index.html#flooring">Rubber Flooring (Industry &amp; Trade)</a></li>
-                  <li><a href="index.html#thermal">Elastoclad HR &amp; Heat Coatings</a></li>
-                  <li><a href="index.html#power">20ms VRP Voltage Regulators</a></li>
-                  <li><a href="index.html#sleeves">Thermal Insulation Sleeves</a></li>
+                  <li><a href="index.html#power">Servo &amp; Voltage Stabilizers</a></li>
                   <li><a href="index.html#daylight">Brilantor Natural Daylight</a></li>
-                  <li><a href="index.html#robotics">Industrial Robotics (64 Types)</a></li>
+                  <li><a href="index.html#robotics">Industrial Robotics</a></li>
                 </ul>
               </li>
               <li class="navbar-dropdown"><a href="faq.html">FAQs</a></li>
@@ -247,7 +297,7 @@
     <div class="mobile-nav hmburger-menu" id="mobile-nav" style="display:none;">
       <div class="res-log">
         <a href="index.html">
-          <img src="assets/img/logo.png" alt="Crony Electronics" class="white-logo" style="height: 50px; width: auto;">
+          <img src="assets/img/logo.png" alt="Crony Electronics Logo" class="white-logo" style="height: 50px; width: auto;">
         </a>
       </div>
       <ul>
@@ -255,12 +305,12 @@
         <li><a href="about.html">About Us</a></li>
         <li class="menu-item-has-children"><a href="javascript:void(0)">Products</a>
           <ul class="sub-menu">
+            <li><a href="index.html#sleeves">Insulation Cover</a></li>
+            <li><a href="index.html#thermal">Elastoclad HR</a></li>
             <li><a href="index.html#flooring">Rubber Flooring (Industry &amp; Trade)</a></li>
-            <li><a href="index.html#thermal">Elastoclad HR &amp; Heat Coatings</a></li>
-            <li><a href="index.html#power">20ms VRP Voltage Regulators</a></li>
-            <li><a href="index.html#sleeves">Thermal Insulation Sleeves</a></li>
+            <li><a href="index.html#power">Servo &amp; Voltage Stabilizers</a></li>
             <li><a href="index.html#daylight">Brilantor Natural Daylight</a></li>
-            <li><a href="index.html#robotics">Industrial Robotics (64 Types)</a></li>
+            <li><a href="index.html#robotics">Industrial Robotics</a></li>
           </ul>
         </li>
         <li><a href="faq.html">FAQs</a></li>
@@ -270,14 +320,14 @@
     </div>
     <div class="mobile-nav desktop-menu">
       <h2>Crony Electronics Pvt Ltd</h2>
-      <p class="des">Pioneering energy saving products, heat reflective coatings, removable thermal insulation, and advanced industrial automation since 1993.</p>
+      <p class="des">We are involved into energy saving products &amp; activities since 1993.</p>
       <figure>
         <img src="assets/img/energy-projects.png" alt="Crony Facility">
       </figure>
       <h3>Get in touch</h3>
-      <p class="num"><a href="tel:+912222032030">+91-22-22032030</a></p>
-      <p class="num"><a href="tel:+919323566600">+91-9323566600</a></p>
-      <p class="adrs">Pan-India Industrial Supply &amp; Technical Support</p>
+      <p class="num"><a href="tel:+912222032030">Phone: 91-22-22032030</a></p>
+      <p class="num"><a href="tel:+919323566600">Mobile: 91-9323566600</a></p>
+      <p class="adrs">www.cronyelectronics.com</p>
       <div class="social-medias">
         <a href="javascript:void(0)">Facebook</a>
         <a href="javascript:void(0)">Twitter</a>
@@ -290,7 +340,7 @@
   <section style="background-image: url(assets/img/projects-background.jpg); background-size: cover; background-position: center;" class="bannr">
     <div class="container">
       <div class="bannr-text">
-        <h2>About Crony Electronics</h2>
+        <h2>About Us</h2>
         <p>Pioneering Industrial Energy Saving Solutions &amp; Efficiency Since 1993</p>
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
@@ -302,47 +352,32 @@
     </div>
   </section>
 
-  <!-- Main About Company & Aim Section -->
-  <section class="gap" id="company-overview">
+  <!-- Section: About Crony Electronics Pvt Ltd. & Our Aim -->
+  <section class="gap" id="about-crony">
     <div class="container">
-      <div class="heading">
-        <img src="assets/img/heading-img.png" alt="heading icon">
-        <span>About Crony Electronics Pvt Ltd.</span>
-        <h2>Over 3 Decades of Excellence in Industrial Energy Management</h2>
+      <div class="about-sec-heading">
+        <h2>About Crony Electronics Pvt Ltd.</h2>
       </div>
       <div class="row align-items-center">
-        <div class="col-lg-6">
-          <div class="experience hover-img">
-            <h3>Pioneering Energy Saving Since 1993</h3>
-            <p>Crony Electronics Pvt Ltd is involved into energy saving products &amp; activities since 1993. We have strived for performance &amp; optimum output for our customers ever since. Energy saving products for Air conditioners were the first to be introduced by us in 1994.</p>
-            <p>As a mark of excellence in our field the company has grown leaps &amp; bounds. This is proven by the fact that we cater to the likes of ONGC, Indian Railways, L&amp;T, Mahindra &amp; Mahindra, Cipla, Kirloskar Brothers Ltd, Hindalco, Sesa Goa &amp; so on. Our wings are spread across all the geographical regions of India.</p>
-            <p>Our continuous efforts as a team have resulted in first of its kind microprocessor based digital energy saving product for AC way back in 1997. The product still runs as a favourite in the scenario of changing technologies goes to prove its efficiency, reliability &amp; performance for more than 2 Decades now.</p>
-            <p>We are presently catering to around 500 corporate customers with this technology &amp; the customers are ever increasing. Just goes to show the sort of confidence customers show in our products.</p>
-            
-            <div class="our-aim-quote">
-              <h5><i class="fa-solid fa-bullseye" style="color: #f05a28;"></i> Our Aim</h5>
-              <p>“To maximize the safety &amp; savings of our clients on power and stay dedicated &amp; determined to give the best. We pledge to give the best &amp; involve ourselves in many new innovations to optimize safety and energy efficiency of our customers at minimum cost.”</p>
-            </div>
+        <div class="col-lg-7">
+          <div class="about-text-content">
+            <p class="lead-paragraph">Crony Electronics Pvt Ltd is involved into energy saving products &amp; activities since 1993. We have strived for performance &amp; optimum output for our customers ever since. Energy saving product for Air conditioners were the first to be introduced by us in 1994.</p>
+            <p class="lead-paragraph">As a mark of excellence in our field the company has grown leaps &amp; bounds. This is proven by the fact that we cater to the likes of ONGC, Railways, L&amp;T, M&amp;M, Cipla, Kirloskar Brothers Ltd, Hindalco, Sesa Goa &amp; so on. Our wings are spread across all the geographical regions of India.</p>
+            <p class="lead-paragraph">Our continuous efforts as a team have resulted in first of its kind microprocessor based digital energy saving product for AC way back in 1997. The product still runs as a favourite in the scenario of changing technologies goes to prove its efficiency, reliability &amp; performance for more than 2 Decades now</p>
+            <p class="lead-paragraph">We are presently catering to around 500 corporate customers with this technology &amp; the customer are ever increasing. Just goes to show the sort of confidence customers show in our products.</p>
+            <p class="lead-paragraph">Our latest step towards energy management &amp; improving the efficiency of the industries is HEAT reflective coating (Elastoclad HR) used on the exterior of rooftops, walls etc. This coating helps in reducing the surface to surface temperature by 10 to 12 degree Celsius. The thermography results of these coatings prove the efficiency &amp; claim of product. Apart from reducing of surface to surface temperature this coat also acts as a waterproofing agent for the applied surfaces. The whole idea is to give multiple advantages with one product.</p>
+            <p class="lead-paragraph">Innovation &amp; savings has always aspired our range of products hence our latest product in the kitty is Removable Thermal Insulation Sleeves to aid the typical scenario of helping customers save on power as the product can take care of the most troubled areas like flanges, valves etc that require frequent servicing &amp; maintenance making it extremely difficult to replace the conventional mode of insulation. Our latest removable thermal insulation sleeves are a perfect solution for these troubled areas. These sleeves could be removed &amp; re installed by any one more over helps save a Huge amount of energy cost &amp; inventory cost. The product is custom built to fit any shape &amp; size of unit.</p>
+            <p class="lead-paragraph">Our sincere effort is to give multiple utility with our products &amp; maximize the profits for our customers. We pledge to give the best &amp; involve ourselves in many new innovations to come to optimize the safety energy efficiency of our customers at minimum cost.</p>
 
-            <p>Our latest step towards energy management &amp; improving the efficiency of industries is HEAT reflective coating (Elastoclad HR) used on the exterior of rooftops, walls etc. This coating helps in reducing surface-to-surface temperature by 10 to 12 degrees Celsius, certified by thermography test results, while doubling as a heavy-duty waterproofing agent.</p>
-            <p>Innovation &amp; savings has always inspired our range of products. Hence our latest product in the kitty is Removable Thermal Insulation Sleeves / Jackets to aid troubled areas like flanges, valves, and pipes that require frequent maintenance, replacing conventional insulation with custom-built removable covers that save huge energy and inventory costs.</p>
-
-            <div class="director-renewable mt-4">
-              <div class="director-profile">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80" alt="Maulik Shah">
-                <div>
-                  <h4>Maulik Shah</h4>
-                  <span>Director, Crony Electronics Pvt Ltd</span>
-                </div>
-              </div>
-              <div class="director-signature">
-                <img src="assets/img/signature.png" alt="signature">
-              </div>
+            <!-- Our Aim Block -->
+            <div class="our-aim-quote-box">
+              <h3><i class="fa-solid fa-bullseye" style="color: #f05a28;"></i> Our Aim</h3>
+              <p>“To maximize the safety &amp; savings of our clients on power and stay dedicated &amp; determined to give the best.”</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="experience-img">
+        <div class="col-lg-5">
+          <div class="experience-img mt-4 mt-lg-0">
             <img src="assets/img/energy-projects.png" alt="Crony Energy Facility">
             <div class="count-style">
               <img src="assets/img/solar-panel.png" alt="solar-panel">
@@ -355,127 +390,16 @@
               <p>In Business Since</p> 
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quality Assurances Section -->
-  <section class="gap no-top" id="quality-assurance">
-    <div class="container">
-      <div class="heading">
-        <img src="assets/img/heading-img.png" alt="heading icon">
-        <span>Uncompromising Reliability &amp; Standards</span>
-        <h2>Quality Assurances &amp; GMP Compliance</h2>
-      </div>
-      <div class="row mb-4">
-        <div class="col-lg-12">
-          <p style="font-size: 16px; line-height: 1.8; color: #555;">
-            We give complete quality assurances for all our products through our stringent quality checks. Various electrical testings are done to check the workability of the products. The products are also tested for robust structure, durability, reliability, accuracy, raw materials etc. All these tests are conducted by our quality controllers who keep a strict vigil on the entire production stages. We also make it a point to adhere to relevant quality norms and Good Manufacturing Practices (GMP) that add to our company's credibility in the market. The presence of modern gadgetry to test the products enables us to check them for accuracy and quality. These tests also ensure a trouble-free, long, and dependable operation minus the drawbacks.
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="about-feature-card">
-            <div class="about-feature-icon">
-              <i class="fa-solid fa-microscope"></i>
+          <div class="director-renewable mt-4 p-4" style="background:#ffffff; border:1px solid #eaedf1; border-radius:8px;">
+            <div class="director-profile">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80" alt="Maulik Shah">
+              <div>
+                <h4 style="font-size:18px; font-weight:700; margin-bottom:4px;">Maulik Shah</h4>
+                <span style="font-size:13.5px; color:#777;">Director, Crony Electronics Pvt Ltd</span>
+              </div>
             </div>
-            <h4 style="font-size: 19px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px;">Stringent Multi-Stage Testing</h4>
-            <p style="font-size: 14.5px; color: #666; line-height: 1.6;">Electrical workability, load testing, structural durability, thermal resistance, and raw material grading are verified through modern computerized test equipment before deployment.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="about-feature-card">
-            <div class="about-feature-icon">
-              <i class="fa-solid fa-certificate"></i>
-            </div>
-            <h4 style="font-size: 19px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px;">Good Manufacturing Practices (GMP)</h4>
-            <p style="font-size: 14.5px; color: #666; line-height: 1.6;">Adherence to strict GMP protocols and industrial safety codes ensures our solutions comply with rigorous pharmaceutical, heavy engineering, and petrochemical requirements.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="about-feature-card">
-            <div class="about-feature-icon">
-              <i class="fa-solid fa-user-shield"></i>
-            </div>
-            <h4 style="font-size: 19px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px;">Strict Production Vigil</h4>
-            <p style="font-size: 14.5px; color: #666; line-height: 1.6;">Dedicated quality controllers maintain continuous supervision from raw material sourcing and precision assembly to final packaging, guaranteeing dependable operations.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Customer Satisfaction & Our Strengths Section -->
-  <section class="gap no-top" id="strengths-and-satisfaction">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <div class="heading text-start" style="margin-bottom: 25px;">
-            <img src="assets/img/heading-img.png" alt="heading icon">
-            <span>Customer First Philosophy</span>
-            <h2>Dedicated Customer Satisfaction</h2>
-          </div>
-          <p style="font-size: 15.5px; line-height: 1.8; color: #555;">
-            We believe in formulating customer-centric policies that help in keeping the clients satisfied. Our focus is on listening to their queries and suggestions and customizing the products according to it.
-          </p>
-          <p style="font-size: 15.5px; line-height: 1.8; color: #555;">
-            Our technicians work in close coordination with customers which helps them in getting a better understanding of their requirements. Such exercises also help in building trust in our company and maintaining healthy long-term relations. Through our deep expertise in the field, we are able to customize products to the total satisfaction of the client within the stipulated time frame.
-          </p>
-          <div class="p-4 mt-4" style="background: #fbfbfc; border: 1px solid #eef0f3; border-radius: 8px;">
-            <h5 style="font-weight: 700; color: #1a1a1a; margin-bottom: 10px;"><i class="fa-solid fa-headset me-2" style="color: #f05a28;"></i> Direct Technical Engineering Support</h5>
-            <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Need on-site thermal assessment, voltage profiling, or custom jacket dimensions? Our technical team coordinates directly with plant engineers across India.</p>
-            <a href="contact.html" class="btn">Connect With Our Engineers</a>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="heading text-start" style="margin-bottom: 25px;">
-            <img src="assets/img/heading-img.png" alt="heading icon">
-            <span>Our Foundation</span>
-            <h2>Our Core Strengths</h2>
-          </div>
-          <p style="font-size: 15px; color: #666; margin-bottom: 20px;">The key aspects that have contributed to the tremendous success witnessed by Crony Electronics Pvt Ltd:</p>
-          <div class="strength-item">
-            <i class="fa-solid fa-tags"></i>
-            <div>
-              <h5>Industry Leading Prices</h5>
-              <p>Highly competitive, manufacturer-direct pricing delivering swift payback periods and maximized operational savings.</p>
-            </div>
-          </div>
-          <div class="strength-item">
-            <i class="fa-solid fa-industry"></i>
-            <div>
-              <h5>Sophisticated Infrastructure</h5>
-              <p>Cutting-edge testing apparatus, electronic diagnostic benches, and custom fabrication machinery.</p>
-            </div>
-          </div>
-          <div class="strength-item">
-            <i class="fa-solid fa-flask-vial"></i>
-            <div>
-              <h5>Strong Research &amp; Development (R&amp;D)</h5>
-              <p>Continuous engineering innovation resulting in proprietary microprocessors, coatings, and thermal insulation solutions.</p>
-            </div>
-          </div>
-          <div class="strength-item">
-            <i class="fa-solid fa-warehouse"></i>
-            <div>
-              <h5>Capacious Warehousing</h5>
-              <p>Large-scale inventory facilities enabling prompt turnaround and ready stock availability for critical industrial components.</p>
-            </div>
-          </div>
-          <div class="strength-item">
-            <i class="fa-solid fa-box-open"></i>
-            <div>
-              <h5>Suitable Industrial Packing</h5>
-              <p>Heavy-duty protective packaging engineered to prevent transit damage across long-distance multi-modal transport.</p>
-            </div>
-          </div>
-          <div class="strength-item">
-            <i class="fa-solid fa-truck-fast"></i>
-            <div>
-              <h5>On-Time Pan-India Delivery</h5>
-              <p>Reliable logistics network ensuring punctual delivery and rapid deployment across all regions of India.</p>
+            <div class="director-signature">
+              <img src="assets/img/signature.png" alt="signature">
             </div>
           </div>
         </div>
@@ -483,183 +407,320 @@
     </div>
   </section>
 
-  <!-- Comprehensive Product Range Section -->
-  <section class="gap no-top" id="product-range">
+  <!-- Section: Comprehensive Product Range -->
+  <section class="gap bg-light-soft" id="comprehensive-product-range">
     <div class="container">
-      <div class="heading">
-        <img src="assets/img/heading-img.png" alt="heading icon">
-        <span>End-to-End Solutions</span>
+      <div class="about-sec-heading">
         <h2>Comprehensive Product Range</h2>
       </div>
-      <div class="row mb-3">
+      <div class="row mb-4">
         <div class="col-lg-12">
-          <p style="text-align: center; max-width: 800px; margin: 0 auto; color: #555; font-size: 15.5px;">
-            Our all-inclusive assortment comprises high-efficiency thermal barriers, microprocessor energy savers, heavy-duty industrial floor coverings, and precision voltage regulators:
+          <p class="lead-paragraph">
+            Our all inclusive assortment comprises of Digi Guard, Eco Max, Removable thermal insulation jacket and Heat reflecting coating(elastoclad HR).Apart from our showcased range of products, we also manufacture the following:
           </p>
         </div>
       </div>
-      <div class="row mt-4">
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="product-range-card">
-            <h4><i class="fa-solid fa-temperature-arrow-down" style="color: #f05a28;"></i> Elastoclad HR Heat Coating</h4>
-            <p>Advanced heat-reflective elastomeric coating for rooftops and exterior industrial walls. Reduces surface temperatures by 10 to 12°C with certified thermography proof while providing full waterproofing.</p>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="product-list-card">
+            <i class="fa-solid fa-microchip"></i>
+            <h5>Energy saving microprocessor devise for air conditioners</h5>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="product-range-card">
-            <h4><i class="fa-solid fa-shield-halved" style="color: #f05a28;"></i> Removable Thermal Jackets</h4>
-            <p>Custom-built thermal insulation sleeves and jackets for flanges, valves, pumps, and pipes. Replaces messy conventional insulation, allows easy removal for maintenance, and saves immense energy cost.</p>
+        <div class="col-lg-4 col-md-6">
+          <div class="product-list-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h5>Digi Guard</h5>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="product-range-card">
-            <h4><i class="fa-solid fa-microchip" style="color: #f05a28;"></i> Digi Guard &amp; Eco Max AC Savers</h4>
-            <p>Microprocessor-based digital energy-saving controllers for air conditioners. Pioneered by Crony Electronics in 1997, delivering proven reliability, power savings, and compressor longevity for over two decades.</p>
+        <div class="col-lg-4 col-md-6">
+          <div class="product-list-card">
+            <i class="fa-solid fa-leaf"></i>
+            <h5>Eco Max</h5>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="product-range-card">
-            <h4><i class="fa-solid fa-bolt" style="color: #f05a28;"></i> Servo &amp; Fast Voltage Regulators</h4>
-            <p>High-speed voltage regulation and servo stabilization protecting sensitive industrial automation, robotics, and mission-critical production machinery against sags, spikes, and brownouts.</p>
+        <div class="col-lg-4 col-md-6">
+          <div class="product-list-card">
+            <i class="fa-solid fa-bolt"></i>
+            <h5>Servo &amp; Step up stabilizer</h5>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="product-range-card">
-            <h4><i class="fa-solid fa-layer-group" style="color: #f05a28;"></i> Heavy-Duty Rubber Flooring</h4>
-            <p>norament® and noraplan® industrial rubber floor coverings withstanding 6 N/mm² dynamic forklift loads, 10-year ESD warranty, and ISO Class 3 / GMP Grade A cleanroom certified surfaces.</p>
+        <div class="col-lg-4 col-md-6">
+          <div class="product-list-card">
+            <i class="fa-solid fa-circle-radiation"></i>
+            <h5>Removable thermal insulation jacket</h5>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="product-range-card">
-            <h4><i class="fa-solid fa-robot" style="color: #f05a28;"></i> Industrial Robotics &amp; Automation</h4>
-            <p>Engineered automation solutions comprising 64 specialized robotic units for high-precision industrial manufacturing, assembly lines, palletizing, and hazardous material handling.</p>
+        <div class="col-lg-4 col-md-6">
+          <div class="product-list-card">
+            <i class="fa-solid fa-temperature-arrow-down"></i>
+            <h5>Heat reflecting coating (Elastoclad HR)</h5>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Our Patronage Section -->
-  <section class="gap no-top" id="patronage">
+  <!-- Section: Quality Assurances -->
+  <section class="gap" id="quality-assurances">
     <div class="container">
-      <div class="heading">
-        <img src="assets/img/heading-img.png" alt="heading icon">
-        <span>Trusted By Industry Leaders</span>
-        <h2>Our Patronage (500+ Corporate Clients)</h2>
+      <div class="about-sec-heading">
+        <h2>Quality Assurances</h2>
       </div>
       <div class="row mb-4">
         <div class="col-lg-12">
-          <p style="text-align: center; max-width: 850px; margin: 0 auto; color: #555; font-size: 15.5px;">
-            We have won accolades for our enduring efforts in power correction, energy efficiency, and thermal solutions. Adhering to Good Manufacturing Practices (GMP) and ethical business policies has helped our company widen our operational scope across all geographical regions of India. The repertoire of our esteemed clientele comprises:
+          <p class="lead-paragraph">
+            We give complete quality assurances for all our products through our stringent quality checks. Various electrical testings are done to check the workability of the products. The products are also tested for robust structure, durability, reliability, accuracy, raw materials etc. All these tests are conducted by our quality controllers who keep a strict vigil on the entire production stages. We also make it a point to adhere to relevant quality norms that add to our company's credibility in the market. The presence of modern gadgetry to test the products enables us to check them for accuracy and quality. These tests also ensure a trouble free, long and dependable operation minus the drawbacks.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="content-card">
+            <div class="content-card-icon">
+              <i class="fa-solid fa-flask-vial"></i>
+            </div>
+            <h4>Stringent Electrical Testing</h4>
+            <p>Comprehensive electrical testing is performed to verify workability, insulation resistance, and accurate operational cycles under varying industrial load conditions.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="content-card">
+            <div class="content-card-icon">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <h4>Relevant Quality Norms &amp; GMP</h4>
+            <p>Full compliance with recognized industry quality norms, good manufacturing practices (GMP), and rigorous material standards adding credibility in the market.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="content-card">
+            <div class="content-card-icon">
+              <i class="fa-solid fa-user-check"></i>
+            </div>
+            <h4>Quality Controllers Vigil</h4>
+            <p>Expert quality controllers supervise every stage from raw materials through production, utilizing modern test gadgetry for long, dependable operation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Customer Satisfaction -->
+  <section class="gap bg-light-soft" id="customer-satisfaction">
+    <div class="container">
+      <div class="about-sec-heading">
+        <h2>Customer Satisfaction</h2>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <p class="lead-paragraph">
+            We believe in formulating customer centric policies that help in keeping the clients satisfied. Our focus is on listening to their queries and suggestions and customizing the products according to it. Our technicians work in close coordination with the customers which helps them in getting a better understanding of their requirement. Such exercises also help in building the trust of the client in our company and maintain healthy relations with them. Through our expertise in the field, we are able to customize the products to the satisfaction of the client within the stipulated time frame.
+          </p>
+          <div class="mt-4">
+            <a href="contact.html" class="btn">Contact Our Technical Team</a>
+          </div>
+        </div>
+        <div class="col-lg-5 mt-4 mt-lg-0">
+          <div class="p-4" style="background:#ffffff; border:1px solid #eaedf1; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.03);">
+            <h4 style="font-size:18px; font-weight:700; color:#1a1a1a; margin-bottom:15px; display:flex; align-items:center; gap:10px;">
+              <i class="fa-solid fa-handshake" style="color:#f05a28;"></i> Customer-Centric Commitment
+            </h4>
+            <ul style="list-style:none; padding:0; margin:0;">
+              <li style="margin-bottom:12px; font-size:14.5px; color:#555; display:flex; align-items:flex-start; gap:10px;">
+                <i class="fa-solid fa-check" style="color:#f05a28; margin-top:4px;"></i> Active listening to customer queries &amp; custom specifications
+              </li>
+              <li style="margin-bottom:12px; font-size:14.5px; color:#555; display:flex; align-items:flex-start; gap:10px;">
+                <i class="fa-solid fa-check" style="color:#f05a28; margin-top:4px;"></i> On-site technician coordination for complete operational clarity
+              </li>
+              <li style="margin-bottom:12px; font-size:14.5px; color:#555; display:flex; align-items:flex-start; gap:10px;">
+                <i class="fa-solid fa-check" style="color:#f05a28; margin-top:4px;"></i> High trust, healthy relations, and long-term partnerships
+              </li>
+              <li style="font-size:14.5px; color:#555; display:flex; align-items:flex-start; gap:10px;">
+                <i class="fa-solid fa-check" style="color:#f05a28; margin-top:4px;"></i> Precise customization delivered strictly within stipulated timeframes
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Our Patronage -->
+  <section class="gap" id="our-patronage">
+    <div class="container">
+      <div class="about-sec-heading">
+        <h2>Our Patronage</h2>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-12">
+          <p class="lead-paragraph">
+            We have won accolades for our enduring efforts in the field of power correction device manufacturing. Our adherence to good manufacturing practices (GMP) and ethical business policies has helped our company in widening our scope of operational area. Apart from a reputed clientele, our company is also associated with our channel partners for various requirements. The repertoire of our esteemed clientele comprises of the following:
           </p>
         </div>
       </div>
       <div class="row g-3">
         <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-card">
-            <img src="assets/img/partners/client-ongc.png" alt="ONGC Logo">
-            <h6>ONGC</h6>
+          <div class="patron-badge">
+            <div style="font-size: 22px; font-weight: 800; color: #1a5276; margin-bottom: 10px; letter-spacing: 0.5px;">Global Telesystems</div>
+            <h5>Global Telesystems Ltd.</h5>
+            <span>Telecom &amp; Networks</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <div style="font-size: 24px; font-weight: 900; color: #2e4053; margin-bottom: 10px; letter-spacing: 1px;">WIPRO</div>
+            <h5>Wipro</h5>
+            <span>Technology &amp; Systems</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <div style="font-size: 24px; font-weight: 900; color: #196f3d; margin-bottom: 10px; letter-spacing: 1px;">HPCL</div>
+            <h5>HPCL</h5>
+            <span>Hindustan Petroleum Corp</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <img src="assets/img/partners/client-railways.png" alt="Indian Railways">
+            <h5>Railways</h5>
+            <span>Indian Railways Network</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <div style="font-size: 24px; font-weight: 900; color: #b03a2e; margin-bottom: 10px; letter-spacing: 1px;">IOCL</div>
+            <h5>IOCL</h5>
+            <span>Indian Oil Corporation</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <div style="font-size: 26px; font-weight: 900; color: #1a5276; margin-bottom: 10px; letter-spacing: 1px;">Cipla</div>
+            <h5>CIPLA</h5>
+            <span>Pharmaceuticals Major</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <div style="font-size: 22px; font-weight: 800; color: #7d3c98; margin-bottom: 10px; letter-spacing: 0.5px;">US Vitamins</div>
+            <h5>US Vitamins</h5>
+            <span>Healthcare &amp; Life Sciences</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <img src="assets/img/partners/client-ongc.png" alt="ONGC">
+            <h5>ONGC</h5>
             <span>Oil &amp; Natural Gas Corp</span>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-card">
-            <img src="assets/img/partners/client-railways.png" alt="Indian Railways Logo">
-            <h6>Indian Railways</h6>
-            <span>National Rail Network</span>
+          <div class="patron-badge">
+            <img src="assets/img/partners/client-lnt.png" alt="L&T">
+            <h5>L&amp;T</h5>
+            <span>Larsen &amp; Toubro</span>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-card">
-            <img src="assets/img/partners/client-lnt.png" alt="L&T Logo">
-            <h6>Larsen &amp; Toubro (L&amp;T)</h6>
-            <span>Engineering &amp; Construction</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-card">
-            <img src="assets/img/partners/client-mahindra.png" alt="Mahindra Logo">
-            <h6>Mahindra &amp; Mahindra</h6>
-            <span>Automotive &amp; Farm Equipment</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-card">
-            <img src="assets/img/partners/client-kirloskar.png" alt="Kirloskar Logo">
-            <h6>Kirloskar Brothers Ltd</h6>
-            <span>Industrial Pumps &amp; Systems</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-card">
-            <img src="assets/img/partners/client-hindalco.png" alt="Hindalco Logo">
-            <h6>Hindalco Industries</h6>
-            <span>Aluminium &amp; Copper Major</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-card">
-            <div style="font-size: 26px; font-weight: 900; color: #1a5276; margin-bottom: 12px; letter-spacing: 1px;">Cipla</div>
-            <h6>Cipla Limited</h6>
-            <span>Global Healthcare &amp; Pharma</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-card">
-            <div style="font-size: 26px; font-weight: 900; color: #2e4053; margin-bottom: 12px; letter-spacing: 1px;">WIPRO</div>
-            <h6>Wipro Limited</h6>
-            <span>Global Technology &amp; IT</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-card">
-            <div style="font-size: 24px; font-weight: 900; color: #b03a2e; margin-bottom: 12px; letter-spacing: 1px;">IOCL</div>
-            <h6>Indian Oil Corporation</h6>
-            <span>Petroleum &amp; Energy Major</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-card">
-            <div style="font-size: 24px; font-weight: 900; color: #196f3d; margin-bottom: 12px; letter-spacing: 1px;">HPCL</div>
-            <h6>Hindustan Petroleum</h6>
-            <span>Refining &amp; Distribution</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-card">
-            <div style="font-size: 24px; font-weight: 900; color: #5b2c6f; margin-bottom: 12px; letter-spacing: 1px;">WOCKHARDT</div>
-            <h6>Wockhardt</h6>
+          <div class="patron-badge">
+            <div style="font-size: 24px; font-weight: 900; color: #5b2c6f; margin-bottom: 10px; letter-spacing: 1px;">WOCKHARDT</div>
+            <h5>wockhardt</h5>
             <span>Pharmaceuticals &amp; Biotech</span>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-card">
-            <div style="font-size: 24px; font-weight: 900; color: #d35400; margin-bottom: 12px; letter-spacing: 1px;">SESA GOA</div>
-            <h6>Sesa Goa</h6>
-            <span>Mining &amp; Metallurgy</span>
+          <div class="patron-badge">
+            <img src="assets/img/partners/client-mahindra.png" alt="Mahindra & Mahindra">
+            <h5>M&amp;M</h5>
+            <span>Mahindra &amp; Mahindra</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <img src="assets/img/partners/client-kirloskar.png" alt="Kirloskar Brothers Ltd">
+            <h5>Kirloskar Brothers Ltd</h5>
+            <span>Industrial Pumps &amp; Systems</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Call to Action Banner -->
-  <section class="gap no-top">
+  <!-- Section: Our Strengths -->
+  <section class="gap bg-light-soft" id="our-strengths">
     <div class="container">
-      <div class="p-5 text-center text-white" style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
-        <h2 style="color: #ffffff; font-weight: 700; margin-bottom: 15px;">Optimize Your Plant's Energy Efficiency &amp; Safety</h2>
-        <p style="max-width: 700px; margin: 0 auto 25px auto; color: #e5e7eb; font-size: 16px;">
-          Connect with Crony Electronics to reduce power bills, eliminate heat stress, and protect critical industrial assets with our proven solutions.
-        </p>
-        <div class="d-flex justify-content-center gap-3 flex-wrap">
-          <a href="contact.html" class="btn">Get in Touch With Us</a>
-          <a href="Crony introduction letter.pdf" download class="btn bk" style="background: #ffffff; color: #1f2937;">Download Introduction Letter</a>
+      <div class="about-sec-heading">
+        <h2>Our Strengths</h2>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-12">
+          <p class="lead-paragraph">
+            The various aspects that have contributed to the tremendous success witnessed by our company are:
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="strength-box">
+            <i class="fa-solid fa-tags"></i>
+            <div>
+              <h5>Industry leading prices</h5>
+              <p>Competitive and value-maximizing pricing delivering high return on investment for clients.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="strength-box">
+            <i class="fa-solid fa-industry"></i>
+            <div>
+              <h5>Sophisticated infrastructure</h5>
+              <p>Modern manufacturing apparatus and advanced testing instruments ensuring precision output.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="strength-box">
+            <i class="fa-solid fa-flask-vial"></i>
+            <div>
+              <h5>Strong research and development</h5>
+              <p>In-house R&amp;D team committed to continuous product innovation and power efficiency breakthroughs.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="strength-box">
+            <i class="fa-solid fa-warehouse"></i>
+            <div>
+              <h5>Capacious warehouse</h5>
+              <p>Extensive inventory and storage capacity ensuring seamless supply chain and quick order fulfillment.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="strength-box">
+            <i class="fa-solid fa-box"></i>
+            <div>
+              <h5>Suitable packing</h5>
+              <p>Heavy-duty, protective industrial packaging guaranteeing defect-free transport across India.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="strength-box">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+              <h5>On time delivery</h5>
+              <p>Dependable logistical coordination adhering strictly to stipulated project timelines.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer Section -->
   <footer style="background-image: url(assets/img/footer-line.png);">
     <div class="container">
       <div class="footer-top">
@@ -667,7 +728,7 @@
           <div class="col-lg-6">
             <div class="logo">
               <img src="assets/img/logo.png" alt="Crony Electronics Logo" style="height: 60px; width: auto; object-fit: contain;">
-              <p>Crony Electronics Pvt Ltd has been pioneering energy-saving products, Elastoclad HR heat-reflective coatings, removable thermal jackets, and industrial solutions since 1993, catering to 500+ corporate clients nationwide.</p>
+              <p><b>Crony Electronics Pvt Ltd.</b><br>We are involved into energy saving products &amp; activities since 1993.</p>
             </div>
           </div>
           <div class="col-lg-6">
@@ -683,10 +744,25 @@
         </div>
       </div>
       <div class="row">
+        <!-- Contact Us Column -->
         <div class="col-lg-4 col-md-6">
           <div class="widget-title">
-            <h3>Contact Us</h3>
+            <h3>contact us</h3>
             <div class="boder"></div>
+            <div class="get-in-touch">
+              <div><i>
+                <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_94_1710)">
+                    <path d="M12.3379 7.11523C10.6713 7.11523 9.31538 8.47115 9.31538 10.1377C9.31538 11.8043 10.6713 13.1602 12.3379 13.1602C14.0045 13.1602 15.3604 11.8043 15.3604 10.1377C15.3604 8.47115 14.0045 7.11523 12.3379 7.11523Z" fill="black"/>
+                    <path d="M19.4104 3.44324C17.5213 1.55407 15.0095 0.513672 12.3379 0.513672C9.66623 0.513672 7.15444 1.55407 5.26532 3.44324C3.37611 5.33245 2.33571 7.8442 2.33571 10.5158C2.33571 15.9205 7.44603 20.4158 10.1915 22.8309C10.573 23.1665 10.9024 23.4563 11.1648 23.7014C11.4937 24.0087 11.9157 24.1623 12.3378 24.1623C12.7599 24.1623 13.182 24.0087 13.5108 23.7015C13.7733 23.4563 14.1028 23.1665 14.4842 22.8309C17.2297 20.4159 22.34 15.9205 22.34 10.5159C22.34 7.8442 21.2996 5.33245 19.4104 3.44324ZM12.3379 14.5457C9.90739 14.5457 7.93009 12.5684 7.93009 10.1379C7.93009 7.70739 9.90739 5.73009 12.3379 5.73009C14.7684 5.73009 16.7457 7.70739 16.7457 10.1379C16.7457 12.5684 14.7683 14.5457 12.3379 14.5457Z" fill="black"/>
+                  </g>
+                </svg>
+              </i></div>
+              <div>
+                <span>Website:</span>
+                <h6><a href="https://cronyelectronics.com">www.cronyelectronics.com</a></h6>
+              </div>
+            </div>
             <div class="get-in-touch">
               <div><i>
                 <svg width="23" height="23" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
@@ -697,7 +773,7 @@
               </i></div>
               <div>
                 <span>Phone:</span> 
-                <h6><a href="tel:+912222032030">+91-22-22032030</a></h6>
+                <h6><a href="tel:+912222032030">91-22-22032030</a></h6>
               </div>
             </div>
             <div class="get-in-touch">
@@ -712,73 +788,48 @@
                 </svg>
               </i></div>
               <div>
-                <span>Email Address:</span> 
-                <h6><a href="mailto:info@cronyelectronics.com">info@cronyelectronics.com</a></h6>
-              </div>
-            </div>
-            <div class="get-in-touch">
-              <div><i>
-                <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_94_1710)">
-                    <path d="M12.3379 7.11523C10.6713 7.11523 9.31538 8.47115 9.31538 10.1377C9.31538 11.8043 10.6713 13.1602 12.3379 13.1602C14.0045 13.1602 15.3604 11.8043 15.3604 10.1377C15.3604 8.47115 14.0045 7.11523 12.3379 7.11523Z" fill="black"/>
-                    <path d="M19.4104 3.44324C17.5213 1.55407 15.0095 0.513672 12.3379 0.513672C9.66623 0.513672 7.15444 1.55407 5.26532 3.44324C3.37611 5.33245 2.33571 7.8442 2.33571 10.5158C2.33571 15.9205 7.44603 20.4158 10.1915 22.8309C10.573 23.1665 10.9024 23.4563 11.1648 23.7014C11.4937 24.0087 11.9157 24.1623 12.3378 24.1623C12.7599 24.1623 13.182 24.0087 13.5108 23.7015C13.7733 23.4563 14.1028 23.1665 14.4842 22.8309C17.2297 20.4159 22.34 15.9205 22.34 10.5159C22.34 7.8442 21.2996 5.33245 19.4104 3.44324ZM12.3379 14.5457C9.90739 14.5457 7.93009 12.5684 7.93009 10.1379C7.93009 7.70739 9.90739 5.73009 12.3379 5.73009C14.7684 5.73009 16.7457 7.70739 16.7457 10.1379C16.7457 12.5684 14.7683 14.5457 12.3379 14.5457Z" fill="black"/>
-                  </g>
-                </svg>
-              </i></div>
-              <div>
-                <span class="pt-2 pb-0">Pan-India Presence · Serving 500+ Corporate Clients Nationwide</span>
+                <span>Mobile:</span> 
+                <h6><a href="tel:+919323566600">91-9323566600</a></h6>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- use full link Column -->
         <div class="col-lg-4 col-md-6">
           <div class="widget-title">
-            <h3>Quick Links</h3>
+            <h3>use full link</h3>
             <div class="boder"></div>
             <ul>
               <li><i class="fa-solid fa-caret-right"></i><a href="index.html">Home</a></li>
               <li><i class="fa-solid fa-caret-right"></i><a href="about.html">About Us</a></li>
-              <li><i class="fa-solid fa-caret-right"></i><a href="index.html#services">Products</a></li>
-              <li><i class="fa-solid fa-caret-right"></i><a href="faq.html">FAQs</a></li>
               <li><i class="fa-solid fa-caret-right"></i><a href="contact.html">Contact Us</a></li>
-              <li><i class="fa-solid fa-caret-right"></i><a href="Crony introduction letter.pdf" download>Company Brochure</a></li>
             </ul>
           </div>
         </div>
+
+        <!-- Our Products Column -->
         <div class="col-lg-4 col-md-6">
           <div class="widget-title mb-0">
-            <h3>Technical Releases</h3>
+            <h3>Our Products</h3>
             <div class="boder"></div>
-            <ul class="recent-news mb-0">
-              <li>
-                <figure>
-                  <img src="assets/img/produce-1.png" alt="Crony Profile">
-                </figure>
-                <div>
-                  <span>Official Release</span>
-                  <a href="Crony introduction letter.pdf" download>Crony Electronics Official Introduction Letter</a>
-                </div>
-              </li>
-              <li class="pb-0">
-                <figure>
-                  <img src="assets/img/produce-3.png" alt="Rubber Flooring Guide">
-                </figure>
-                <div>
-                  <span>Technical Guide</span>
-                  <a href="Industry & trade rubber floorings.pdf" download>nora® Industry &amp; Trade Rubber Flooring Guide</a>
-                </div>
-              </li>
+            <ul>
+              <li><i class="fa-solid fa-caret-right"></i><a href="index.html#sleeves">Insulation Cover</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="index.html#thermal">Elastoclad HR</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="index.html#services">Digi Guard &amp; Eco Max</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="index.html#power">Servo &amp; Step up stabilizer</a></li>
             </ul>
           </div>
         </div>
       </div>
+
       <div class="footer-bottom">
         <div class="footer-bottom-text">
-          <h6><b>&copy; Copyright Crony Electronics Pvt Ltd 2026</b>. All Rights Reserved.</h6>
+          <h6><b>&copy; Copyright 2017-23 Crony Elecrtronics Pvt. Ltd.</b> - Designed by: Fiveone Digital</h6>
           <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
@@ -797,7 +848,6 @@
       </div>
     </form>
   </div>
-  <!-- search-popup end -->
 
   <!-- progress -->
   <div id="progress">
