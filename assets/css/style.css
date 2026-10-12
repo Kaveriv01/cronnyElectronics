@@ -261,7 +261,7 @@ header .phone a:hover {
     display: inline-flex;
     align-items: center;
     background: #ffffff;
-    padding: 6px 16px;
+    padding: 4px 10px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
     transition: all 0.3s ease;
@@ -271,7 +271,7 @@ header .phone a:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
 }
 .bottom-bar-text > a img {
-    max-height: 48px;
+    max-height: 70px;
     width: auto;
     object-fit: contain;
 }
@@ -2101,9 +2101,9 @@ footer:before {
 }
 .logo img {
     background: #ffffff;
-    padding: 8px 16px;
+    padding: 8px 14px;
     border-radius: 8px;
-    max-height: 56px;
+    max-height: 85px;
     width: auto;
     object-fit: contain;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
