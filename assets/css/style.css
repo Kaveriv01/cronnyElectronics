@@ -257,6 +257,34 @@ header .phone a:hover {
     position: relative;
     justify-content: space-between;
 }
+.bottom-bar-text > a {
+    display: inline-flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 6px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+.bottom-bar-text > a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+.bottom-bar-text > a img {
+    max-height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+.res-log a {
+    display: inline-flex;
+    background: #ffffff;
+    padding: 6px 14px;
+    border-radius: 6px;
+}
+.res-log img {
+    max-height: 44px;
+    width: auto;
+}
 /* 02. navbar */
 .overlay {
   position: fixed;
@@ -2070,6 +2098,15 @@ footer:before {
     align-items: center;
     justify-content: left;
     margin-top: 14px;
+}
+.logo img {
+    background: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    max-height: 56px;
+    width: auto;
+    object-fit: contain;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 .logo p {
     color: #fff;
