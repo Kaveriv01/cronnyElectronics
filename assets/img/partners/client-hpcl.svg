@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" width="160" height="50">
+  <g fill="none">
+    <circle cx="25" cy="25" r="18" fill="#003A70"/>
+    <circle cx="25" cy="25" r="14" fill="#ED1C24"/>
+    <circle cx="25" cy="25" r="9" fill="#003A70"/>
+    <text x="25" y="30" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle">HP</text>
+    <text x="52" y="27" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" fill="#003A70" letter-spacing="0.5">HPCL</text>
+    <text x="52" y="38" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#ED1C24" letter-spacing="0.2">HINDUSTAN PETROLEUM</text>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" width="160" height="50">
+  <g fill="none">
+    <rect x="10" y="10" width="30" height="30" rx="6" fill="#008080"/>
+    <text x="25" y="31" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle">USV</text>
+    <text x="48" y="27" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="800" fill="#008080" letter-spacing="0.3">US VITAMINS</text>
+    <text x="48" y="38" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#666666" letter-spacing="0.5">HEALTHCARE</text>
+  </g>
+</svg>

@@ -145,8 +145,8 @@
     .patron-badge {
       background: #ffffff;
       border: 1px solid #eaedf1;
-      border-radius: 8px;
-      padding: 22px 16px;
+      border-radius: 10px;
+      padding: 24px 16px;
       text-align: center;
       height: 100%;
       display: flex;
@@ -154,27 +154,28 @@
       align-items: center;
       justify-content: center;
       transition: all 0.25s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
     }
     .patron-badge:hover {
       border-color: #f05a28;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
       transform: translateY(-4px);
     }
     .patron-badge img {
-      max-height: 48px;
+      height: 50px;
       max-width: 140px;
       object-fit: contain;
       margin-bottom: 12px;
+      transition: transform 0.25s ease;
+    }
+    .patron-badge:hover img {
+      transform: scale(1.06);
     }
     .patron-badge h5 {
       font-size: 15px;
       font-weight: 700;
-      color: #222;
-      margin-bottom: 4px;
-    }
-    .patron-badge span {
-      font-size: 12.5px;
-      color: #777;
+      color: #1a1a1a;
+      margin-bottom: 0;
     }
     .strength-box {
       display: flex;
@@ -259,14 +260,14 @@
               <li class="navbar-dropdown"><a href="index.html">Home</a></li>
               <li class="navbar-dropdown"><a href="about.html" style="color: #f05a28; font-weight: 700;">About Us</a></li>
               <li class="navbar-dropdown menu-item-children">
-                <a href="index.html#services">Products</a>
+                <a href="products.html">Products</a>
                 <ul class="sub-menu">
-                  <li><a href="index.html#sleeves">Insulation Cover</a></li>
-                  <li><a href="index.html#thermal">Elastoclad HR</a></li>
-                  <li><a href="index.html#flooring">Rubber Flooring (Industry &amp; Trade)</a></li>
-                  <li><a href="index.html#power">Servo &amp; Voltage Stabilizers</a></li>
-                  <li><a href="index.html#daylight">Brilantor Natural Daylight</a></li>
-                  <li><a href="index.html#robotics">Industrial Robotics</a></li>
+                  <li><a href="products.html#sleeves">Insulation Cover</a></li>
+                  <li><a href="products.html#thermal">Elastoclad HR</a></li>
+                  <li><a href="products.html#flooring">Rubber Flooring (Industry &amp; Trade)</a></li>
+                  <li><a href="products.html#power">Servo &amp; Voltage Stabilizers</a></li>
+                  <li><a href="products.html#daylight">Brilantor Natural Daylight</a></li>
+                  <li><a href="products.html#robotics">Industrial Robotics</a></li>
                 </ul>
               </li>
               <li class="navbar-dropdown"><a href="faq.html">FAQs</a></li>
@@ -305,12 +306,12 @@
         <li><a href="about.html">About Us</a></li>
         <li class="menu-item-has-children"><a href="javascript:void(0)">Products</a>
           <ul class="sub-menu">
-            <li><a href="index.html#sleeves">Insulation Cover</a></li>
-            <li><a href="index.html#thermal">Elastoclad HR</a></li>
-            <li><a href="index.html#flooring">Rubber Flooring (Industry &amp; Trade)</a></li>
-            <li><a href="index.html#power">Servo &amp; Voltage Stabilizers</a></li>
-            <li><a href="index.html#daylight">Brilantor Natural Daylight</a></li>
-            <li><a href="index.html#robotics">Industrial Robotics</a></li>
+            <li><a href="products.html#sleeves">Insulation Cover</a></li>
+            <li><a href="products.html#thermal">Elastoclad HR</a></li>
+            <li><a href="products.html#flooring">Rubber Flooring (Industry &amp; Trade)</a></li>
+            <li><a href="products.html#power">Servo &amp; Voltage Stabilizers</a></li>
+            <li><a href="products.html#daylight">Brilantor Natural Daylight</a></li>
+            <li><a href="products.html#robotics">Industrial Robotics</a></li>
           </ul>
         </li>
         <li><a href="faq.html">FAQs</a></li>
@@ -337,7 +338,7 @@
   </header>
 
   <!-- Banner Section -->
-  <section style="background-image: url(assets/img/projects-background.jpg); background-size: cover; background-position: center;" class="bannr">
+  <section style="background-image: url('assets/img/about-banner.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat;" class="bannr">
     <div class="container">
       <div class="bannr-text">
         <h2>About Us</h2>
@@ -546,102 +547,100 @@
     </div>
   </section>
 
-  <!-- Section: Our Patronage -->
+  <!-- Section: Our Patronage & Brand Partnerships -->
   <section class="gap" id="our-patronage">
     <div class="container">
-      <div class="about-sec-heading">
-        <h2>Our Patronage</h2>
+      <div class="about-sec-heading text-center" style="max-width: 850px; margin: 0 auto 40px;">
+        <h2>Our Patronage &amp; Brand Partners</h2>
+        <p class="lead-paragraph" style="margin-top: 15px;">
+          We have won accolades for our enduring efforts in the field of energy saving and power protection since 1993. Trusted by 500+ premier corporations, public sector enterprises, and global industrial leaders across India.
+        </p>
       </div>
-      <div class="row mb-4">
-        <div class="col-lg-12">
-          <p class="lead-paragraph">
-            We have won accolades for our enduring efforts in the field of power correction device manufacturing. Our adherence to good manufacturing practices (GMP) and ethical business policies has helped our company in widening our scope of operational area. Apart from a reputed clientele, our company is also associated with our channel partners for various requirements. The repertoire of our esteemed clientele comprises of the following:
-          </p>
-        </div>
-      </div>
+
+      <!-- Corporate Client & Brand Grid -->
       <div class="row g-3">
         <div class="col-lg-3 col-md-4 col-6">
           <div class="patron-badge">
-            <div style="font-size: 22px; font-weight: 800; color: #1a5276; margin-bottom: 10px; letter-spacing: 0.5px;">Global Telesystems</div>
-            <h5>Global Telesystems Ltd.</h5>
-            <span>Telecom &amp; Networks</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <div style="font-size: 24px; font-weight: 900; color: #2e4053; margin-bottom: 10px; letter-spacing: 1px;">WIPRO</div>
-            <h5>Wipro</h5>
-            <span>Technology &amp; Systems</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <div style="font-size: 24px; font-weight: 900; color: #196f3d; margin-bottom: 10px; letter-spacing: 1px;">HPCL</div>
-            <h5>HPCL</h5>
-            <span>Hindustan Petroleum Corp</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/client-railways.png" alt="Indian Railways">
-            <h5>Railways</h5>
-            <span>Indian Railways Network</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <div style="font-size: 24px; font-weight: 900; color: #b03a2e; margin-bottom: 10px; letter-spacing: 1px;">IOCL</div>
-            <h5>IOCL</h5>
-            <span>Indian Oil Corporation</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <div style="font-size: 26px; font-weight: 900; color: #1a5276; margin-bottom: 10px; letter-spacing: 1px;">Cipla</div>
-            <h5>CIPLA</h5>
-            <span>Pharmaceuticals Major</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <div style="font-size: 22px; font-weight: 800; color: #7d3c98; margin-bottom: 10px; letter-spacing: 0.5px;">US Vitamins</div>
-            <h5>US Vitamins</h5>
-            <span>Healthcare &amp; Life Sciences</span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/client-ongc.png" alt="ONGC">
+            <img src="assets/img/partners/ongc.png" alt="ONGC">
             <h5>ONGC</h5>
-            <span>Oil &amp; Natural Gas Corp</span>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-6">
           <div class="patron-badge">
-            <img src="assets/img/partners/client-lnt.png" alt="L&T">
-            <h5>L&amp;T</h5>
-            <span>Larsen &amp; Toubro</span>
+            <img src="assets/img/partners/indian-railways.png" alt="Indian Railways">
+            <h5>Indian Railways</h5>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-6">
           <div class="patron-badge">
-            <div style="font-size: 24px; font-weight: 900; color: #5b2c6f; margin-bottom: 10px; letter-spacing: 1px;">WOCKHARDT</div>
-            <h5>wockhardt</h5>
-            <span>Pharmaceuticals &amp; Biotech</span>
+            <img src="assets/img/partners/larsen-toubro.png" alt="L&T">
+            <h5>Larsen &amp; Toubro (L&amp;T)</h5>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-6">
           <div class="patron-badge">
-            <img src="assets/img/partners/client-mahindra.png" alt="Mahindra & Mahindra">
-            <h5>M&amp;M</h5>
-            <span>Mahindra &amp; Mahindra</span>
+            <img src="assets/img/partners/mahindra.png" alt="Mahindra & Mahindra">
+            <h5>Mahindra &amp; Mahindra</h5>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-6">
           <div class="patron-badge">
-            <img src="assets/img/partners/client-kirloskar.png" alt="Kirloskar Brothers Ltd">
+            <img src="assets/img/partners/kirloskar.png" alt="Kirloskar Brothers Ltd">
             <h5>Kirloskar Brothers Ltd</h5>
-            <span>Industrial Pumps &amp; Systems</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <img src="assets/img/partners/hindalco.png" alt="Hindalco">
+            <h5>Hindalco</h5>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <img src="assets/img/partners/client-wipro.svg" alt="Wipro">
+            <h5>Wipro</h5>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <img src="assets/img/partners/client-hpcl.svg" alt="HPCL">
+            <h5>HPCL</h5>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <img src="assets/img/partners/client-iocl.svg" alt="IOCL">
+            <h5>IOCL</h5>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <img src="assets/img/partners/client-cipla.svg" alt="Cipla">
+            <h5>Cipla</h5>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <img src="assets/img/partners/client-wockhardt.svg" alt="Wockhardt">
+            <h5>Wockhardt</h5>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <img src="assets/img/partners/client-usvitamins.svg" alt="US Vitamins">
+            <h5>US Vitamins</h5>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <img src="assets/img/partners/client-gtl.svg" alt="Global Telesystems">
+            <h5>Global Telesystems</h5>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="patron-badge">
+            <img src="assets/img/partners/client-nora.svg" alt="nora systems">
+            <h5>nora® by Interface</h5>
           </div>
         </div>
       </div>
