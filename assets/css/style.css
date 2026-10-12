@@ -102,6 +102,10 @@
     --common-colour: #009A4E;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
 body {
     font-family: 'Archivo';
     overflow-x: hidden;
