@@ -1396,6 +1396,98 @@ span#progress-value i {
     bottom: 0%;
     right: 2%;
 }
+/* 13b. About Pillar Cards (Core Competencies with React Icons) */
+.about-pillar-card {
+    background: #ffffff;
+    border: 1px solid #eef2f5;
+    border-radius: 12px;
+    padding: 34px 28px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+    cursor: default;
+}
+.about-pillar-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: transparent;
+    transition: background 0.35s ease;
+}
+.about-pillar-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 36px rgba(0, 26, 46, 0.09);
+    border-color: rgba(0, 154, 78, 0.25);
+}
+.about-pillar-card:hover::before {
+    background: linear-gradient(90deg, var(--common-colour), var(--theme-colour));
+}
+.about-pillar-card .pillar-icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    background: rgba(0, 154, 78, 0.08);
+    color: var(--common-colour);
+    border: 1px solid rgba(0, 154, 78, 0.15);
+    font-size: 28px;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+}
+.about-pillar-card .pillar-icon-box svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+    transition: transform 0.35s ease;
+}
+.about-pillar-card:hover .pillar-icon-box {
+    background: var(--common-colour);
+    color: #ffffff;
+    border-color: var(--common-colour);
+    transform: scale(1.08) rotate(3deg);
+    box-shadow: 0 8px 20px rgba(0, 154, 78, 0.28);
+}
+.about-pillar-card:hover .pillar-icon-box svg {
+    transform: scale(1.1);
+}
+.about-pillar-card .pillar-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 800;
+    color: var(--common-colour);
+    margin-bottom: 6px;
+    display: block;
+}
+.about-pillar-card h4 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #001a2e;
+    margin-bottom: 12px;
+    letter-spacing: -0.2px;
+    font-family: 'Archivo';
+    transition: color 0.25s ease;
+}
+.about-pillar-card:hover h4 {
+    color: var(--common-colour);
+}
+.about-pillar-card p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: #555555;
+    margin-bottom: 0;
+    flex-grow: 1;
+}
 /* 14. services  */
 .services h3 a {
     display: inline-block;
@@ -1661,15 +1753,33 @@ ul.list-style li:before {
 }
 .research-analysis {
     position: relative;
+    z-index: 1;
+}
+.research-analysis h3,
+.research-analysis p,
+.research-analysis ul {
+    position: relative;
+    z-index: 2;
 }
 .research-analysis span {
     position: absolute;
     right: 0;
+    bottom: -35px;
     font-weight: 900;
-    font-size: 220px;
-    bottom: -24%;
-    color: #009A4E30;
-    line-height: 220px;
+    font-size: 150px;
+    line-height: 110px;
+    color: rgba(0, 154, 78, 0.08);
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+}
+@media (max-width: 991px) {
+    .research-analysis span {
+        font-size: 110px;
+        line-height: 90px;
+        bottom: -20px;
+        opacity: 0.6;
+    }
 }
 /* 18. heading.two */
 .heading.two {

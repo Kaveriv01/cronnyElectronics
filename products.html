@@ -6,101 +6,28 @@
   <title>Products &amp; Industrial Solutions | Crony Electronics Pvt Ltd</title>
   <meta name="description" content="Explore Crony Electronics full product portfolio: Elastoclad HR, Removable Thermal Insulation Jackets, Digi Guard, norament rubber flooring, and 20ms VRP voltage regulators.">
   <link rel="icon" href="assets/img/favicon.png">
-  <!-- CSS only -->
+
+  <!-- Typography: Google Fonts (Montserrat & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-  <!-- fancybox -->
   <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
   <link rel="stylesheet" href="assets/css/slick.css">
   <link rel="stylesheet" href="assets/css/slick-theme.css">
   <link rel="stylesheet" href="assets/css/swiper.css">
   <link rel="stylesheet" href="assets/css/fontawesome.min.css">
   <link rel="stylesheet" href="assets/font/flaticon_mycollection.css">
-  <!-- style -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- responsive -->
-  <link rel="stylesheet" href="assets/css/responsive.css"> 
-  <link rel="stylesheet" href="assets/css/color.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- Redesigned Product Portfolio Styles -->
+  <link rel="stylesheet" href="assets/css/portfolio-redesign.css">
+
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/preloader.js"></script>
-  <style>
-    .product-detail-card {
-      background: #ffffff;
-      border: 1px solid #eef0f3;
-      border-radius: 12px;
-      padding: 35px 30px;
-      margin-bottom: 35px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-      transition: all 0.3s ease;
-    }
-    .product-detail-card:hover {
-      border-color: #f05a28;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-    }
-    .product-detail-card .icon-wrap {
-      width: 58px;
-      height: 58px;
-      background: rgba(240, 90, 40, 0.1);
-      color: #f05a28;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      margin-bottom: 20px;
-    }
-    .product-detail-card h3 {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 14px;
-    }
-    .product-detail-card p {
-      font-size: 15px;
-      color: #555;
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-    .product-spec-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 20px 0;
-    }
-    .product-spec-list li {
-      font-size: 14.5px;
-      color: #444;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-    .product-spec-list li i {
-      color: #f05a28;
-      margin-top: 4px;
-      font-size: 13px;
-    }
-    .product-card-img {
-      border-radius: 10px;
-      overflow: hidden;
-      max-height: 280px;
-      margin-bottom: 20px;
-    }
-    .product-card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-    .product-detail-card:hover .product-card-img img {
-      transform: scale(1.03);
-    }
-    .quick-inquiry-box {
-      background: #fff8f5;
-      border-left: 4px solid #f05a28;
-      border-radius: 8px;
-      padding: 24px;
-      margin-top: 15px;
-    }
-  </style>
 </head>
 <body>
   <div class="preloader">
@@ -145,12 +72,13 @@
               <li class="navbar-dropdown"><a href="index.html">Home</a></li>
               <li class="navbar-dropdown"><a href="about.html">About Us</a></li>
               <li class="navbar-dropdown menu-item-children">
-                <a href="products.html" style="color: #f05a28; font-weight: 700;">Products</a>
+                <a href="products.html" style="color: var(--theme-colour, #FFC80B); font-weight: 700;">Products</a>
                 <ul class="sub-menu">
                   <li><a href="products.html#flooring">Rubber Flooring (Industry &amp; Trade)</a></li>
                   <li><a href="products.html#thermal">Elastoclad HR &amp; Heat Coatings</a></li>
-                  <li><a href="products.html#power">20ms VRP Voltage Regulators</a></li>
                   <li><a href="products.html#sleeves">Thermal Insulation Sleeves</a></li>
+                  <li><a href="products.html#power">20ms VRP Voltage Regulators</a></li>
+                  <li><a href="products.html#digiguard">Digi Guard &amp; Eco Max</a></li>
                   <li><a href="products.html#daylight">Brilantor Natural Daylight</a></li>
                   <li><a href="products.html#robotics">Industrial Robotics (64 Types)</a></li>
                 </ul>
@@ -199,225 +127,431 @@
     </div>
   </header>
 
-  <!-- Banner Section -->
-  <section style="background-image: url(assets/img/projects-background.jpg); background-size: cover; background-position: center;" class="bannr">
-    <div class="container">
-      <div class="bannr-text">
-        <h2>Industrial &amp; Energy Product Portfolio</h2>
-        <p>Engineered Solutions for Extreme Energy Efficiency, Thermal Control &amp; Heavy Industry</p>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-          </li>
-          <li class="breadcrumb-item active" aria-current="page">Products</li>
-        </ol>
+  <main>
+    <!-- 1. Premium Hero Banner -->
+    <section class="portfolio-hero">
+      <div class="portfolio-hero-bg" aria-hidden="true"></div>
+      <div class="portfolio-hero-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="portfolio-hero-content">
+          <div class="portfolio-hero-eyebrow">
+            <i class="fa-solid fa-industry"></i> Industrial &amp; Energy Engineering
+          </div>
+          <h1 class="portfolio-hero-title">Industrial &amp; Energy Product Portfolio</h1>
+          <p class="portfolio-hero-desc">Engineered Solutions for Extreme Energy Efficiency, Thermal Control &amp; Heavy Industry</p>
+          <nav aria-label="breadcrumb">
+            <ol class="portfolio-breadcrumb">
+              <li>
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+              </li>
+              <li class="portfolio-breadcrumb-sep"><i class="fa-solid fa-chevron-right"></i></li>
+              <li aria-current="page">Products</li>
+            </ol>
+          </nav>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Main Products Section -->
-  <section class="gap" id="products-list">
-    <div class="container">
-      
-      <!-- Product 1: Rubber Flooring -->
-      <div class="product-detail-card" id="flooring">
-        <div class="row align-items-center">
-          <div class="col-lg-7">
-            <div class="icon-wrap">
-              <i class="fa-solid fa-layer-group"></i>
+    <!-- Quick Navigation Bar -->
+    <nav class="portfolio-subnav" aria-label="Product categories navigation">
+      <div class="container">
+        <ul class="portfolio-subnav-list">
+          <li><a href="#flooring" class="portfolio-subnav-link"><i class="fa-solid fa-layer-group"></i> Rubber Flooring</a></li>
+          <li><a href="#thermal" class="portfolio-subnav-link"><i class="fa-solid fa-temperature-arrow-down"></i> Elastoclad HR</a></li>
+          <li><a href="#sleeves" class="portfolio-subnav-link"><i class="fa-solid fa-shield-halved"></i> Insulation Jackets</a></li>
+          <li><a href="#power" class="portfolio-subnav-link"><i class="fa-solid fa-bolt"></i> Voltage Regulators</a></li>
+          <li><a href="#digiguard" class="portfolio-subnav-link"><i class="fa-solid fa-microchip"></i> Digi Guard &amp; Eco Max</a></li>
+          <li><a href="#daylight" class="portfolio-subnav-link"><i class="fa-solid fa-sun"></i> Daylight Systems</a></li>
+          <li><a href="#robotics" class="portfolio-subnav-link"><i class="fa-solid fa-robot"></i> Industrial Robotics</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Products Editorial Portfolio -->
+    <section class="portfolio-section" id="products-list">
+      <div class="container">
+
+        <!-- Product 1: Rubber Flooring (Details Left, Image Right) -->
+        <article class="editorial-card reveal-on-scroll" id="flooring">
+          <div class="row align-items-center g-4 g-lg-5">
+            <div class="col-lg-7">
+              <div class="editorial-badge">
+                <i class="fa-solid fa-layer-group"></i> Heavy Industry Surface Engineering
+              </div>
+              <h2 class="editorial-title">Rubber Flooring (Industry &amp; Trade) - norament® &amp; noraplan®</h2>
+              <p class="editorial-desc">
+                Premium heavy-duty floor coverings from <b>nora systems GmbH</b>, engineered specifically for rigorous manufacturing environments, pharmaceutical facilities, cleanrooms, and high-traffic industrial corridors.
+              </p>
+              <div class="editorial-specs-box">
+                <div class="editorial-specs-header">
+                  <i class="fa-solid fa-sliders"></i> Key Technical Specifications &amp; Certifications
+                </div>
+                <ul class="editorial-spec-list">
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Forklift &amp; Heavy Load Rating:</b> Withstands up to 6 N/mm² dynamic load without indentation or damage.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Electrostatic Discharge (ESD):</b> 10-year electrostatic dissipative warranty for electronics, cleanrooms &amp; explosive zones.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Cleanroom Certified:</b> Suitable for ISO Class 3 and GMP Grade A environments with zero VOC emissions.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Zero Coating Maintenance:</b> Extremely dense vulcanized surface requires no waxing, sealing, or acrylic coatings.</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="editorial-actions">
+                <a href="Industry & trade rubber floorings.pdf" download class="btn-crony-primary">
+                  <i class="fa-solid fa-download"></i> Download Flooring Guide
+                </a>
+                <a href="contact.html" class="btn-crony-secondary">
+                  <i class="fa-solid fa-envelope"></i> Request Technical Sample
+                </a>
+              </div>
             </div>
-            <h3>Rubber Flooring (Industry &amp; Trade) - norament® &amp; noraplan®</h3>
-            <p>
-              Premium heavy-duty floor coverings from <b>nora systems GmbH</b>, engineered specifically for rigorous manufacturing environments, pharmaceutical facilities, cleanrooms, and high-traffic industrial corridors.
-            </p>
-            <ul class="product-spec-list">
-              <li><i class="fa-solid fa-circle-check"></i> <b>Forklift &amp; Heavy Load Rating:</b> Withstands up to 6 N/mm² dynamic load without indentation or damage.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Electrostatic Discharge (ESD):</b> 10-year electrostatic dissipative warranty for electronics, cleanrooms &amp; explosive zones.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Cleanroom Certified:</b> Suitable for ISO Class 3 and GMP Grade A environments with zero VOC emissions.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Zero Coating Maintenance:</b> Extremely dense vulcanized surface requires no waxing, sealing, or acrylic coatings.</li>
-            </ul>
-            <div class="d-flex gap-3 flex-wrap">
-              <a href="Industry & trade rubber floorings.pdf" download class="btn"><i class="fa-solid fa-download me-2"></i>Download Flooring Guide</a>
-              <a href="contact.html" class="btn bk">Request Technical Sample</a>
+            <div class="col-lg-5">
+              <div class="editorial-img-col">
+                <div class="editorial-img-wrap">
+                  <img src="assets/img/product-rubber-flooring.jpg" alt="Rubber Flooring norament and noraplan for Industry and Trade" loading="lazy">
+                  <span class="editorial-img-tag"><i class="fa-solid fa-award"></i> nora systems GmbH Partner</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-lg-5 mt-4 mt-lg-0">
-            <div class="product-card-img">
-              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&h=400&q=80" alt="Rubber Flooring">
+        </article>
+
+        <!-- Product 2: Elastoclad HR (Image Left, Details Right - Alternating) -->
+        <article class="editorial-card reveal-on-scroll" id="thermal">
+          <div class="row align-items-center g-4 g-lg-5">
+            <div class="col-lg-5 order-lg-1 order-2">
+              <div class="editorial-img-col">
+                <div class="editorial-img-wrap">
+                  <img src="assets/img/elastoclad-coating.jpg" alt="Elastoclad HR Heat Reflective Coating and Waterproofing on Industrial Rooftop" loading="lazy">
+                  <span class="editorial-img-tag"><i class="fa-solid fa-temperature-arrow-down"></i> Up to 12°C Surface Drop</span>
+                </div>
+              </div>
             </div>
+            <div class="col-lg-7 order-lg-2 order-1">
+              <div class="editorial-badge">
+                <i class="fa-solid fa-temperature-arrow-down"></i> Thermal Shield &amp; Waterproofing
+              </div>
+              <h2 class="editorial-title">Elastoclad HR - Heat Reflective Coating &amp; Waterproofing</h2>
+              <p class="editorial-desc">
+                Our flagship elastomeric heat-reflective barrier engineered for industrial rooftops, exterior metal sheds, concrete decks, and facades. Delivers dramatic surface cooling backed by certified thermography imaging.
+              </p>
+              <div class="editorial-specs-box">
+                <div class="editorial-specs-header">
+                  <i class="fa-solid fa-sliders"></i> Verified Performance Metrics
+                </div>
+                <ul class="editorial-spec-list">
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>10 to 12°C Surface Temperature Drop:</b> Proven thermal reduction validated across industrial site thermography tests.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Dual Utility:</b> Acts simultaneously as a high-performance heat shield and seamless elastomeric waterproofing membrane.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>HVAC Savings:</b> Cuts indoor heat transfer significantly, lowering warehouse and plant cooling loads by up to 25%.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Weather &amp; UV Resistant:</b> Withstands tropical UV radiation, monsoon downpours, and thermal expansion cycles.</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="editorial-actions">
+                <a href="contact.html" class="btn-crony-primary">
+                  <i class="fa-solid fa-calendar-check"></i> Request Site Thermal Audit
+                </a>
+                <a href="Crony introduction letter.pdf" download class="btn-crony-secondary">
+                  <i class="fa-solid fa-file-lines"></i> Download Technical Specs
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 3: Removable Thermal Insulation Jackets (Details Left, Image Right) -->
+        <article class="editorial-card reveal-on-scroll" id="sleeves">
+          <div class="row align-items-center g-4 g-lg-5">
+            <div class="col-lg-7">
+              <div class="editorial-badge">
+                <i class="fa-solid fa-shield-halved"></i> Custom Energy-Saving Jacketing
+              </div>
+              <h2 class="editorial-title">Removable Thermal Insulation Jackets &amp; Sleeves</h2>
+              <p class="editorial-desc">
+                Custom-built thermal insulation covers designed specifically for troubled high-heat zones like valves, flanges, pumps, pipe bends, and heat exchangers that require frequent inspection and servicing.
+              </p>
+              <div class="editorial-specs-box">
+                <div class="editorial-specs-header">
+                  <i class="fa-solid fa-sliders"></i> Engineering &amp; Operational Standards
+                </div>
+                <ul class="editorial-spec-list">
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Tool-Free Rapid Removal:</b> Fitted with industrial hook-and-loop fasteners and quick-release straps for removal in minutes.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Replaces Conventional Cladding:</b> Eliminates costly recurring insulation replacement and inventory waste.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Custom Engineered:</b> Tailored to exact component dimensions, odd pipe geometries, and temperature ratings up to 600°C.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Personnel Safety:</b> Reduces exposed surface temperatures to safe touch levels, preventing burn injuries.</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="editorial-actions">
+                <a href="contact.html" class="btn-crony-primary">
+                  <i class="fa-solid fa-ruler-combined"></i> Get Custom Jacket Quote
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="editorial-img-col">
+                <div class="editorial-img-wrap">
+                  <img src="assets/img/product-thermal-sleeves.jpg" alt="Removable Thermal Insulation Jackets and Sleeves for Valves and Pipes" loading="lazy">
+                  <span class="editorial-img-tag"><i class="fa-solid fa-fire"></i> Rated Up to 600°C</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 4: 20ms High-Speed VRP Voltage Regulators (Image Left, Details Right - Alternating) -->
+        <article class="editorial-card reveal-on-scroll" id="power">
+          <div class="row align-items-center g-4 g-lg-5">
+            <div class="col-lg-5 order-lg-1 order-2">
+              <div class="editorial-img-col">
+                <div class="editorial-img-wrap">
+                  <img src="assets/img/product-voltage-regulators.jpg" alt="20ms High-Speed VRP Voltage Regulators and Servo Stabilizers" loading="lazy">
+                  <span class="editorial-img-tag"><i class="fa-solid fa-bolt"></i> Sub-20ms Transient Speed</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7 order-lg-2 order-1">
+              <div class="editorial-badge">
+                <i class="fa-solid fa-bolt"></i> Power Quality &amp; Transient Protection
+              </div>
+              <h2 class="editorial-title">20ms High-Speed VRP Voltage Regulators &amp; Servo Stabilizers</h2>
+              <p class="editorial-desc">
+                Advanced digital voltage regulation units delivering instantaneous voltage stabilization in under 20 milliseconds, safeguarding mission-critical automation, CNC machines, and heavy production lines.
+              </p>
+              <div class="editorial-specs-box">
+                <div class="editorial-specs-header">
+                  <i class="fa-solid fa-sliders"></i> Electrical Performance Specifications
+                </div>
+                <ul class="editorial-spec-list">
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Sub-20ms Response Speed:</b> 10x faster than conventional motor-driven servo stabilizers for instantaneous transient protection.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Zero Waveform Distortion:</b> Pure sine wave output preserving sensitive industrial electronics and microprocessors.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Wide Input Window:</b> Handles severe grid voltage sags, brownouts, and surges across continuous industrial operation.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Heavy-Duty Build:</b> Engineered for continuous 24/7 duty in harsh industrial electrical environments.</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="editorial-actions">
+                <a href="contact.html" class="btn-crony-primary">
+                  <i class="fa-solid fa-bolt-lightning"></i> Inquire for Electrical Capacity
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 5: Digi Guard & Eco Max (Details Left, Image Right) -->
+        <article class="editorial-card reveal-on-scroll" id="digiguard">
+          <div class="row align-items-center g-4 g-lg-5">
+            <div class="col-lg-7">
+              <div class="editorial-badge">
+                <i class="fa-solid fa-microchip"></i> Microprocessor AC Energy Savers
+              </div>
+              <h2 class="editorial-title">Digi Guard &amp; Eco Max - AC Energy Saving Microprocessors</h2>
+              <p class="editorial-desc">
+                Pioneered by Crony Electronics in 1997, Digi Guard and Eco Max are microprocessor-based digital energy savers for industrial and commercial air conditioning systems, delivering proven reliability for over two decades.
+              </p>
+              <div class="editorial-specs-box">
+                <div class="editorial-specs-header">
+                  <i class="fa-solid fa-sliders"></i> Industrial Field Metrics &amp; Proven Savings
+                </div>
+                <ul class="editorial-spec-list">
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>15% to 30% Power Reduction:</b> Intelligently monitors cooling coil saturation and modulates compressor cycles.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>2+ Decades Field Proven:</b> Installed and operational across 500+ corporate clients including ONGC, Indian Railways, and L&amp;T.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Compressor Life Extension:</b> Prevents thermodynamic over-saturation and reduces mechanical wear.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Universal Compatibility:</b> Easily retrofitted to ductable units, package ACs, and centralized chillers.</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="editorial-actions">
+                <a href="contact.html" class="btn-crony-primary">
+                  <i class="fa-solid fa-chart-line"></i> Request AC Energy Audit
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="editorial-img-col">
+                <div class="editorial-img-wrap">
+                  <img src="assets/img/product-digiguard-ecomax.jpg" alt="Digi Guard and Eco Max AC Energy Saving Microprocessors" loading="lazy">
+                  <span class="editorial-img-tag"><i class="fa-solid fa-building-shield"></i> 500+ Corporate Clients</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 6: Brilantor Natural Daylight Systems (Image Left, Details Right - Alternating) -->
+        <article class="editorial-card reveal-on-scroll" id="daylight">
+          <div class="row align-items-center g-4 g-lg-5">
+            <div class="col-lg-5 order-lg-1 order-2">
+              <div class="editorial-img-col">
+                <div class="editorial-img-wrap">
+                  <img src="assets/img/product-daylight-systems.jpg" alt="Brilantor Natural Daylight Harvesting Skylights in Industrial Factory" loading="lazy">
+                  <span class="editorial-img-tag"><i class="fa-solid fa-sun"></i> Zero Electricity Lighting</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7 order-lg-2 order-1">
+              <div class="editorial-badge">
+                <i class="fa-solid fa-sun"></i> Optical Daylight Harvesting
+              </div>
+              <h2 class="editorial-title">Brilantor Natural Daylight Systems</h2>
+              <p class="editorial-desc">
+                Zero-electricity prismatic daylight harvesting optical skylights designed for large-scale industrial warehouses, factory sheds, and engineering hangars.
+              </p>
+              <div class="editorial-specs-box">
+                <div class="editorial-specs-header">
+                  <i class="fa-solid fa-sliders"></i> Natural Illumination Performance
+                </div>
+                <ul class="editorial-spec-list">
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Glare-Free Illumination:</b> Up to 10 hours of natural glare-free 100% sunlight indoors.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>UV &amp; Heat Protection:</b> Blocks 99% UV rays and prevents heat buildup inside plant floors.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Zero Power Consumption:</b> Eliminates daytime artificial lighting electricity costs completely.</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="editorial-actions">
+                <a href="contact.html" class="btn-crony-primary">
+                  <i class="fa-solid fa-circle-info"></i> Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 7: Industrial Robotics (Details Left, Image Right) -->
+        <article class="editorial-card reveal-on-scroll" id="robotics">
+          <div class="row align-items-center g-4 g-lg-5">
+            <div class="col-lg-7">
+              <div class="editorial-badge">
+                <i class="fa-solid fa-robot"></i> Factory Automation &amp; Robotic Cells
+              </div>
+              <h2 class="editorial-title">Industrial Robotics (64 Specialized Units)</h2>
+              <p class="editorial-desc">
+                Tailor-engineered industrial robotic systems and automated processing units configured for demanding production, welding, palletizing, and precision assembly lines.
+              </p>
+              <div class="editorial-specs-box">
+                <div class="editorial-specs-header">
+                  <i class="fa-solid fa-sliders"></i> Automation Architecture
+                </div>
+                <ul class="editorial-spec-list">
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>64 Specialized Units:</b> Extensive catalog of unit configurations tailored to specific plant processes.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Continuous Duty:</b> High repeatability, speed, and continuous 24/7 duty cycle under heavy industrial loads.</div>
+                  </li>
+                  <li>
+                    <span class="editorial-spec-icon"><i class="fa-solid fa-check"></i></span>
+                    <div><b>Plant Integration:</b> Full integration with plant PLCs, SCADA architectures, and industrial automation protocols.</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="editorial-actions">
+                <a href="contact.html" class="btn-crony-primary">
+                  <i class="fa-solid fa-robot"></i> Explore Robotics
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="editorial-img-col">
+                <div class="editorial-img-wrap">
+                  <img src="assets/img/product-industrial-robotics.jpg" alt="Industrial Robotics Automated Precision Manufacturing Cells" loading="lazy">
+                  <span class="editorial-img-tag"><i class="fa-solid fa-microchip"></i> 64 Unit Configurations</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 7. CTA Section Enhancement -->
+    <section class="portfolio-cta-section">
+      <div class="container">
+        <div class="portfolio-cta-card reveal-on-scroll">
+          <div class="portfolio-cta-eyebrow">
+            <i class="fa-solid fa-headset"></i> Engineering Consultation
+          </div>
+          <h2 class="portfolio-cta-title">Need Technical Specifications or Custom Engineering?</h2>
+          <p class="portfolio-cta-desc">
+            Our engineering team coordinates directly with plant managers and electrical consultants across India for site surveys, custom jacket measurements, and thermal coatings.
+          </p>
+          <div class="portfolio-cta-actions">
+            <a href="contact.html" class="btn-crony-primary">
+              <i class="fa-solid fa-arrow-right"></i> Connect With Us
+            </a>
+            <a href="Crony introduction letter.pdf" download class="btn-crony-white">
+              <i class="fa-solid fa-download"></i> Download Company Profile
+            </a>
           </div>
         </div>
       </div>
-
-      <!-- Product 2: Elastoclad HR -->
-      <div class="product-detail-card" id="thermal">
-        <div class="row align-items-center">
-          <div class="col-lg-7">
-            <div class="icon-wrap">
-              <i class="fa-solid fa-temperature-arrow-down"></i>
-            </div>
-            <h3>Elastoclad HR - Heat Reflective Coating &amp; Waterproofing</h3>
-            <p>
-              Our flagship elastomeric heat-reflective barrier engineered for industrial rooftops, exterior metal sheds, concrete decks, and facades. Delivers dramatic surface cooling backed by certified thermography imaging.
-            </p>
-            <ul class="product-spec-list">
-              <li><i class="fa-solid fa-circle-check"></i> <b>10 to 12°C Surface Temperature Drop:</b> Proven thermal reduction validated across industrial site thermography tests.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Dual Utility:</b> Acts simultaneously as a high-performance heat shield and seamless elastomeric waterproofing membrane.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>HVAC Savings:</b> Cuts indoor heat transfer significantly, lowering warehouse and plant cooling loads by up to 25%.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Weather &amp; UV Resistant:</b> Withstands tropical UV radiation, monsoon downpours, and thermal expansion cycles.</li>
-            </ul>
-            <div class="d-flex gap-3 flex-wrap">
-              <a href="contact.html" class="btn">Request Site Thermal Audit</a>
-              <a href="Crony introduction letter.pdf" download class="btn bk">Download Technical Specs</a>
-            </div>
-          </div>
-          <div class="col-lg-5 mt-4 mt-lg-0">
-            <div class="product-card-img">
-              <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=600&h=400&q=80" alt="Elastoclad HR Rooftop Coating">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 3: Removable Thermal Insulation Jackets -->
-      <div class="product-detail-card" id="sleeves">
-        <div class="row align-items-center">
-          <div class="col-lg-7">
-            <div class="icon-wrap">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <h3>Removable Thermal Insulation Jackets &amp; Sleeves</h3>
-            <p>
-              Custom-built thermal insulation covers designed specifically for troubled high-heat zones like valves, flanges, pumps, pipe bends, and heat exchangers that require frequent inspection and servicing.
-            </p>
-            <ul class="product-spec-list">
-              <li><i class="fa-solid fa-circle-check"></i> <b>Tool-Free Rapid Removal:</b> Fitted with industrial hook-and-loop fasteners and quick-release straps for removal in minutes.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Replaces Conventional Cladding:</b> Eliminates costly recurring insulation replacement and inventory waste.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Custom Engineered:</b> Tailored to exact component dimensions, odd pipe geometries, and temperature ratings up to 600°C.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Personnel Safety:</b> Reduces exposed surface temperatures to safe touch levels, preventing burn injuries.</li>
-            </ul>
-            <div class="d-flex gap-3 flex-wrap">
-              <a href="contact.html" class="btn">Get Custom Jacket Quote</a>
-            </div>
-          </div>
-          <div class="col-lg-5 mt-4 mt-lg-0">
-            <div class="product-card-img">
-              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&h=400&q=80" alt="Thermal Insulation Jackets">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 4: 20ms VRP Voltage Regulators & Stabilizers -->
-      <div class="product-detail-card" id="power">
-        <div class="row align-items-center">
-          <div class="col-lg-7">
-            <div class="icon-wrap">
-              <i class="fa-solid fa-bolt"></i>
-            </div>
-            <h3>20ms High-Speed VRP Voltage Regulators &amp; Servo Stabilizers</h3>
-            <p>
-              Advanced digital voltage regulation units delivering instantaneous voltage stabilization in under 20 milliseconds, safeguarding mission-critical automation, CNC machines, and heavy production lines.
-            </p>
-            <ul class="product-spec-list">
-              <li><i class="fa-solid fa-circle-check"></i> <b>Sub-20ms Response Speed:</b> 10x faster than conventional motor-driven servo stabilizers for instantaneous transient protection.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Zero Waveform Distortion:</b> Pure sine wave output preserving sensitive industrial electronics and microprocessors.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Wide Input Window:</b> Handles severe grid voltage sags, brownouts, and surges across continuous industrial operation.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Heavy-Duty Build:</b> Engineered for continuous 24/7 duty in harsh industrial electrical environments.</li>
-            </ul>
-            <div class="d-flex gap-3 flex-wrap">
-              <a href="contact.html" class="btn">Inquire for Electrical Capacity</a>
-            </div>
-          </div>
-          <div class="col-lg-5 mt-4 mt-lg-0">
-            <div class="product-card-img">
-              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&h=400&q=80" alt="Voltage Regulators">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 5: Digi Guard & Eco Max -->
-      <div class="product-detail-card" id="digiguard">
-        <div class="row align-items-center">
-          <div class="col-lg-7">
-            <div class="icon-wrap">
-              <i class="fa-solid fa-microchip"></i>
-            </div>
-            <h3>Digi Guard &amp; Eco Max - AC Energy Saving Microprocessors</h3>
-            <p>
-              Pioneered by Crony Electronics in 1997, Digi Guard and Eco Max are microprocessor-based digital energy savers for industrial and commercial air conditioning systems, delivering proven reliability for over two decades.
-            </p>
-            <ul class="product-spec-list">
-              <li><i class="fa-solid fa-circle-check"></i> <b>15% to 30% Power Reduction:</b> Intelligently monitors cooling coil saturation and modulates compressor cycles.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>2+ Decades Field Proven:</b> Installed and operational across 500+ corporate clients including ONGC, Indian Railways, and L&amp;T.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Compressor Life Extension:</b> Prevents thermodynamic over-saturation and reduces mechanical wear.</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Universal Compatibility:</b> Easily retrofitted to ductable units, package ACs, and centralized chillers.</li>
-            </ul>
-            <div class="d-flex gap-3 flex-wrap">
-              <a href="contact.html" class="btn">Request AC Energy Audit</a>
-            </div>
-          </div>
-          <div class="col-lg-5 mt-4 mt-lg-0">
-            <div class="product-card-img">
-              <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&h=400&q=80" alt="Digi Guard Eco Max">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 6: Brilantor Daylight & Robotics -->
-      <div class="row">
-        <div class="col-lg-6 mb-4">
-          <div class="product-detail-card h-100" id="daylight">
-            <div class="icon-wrap">
-              <i class="fa-solid fa-sun"></i>
-            </div>
-            <h3>Brilantor Natural Daylight Systems</h3>
-            <p>Zero-electricity prismatic daylight harvesting optical skylights designed for large-scale industrial warehouses, factory sheds, and engineering hangars.</p>
-            <ul class="product-spec-list">
-              <li><i class="fa-solid fa-circle-check"></i> Up to 10 hours of natural glare-free 100% sunlight indoors</li>
-              <li><i class="fa-solid fa-circle-check"></i> Blocks 99% UV rays and prevents heat buildup</li>
-              <li><i class="fa-solid fa-circle-check"></i> Eliminates daytime artificial lighting electricity costs</li>
-            </ul>
-            <a href="contact.html" class="btn mt-3">Learn More</a>
-          </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-          <div class="product-detail-card h-100" id="robotics">
-            <div class="icon-wrap">
-              <i class="fa-solid fa-robot"></i>
-            </div>
-            <h3>Industrial Robotics (64 Specialized Units)</h3>
-            <p>Tailor-engineered industrial robotic systems and automated processing units configured for demanding production, welding, palletizing, and precision assembly lines.</p>
-            <ul class="product-spec-list">
-              <li><i class="fa-solid fa-circle-check"></i> 64 specialized robotic unit configurations</li>
-              <li><i class="fa-solid fa-circle-check"></i> High repeatability, speed, and continuous 24/7 duty cycle</li>
-              <li><i class="fa-solid fa-circle-check"></i> Full integration with plant PLCs and automation protocols</li>
-            </ul>
-            <a href="contact.html" class="btn mt-3">Explore Robotics</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CTA Box -->
-  <section class="gap no-top">
-    <div class="container">
-      <div class="p-5 text-center text-white" style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
-        <h2 style="color: #ffffff; font-weight: 700; margin-bottom: 15px;">Need Technical Specifications or Custom Engineering?</h2>
-        <p style="max-width: 700px; margin: 0 auto 25px auto; color: #e5e7eb; font-size: 16px;">
-          Our engineering team coordinates directly with plant managers and electrical consultants across India for site surveys, custom jacket measurements, and thermal coatings.
-        </p>
-        <div class="d-flex justify-content-center gap-3 flex-wrap">
-          <a href="contact.html" class="btn">Connect With Us</a>
-          <a href="Crony introduction letter.pdf" download class="btn bk" style="background: #ffffff; color: #1f2937;">Download Company Profile</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer style="background-image: url(assets/img/footer-line.png);">
@@ -494,7 +628,7 @@
           </div>
         </div>
 
-        <!-- use full link Column -->
+        <!-- Use Full Link Column -->
         <div class="col-lg-4 col-md-6">
           <div class="widget-title">
             <h3>use full link</h3>
@@ -524,7 +658,7 @@
 
       <div class="footer-bottom">
         <div class="footer-bottom-text">
-          <h6><b>&copy; Copyright 2017-23 Crony Elecrtronics Pvt. Ltd.</b> - Designed by: Fiveone Digital</h6>
+          <h6><b>&copy; Copyright 2017-23 Crony Electronics Pvt. Ltd.</b> - Designed by: Fiveone Digital</h6>
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -562,5 +696,64 @@
   <script src="assets/js/sweetalert.min.js"></script> 
   <script src="assets/js/contact.js"></script>
   <script src="assets/js/custom.js"></script>
+
+  <!-- Interactive Scroll Animations & Navigation Tracking -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1. IntersectionObserver for lightweight, performant scroll animations
+      var revealElements = document.querySelectorAll('.reveal-on-scroll');
+      if ('IntersectionObserver' in window) {
+        var revealObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          root: null,
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(function (el) {
+          revealObserver.observe(el);
+        });
+      } else {
+        // Fallback for older browsers
+        revealElements.forEach(function (el) {
+          el.classList.add('is-revealed');
+        });
+      }
+
+      // 2. Active state update for sticky subnav on scroll
+      var productSections = document.querySelectorAll('.editorial-card[id]');
+      var subnavLinks = document.querySelectorAll('.portfolio-subnav-link');
+
+      function updateActiveSubnav() {
+        var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+        var currentId = '';
+
+        productSections.forEach(function (section) {
+          var top = section.offsetTop - 140;
+          if (scrollPos >= top) {
+            currentId = section.getAttribute('id');
+          }
+        });
+
+        subnavLinks.forEach(function (link) {
+          var target = link.getAttribute('href').replace('#', '');
+          if (target === currentId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveSubnav, { passive: true });
+      updateActiveSubnav();
+    });
+  </script>
 </body>
 </html>

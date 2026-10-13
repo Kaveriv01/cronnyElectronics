@@ -1,0 +1,770 @@
+/* ==========================================================================
+   Crony Electronics — Premium Product Portfolio Design System
+   Color Palette: Black (#001a2e), Industrial Green (#009A4E),
+   Theme Yellow (#FFC80B), Pure White (#ffffff)
+   Typography: Montserrat (Headings & Buttons), Inter (Body & Specs)
+   ========================================================================== */
+
+:root {
+  --ce-yellow: #FFC80B;
+  --ce-yellow-hover: #e6b306;
+  --ce-green: #009A4E;
+  --ce-green-hover: #008141;
+  --ce-green-subtle: rgba(0, 154, 78, 0.09);
+  --ce-green-border: rgba(0, 154, 78, 0.22);
+  --ce-dark: #001a2e;
+  --ce-dark-surface: #0a2339;
+  --ce-dark-slate: #0f172a;
+  --ce-text-title: #001a2e;
+  --ce-text-body: #475569;
+  --ce-text-strong: #0f172a;
+  --ce-border: #e2e8f0;
+  --ce-bg-surface: #f8fafc;
+  --ce-radius-card: 14px;
+  --ce-radius-sm: 8px;
+  --ce-shadow-card: 0 4px 20px -2px rgba(0, 26, 46, 0.05);
+  --ce-shadow-hover: 0 16px 36px -4px rgba(0, 26, 46, 0.12);
+  --font-montserrat: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ==========================================================================
+   1. Premium Hero Banner
+   ========================================================================== */
+.portfolio-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 130px 0 100px;
+  background-color: var(--ce-dark);
+  color: #ffffff;
+}
+
+.portfolio-hero-bg {
+  position: absolute;
+  inset: -15px;
+  background-image: url('../img/products-banner.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  transform: scale(1.06);
+  animation: heroBgZoom 8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform;
+}
+
+@keyframes heroBgZoom {
+  0% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.portfolio-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 26, 46, 0.88) 0%,
+    rgba(10, 25, 40, 0.92) 65%,
+    rgba(0, 26, 46, 0.98) 100%
+  );
+  pointer-events: none;
+}
+
+.portfolio-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.portfolio-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(255, 200, 11, 0.12);
+  border: 1px solid rgba(255, 200, 11, 0.3);
+  border-radius: 999px;
+  color: var(--ce-yellow);
+  font-family: var(--font-montserrat);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: heroFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+.portfolio-hero-eyebrow i {
+  font-size: 13px;
+}
+
+.portfolio-hero-title {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 18px;
+  opacity: 0;
+  transform: translateY(22px);
+  animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+}
+
+.portfolio-hero-desc {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.65;
+  color: #e2e8f0;
+  max-width: 760px;
+  margin: 0 auto 28px;
+  opacity: 0;
+  transform: translateY(22px);
+  animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+.portfolio-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 8px 22px;
+  list-style: none;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+}
+
+.portfolio-breadcrumb li {
+  font-family: var(--font-montserrat);
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.portfolio-breadcrumb li a {
+  color: var(--ce-yellow);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.portfolio-breadcrumb li a:hover {
+  color: #ffffff;
+}
+
+.portfolio-breadcrumb-sep {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 11px;
+}
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   2. Sticky Quick-Jump Navigation Bar
+   ========================================================================== */
+.portfolio-subnav {
+  background: #ffffff;
+  border-bottom: 1px solid var(--ce-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 12px 0;
+}
+
+.portfolio-subnav-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.portfolio-subnav-list::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio-subnav-link {
+  font-family: var(--font-montserrat);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ce-text-body);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.portfolio-subnav-link:hover,
+.portfolio-subnav-link.active {
+  background: var(--ce-green-subtle);
+  color: var(--ce-green);
+  border-color: var(--ce-green-border);
+}
+
+/* ==========================================================================
+   3. Editorial Product Cards Redesign
+   ========================================================================== */
+.portfolio-section {
+  padding: 70px 0 30px;
+  background: #fdfdfe;
+}
+
+.editorial-card {
+  background: #ffffff;
+  border: 1px solid var(--ce-border);
+  border-radius: var(--ce-radius-card);
+  padding: 44px 40px;
+  margin-bottom: 48px;
+  box-shadow: var(--ce-shadow-card);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 90px;
+}
+
+/* Scroll Animation Base State */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.editorial-card:hover {
+  border-color: rgba(0, 154, 78, 0.35);
+  box-shadow: var(--ce-shadow-hover);
+  transform: translateY(-4px);
+}
+
+/* Editorial Card Components */
+.editorial-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 14px;
+  background: var(--ce-green-subtle);
+  border: 1px solid var(--ce-green-border);
+  border-radius: 999px;
+  color: var(--ce-green);
+  font-family: var(--font-montserrat);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.editorial-badge i {
+  font-size: 12px;
+}
+
+.editorial-title {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.3;
+  color: var(--ce-text-title);
+  margin-bottom: 14px;
+  letter-spacing: -0.015em;
+}
+
+.editorial-desc {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.68;
+  color: var(--ce-text-body);
+  margin-bottom: 22px;
+}
+
+.editorial-desc b,
+.editorial-desc strong {
+  color: var(--ce-text-strong);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   4. Technical Specifications Box
+   ========================================================================== */
+.editorial-specs-box {
+  background: var(--ce-bg-surface);
+  border: 1px solid #edf2f7;
+  border-radius: 10px;
+  padding: 22px 24px;
+  margin-bottom: 28px;
+}
+
+.editorial-specs-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-montserrat);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--ce-text-strong);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e9edf2;
+}
+
+.editorial-specs-header i {
+  color: var(--ce-green);
+  font-size: 14px;
+}
+
+.editorial-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.editorial-spec-list li {
+  font-family: var(--font-inter);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ce-text-body);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.editorial-spec-list li:last-child {
+  margin-bottom: 0;
+}
+
+.editorial-spec-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(0, 154, 78, 0.12);
+  color: var(--ce-green);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.editorial-spec-list b,
+.editorial-spec-list strong {
+  font-weight: 600;
+  color: var(--ce-text-strong);
+}
+
+/* ==========================================================================
+   5. Product HD Imagery Container & Image Animations
+   ========================================================================== */
+.editorial-img-col {
+  height: 100%;
+}
+
+.editorial-img-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  min-height: 380px;
+  background: var(--ce-dark);
+  box-shadow: 0 6px 18px rgba(0, 26, 46, 0.08);
+}
+
+.editorial-img-wrap img {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  max-height: 460px;
+  object-fit: cover;
+  display: block;
+  transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.editorial-card:hover .editorial-img-wrap img {
+  transform: scale(1.03);
+}
+
+.editorial-img-tag {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(0, 26, 46, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: var(--font-montserrat);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.editorial-img-tag i {
+  color: var(--ce-yellow);
+}
+
+/* ==========================================================================
+   6. Premium Button System
+   ========================================================================== */
+.editorial-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* Primary Button (Theme Yellow) */
+.btn-crony-primary {
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background-color: var(--ce-yellow);
+  color: var(--ce-dark);
+  border: 1.5px solid var(--ce-yellow);
+  padding: 12px 24px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 200ms ease,
+              border-color 200ms ease,
+              color 200ms ease,
+              transform 200ms ease,
+              box-shadow 200ms ease;
+  line-height: 1.4;
+}
+
+.btn-crony-primary i {
+  font-size: 14px;
+  transition: transform 200ms ease;
+}
+
+.btn-crony-primary:hover {
+  background-color: var(--ce-green);
+  border-color: var(--ce-green);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 154, 78, 0.25);
+}
+
+.btn-crony-primary:hover i {
+  transform: translateX(4px);
+}
+
+/* Secondary Button (Bordered / Inverted) */
+.btn-crony-secondary {
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background-color: transparent;
+  color: var(--ce-dark);
+  border: 1.5px solid var(--ce-dark);
+  padding: 12px 24px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 200ms ease,
+              border-color 200ms ease,
+              color 200ms ease,
+              transform 200ms ease,
+              box-shadow 200ms ease;
+  line-height: 1.4;
+}
+
+.btn-crony-secondary i {
+  font-size: 14px;
+  transition: transform 200ms ease;
+}
+
+.btn-crony-secondary:hover {
+  background-color: var(--ce-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 26, 46, 0.14);
+}
+
+.btn-crony-secondary:hover i {
+  transform: translateX(4px);
+}
+
+/* Secondary Inverted for Dark Backgrounds */
+.btn-crony-white {
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background-color: #ffffff;
+  color: var(--ce-dark);
+  border: 1.5px solid #ffffff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 200ms ease,
+              border-color 200ms ease,
+              color 200ms ease,
+              transform 200ms ease,
+              box-shadow 200ms ease;
+  line-height: 1.4;
+}
+
+.btn-crony-white i {
+  font-size: 14px;
+  transition: transform 200ms ease;
+}
+
+.btn-crony-white:hover {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.15);
+}
+
+.btn-crony-white:hover i {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   7. Premium CTA Section Enhancement
+   ========================================================================== */
+.portfolio-cta-section {
+  padding: 40px 0 80px;
+}
+
+.portfolio-cta-card {
+  position: relative;
+  background: linear-gradient(135deg, #001a2e 0%, #0a253d 50%, #001a2e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--ce-radius-card);
+  padding: 60px 48px;
+  box-shadow: 0 20px 45px -10px rgba(0, 26, 46, 0.4);
+  text-align: center;
+  overflow: hidden;
+}
+
+.portfolio-cta-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 154, 78, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.portfolio-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  background: rgba(255, 200, 11, 0.12);
+  border: 1px solid rgba(255, 200, 11, 0.3);
+  border-radius: 999px;
+  color: var(--ce-yellow);
+  font-family: var(--font-montserrat);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.portfolio-cta-title {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.25;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.015em;
+}
+
+.portfolio-cta-desc {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: #cbd5e1;
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+
+.portfolio-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   8. Responsive Refinements
+   ========================================================================== */
+@media (max-width: 991px) {
+  .editorial-card {
+    padding: 34px 28px;
+    margin-bottom: 36px;
+  }
+  .editorial-title {
+    font-size: 24px;
+  }
+  .editorial-img-wrap,
+  .editorial-img-wrap img {
+    min-height: 320px;
+    max-height: 360px;
+  }
+  .portfolio-cta-card {
+    padding: 44px 28px;
+  }
+  .portfolio-cta-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-hero {
+    padding: 95px 0 65px;
+  }
+  .portfolio-hero-title {
+    font-size: 34px;
+  }
+  .portfolio-hero-desc {
+    font-size: 15.5px;
+  }
+  .editorial-card {
+    padding: 26px 18px;
+    margin-bottom: 30px;
+  }
+  .editorial-title {
+    font-size: 22px;
+  }
+  .editorial-desc {
+    font-size: 15px;
+  }
+  .editorial-specs-box {
+    padding: 16px 16px;
+  }
+  .editorial-spec-list li {
+    font-size: 14px;
+    gap: 10px;
+  }
+  .editorial-img-wrap,
+  .editorial-img-wrap img {
+    min-height: 250px;
+    max-height: 280px;
+  }
+  .editorial-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .editorial-actions .btn-crony-primary,
+  .editorial-actions .btn-crony-secondary {
+    width: 100%;
+  }
+  .portfolio-cta-title {
+    font-size: 24px;
+  }
+  .portfolio-cta-desc {
+    font-size: 15px;
+  }
+  .portfolio-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .portfolio-cta-actions .btn-crony-primary,
+  .portfolio-cta-actions .btn-crony-white {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   9. Accessibility & Reduced Motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-hero-bg,
+  .portfolio-hero-eyebrow,
+  .portfolio-hero-title,
+  .portfolio-hero-desc,
+  .portfolio-breadcrumb,
+  .reveal-on-scroll,
+  .editorial-card,
+  .editorial-img-wrap img,
+  .btn-crony-primary,
+  .btn-crony-secondary,
+  .btn-crony-white {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

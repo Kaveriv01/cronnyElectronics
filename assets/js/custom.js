@@ -316,6 +316,10 @@ window.onload = calcScrollValue;
       speed:1000,
       freeMode: true,
       effect: "fade",
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
       autoplay: {
         delay: 3000,
       },
@@ -360,6 +364,10 @@ window.onload = calcScrollValue;
       loop: true,
       speed:1000,
       freeMode: true,
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
       autoplay: {
         delay: 2000,
       },
@@ -509,3 +517,68 @@ function progress_bar() {
         },speed);
     });
 }
+
+/*-------------------- 18. Process Tabs Keyboard Pad & Swipe Navigation (No Extra Symbols Added) ----------------------------*/
+jQuery(document).ready(function($) {
+  var $processTabButtons = $('#v-pills-tab button[data-bs-toggle="pill"]');
+  if ($processTabButtons.length) {
+    // Keyboard navigation (Arrow keys & numbers 1, 2, 3)
+    $(document).on('keydown', function(e) {
+      if ($(e.target).is('input, textarea, select')) return;
+
+      var $activeBtn = $('#v-pills-tab button.nav-link.active');
+      var currentIndex = $processTabButtons.index($activeBtn);
+
+      var $processSec = $('#process');
+      var isProcessVisible = false;
+      if ($processSec.length) {
+        var rect = $processSec[0].getBoundingClientRect();
+        isProcessVisible = (rect.top <= window.innerHeight * 0.75 && rect.bottom >= window.innerHeight * 0.2);
+      }
+
+      if (isProcessVisible || $('#v-pills-tab').is(':focus-within')) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          var nextIndex = (currentIndex + 1) % $processTabButtons.length;
+          $processTabButtons.eq(nextIndex).trigger('click');
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          var prevIndex = (currentIndex - 1 + $processTabButtons.length) % $processTabButtons.length;
+          $processTabButtons.eq(prevIndex).trigger('click');
+        } else if (e.key === '1') {
+          $processTabButtons.eq(0).trigger('click');
+        } else if (e.key === '2') {
+          $processTabButtons.eq(1).trigger('click');
+        } else if (e.key === '3') {
+          $processTabButtons.eq(2).trigger('click');
+        }
+      }
+    });
+
+    // Touch swipe support on touch screens
+    var touchStartX = 0;
+    var touchEndX = 0;
+    $('#v-pills-tabContent').on('touchstart', function(e) {
+      if (e.originalEvent && e.originalEvent.changedTouches) {
+        touchStartX = e.originalEvent.changedTouches[0].screenX;
+      }
+    });
+    $('#v-pills-tabContent').on('touchend', function(e) {
+      if (e.originalEvent && e.originalEvent.changedTouches) {
+        touchEndX = e.originalEvent.changedTouches[0].screenX;
+        var diffX = touchEndX - touchStartX;
+        if (Math.abs(diffX) > 50) {
+          var $activeBtn = $('#v-pills-tab button.nav-link.active');
+          var currentIndex = $processTabButtons.index($activeBtn);
+          if (diffX < 0) {
+            var nextIndex = (currentIndex + 1) % $processTabButtons.length;
+            $processTabButtons.eq(nextIndex).trigger('click');
+          } else {
+            var prevIndex = (currentIndex - 1 + $processTabButtons.length) % $processTabButtons.length;
+            $processTabButtons.eq(prevIndex).trigger('click');
+          }
+        }
+      }
+    });
+  }
+});
