@@ -1,8 +1,8 @@
 /* ==========================================================================
    Crony Electronics — Premium Product Portfolio Design System
-   Color Palette: Black (#001a2e), Industrial Green (#009A4E),
-   Theme Yellow (#FFC80B), Pure White (#ffffff)
-   Typography: Montserrat (Headings & Buttons), Inter (Body & Specs)
+   Colors: Navy/Black (#001a2e), Industrial Green (#009A4E),
+           Theme Yellow (#FFC80B), Pure White (#ffffff)
+   Typography: Montserrat (Headings, Tags, Buttons), Inter (Body & Specs)
    ========================================================================== */
 
 :root {
@@ -10,171 +10,121 @@
   --ce-yellow-hover: #e6b306;
   --ce-green: #009A4E;
   --ce-green-hover: #008141;
-  --ce-green-subtle: rgba(0, 154, 78, 0.09);
-  --ce-green-border: rgba(0, 154, 78, 0.22);
+  --ce-green-subtle: rgba(0, 154, 78, 0.08);
+  --ce-green-border: rgba(0, 154, 78, 0.25);
   --ce-dark: #001a2e;
   --ce-dark-surface: #0a2339;
-  --ce-dark-slate: #0f172a;
   --ce-text-title: #001a2e;
   --ce-text-body: #475569;
   --ce-text-strong: #0f172a;
-  --ce-border: #e2e8f0;
+  --ce-border: #dbe4ec;
   --ce-bg-surface: #f8fafc;
-  --ce-radius-card: 14px;
-  --ce-radius-sm: 8px;
-  --ce-shadow-card: 0 4px 20px -2px rgba(0, 26, 46, 0.05);
-  --ce-shadow-hover: 0 16px 36px -4px rgba(0, 26, 46, 0.12);
+  --ce-radius-card: 6px;
+  --ce-radius-sm: 4px;
+  --ce-shadow-card: 0 2px 8px rgba(0, 26, 46, 0.06);
+  --ce-shadow-hover: 0 12px 24px rgba(0, 26, 46, 0.12);
   --font-montserrat: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* ==========================================================================
-   1. Premium Hero Banner
+   1. Hero Banner Enhancements (Compact & Clean Spacing)
    ========================================================================== */
-.portfolio-hero {
+.bannr.portfolio-hero-banner {
   position: relative;
   overflow: hidden;
-  padding: 130px 0 100px;
-  background-color: var(--ce-dark);
-  color: #ffffff;
-}
-
-.portfolio-hero-bg {
-  position: absolute;
-  inset: -15px;
-  background-image: url('../img/products-banner.jpg');
+  clip-path: polygon(0 0, 100% 0, 100% 86%, 0% 100%);
   background-size: cover;
-  background-position: center 30%;
-  transform: scale(1.06);
-  animation: heroBgZoom 8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  will-change: transform;
+  background-position: center;
+  padding-top: 240px;
+  padding-bottom: 85px;
+  cursor: pointer;
 }
 
-@keyframes heroBgZoom {
-  0% {
-    transform: scale(1.06);
-  }
-  100% {
-    transform: scale(1);
-  }
+.bannr.portfolio-hero-banner .bannr-bg-wrap {
+  position: absolute;
+  inset: -12px;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: filter 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: filter, transform;
 }
 
-.portfolio-hero-overlay {
+.bannr.portfolio-hero-banner:hover .bannr-bg-wrap {
+  filter: blur(5px);
+  transform: scale(1.03);
+}
+
+.bannr.portfolio-hero-banner::before {
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 26, 46, 0.88) 0%,
-    rgba(10, 25, 40, 0.92) 65%,
-    rgba(0, 26, 46, 0.98) 100%
+    rgba(0, 26, 46, 0.55) 0%,
+    rgba(0, 26, 46, 0.72) 100%
   );
+  clip-path: polygon(0 0, 100% 0, 100% 86%, 0% 100%);
+  z-index: 1;
   pointer-events: none;
 }
 
-.portfolio-hero-content {
+.bannr.portfolio-hero-banner .container {
   position: relative;
   z-index: 2;
-  text-align: center;
-  max-width: 920px;
-  margin: 0 auto;
 }
 
 .portfolio-hero-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  background: rgba(255, 200, 11, 0.12);
-  border: 1px solid rgba(255, 200, 11, 0.3);
-  border-radius: 999px;
+  gap: 7px;
+  padding: 4px 12px;
+  background: rgba(255, 200, 11, 0.15);
+  border: 1px solid rgba(255, 200, 11, 0.4);
+  border-radius: 4px;
   color: var(--ce-yellow);
   font-family: var(--font-montserrat);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(18px);
-  animation: heroFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
-}
-
-.portfolio-hero-eyebrow i {
-  font-size: 13px;
-}
-
-.portfolio-hero-title {
-  font-family: var(--font-montserrat);
-  font-weight: 700;
-  font-size: 52px;
-  line-height: 1.16;
-  letter-spacing: -0.02em;
-  color: #ffffff;
-  margin-bottom: 18px;
-  opacity: 0;
-  transform: translateY(22px);
-  animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
-}
-
-.portfolio-hero-desc {
-  font-family: var(--font-inter);
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 1.65;
-  color: #e2e8f0;
-  max-width: 760px;
-  margin: 0 auto 28px;
-  opacity: 0;
-  transform: translateY(22px);
-  animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
-}
-
-.portfolio-breadcrumb {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
-  padding: 8px 22px;
-  list-style: none;
-  margin: 0;
-  opacity: 0;
-  transform: translateY(18px);
-  animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
-}
-
-.portfolio-breadcrumb li {
-  font-family: var(--font-montserrat);
-  font-size: 13px;
-  font-weight: 600;
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.portfolio-breadcrumb li a {
-  color: var(--ce-yellow);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.portfolio-breadcrumb li a:hover {
-  color: #ffffff;
-}
-
-.portfolio-breadcrumb-sep {
-  color: rgba(255, 255, 255, 0.4);
   font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  animation: heroFadeUp 0.5s ease-out forwards;
+}
+
+.bannr.portfolio-hero-banner .bannr-text h2 {
+  font-size: 52px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  color: #ffffff;
+  animation: heroFadeUp 0.6s ease-out forwards;
+}
+
+.bannr.portfolio-hero-banner .bannr-text p {
+  font-size: 18px;
+  color: #f1f5f9;
+  max-width: 780px;
+  margin-bottom: 0;
+  line-height: 28px;
+  animation: heroFadeUp 0.7s ease-out forwards;
+}
+
+.bannr.portfolio-hero-banner .breadcrumb {
+  margin: 0;
+  padding: 12px 24px;
+  background-color: var(--ce-yellow);
+  margin-top: 28px;
+  display: inline-flex;
+  border-radius: 4px;
 }
 
 @keyframes heroFadeUp {
   0% {
     opacity: 0;
-    transform: translateY(22px);
+    transform: translateY(14px);
   }
   100% {
     opacity: 1;
@@ -183,588 +133,669 @@
 }
 
 /* ==========================================================================
-   2. Sticky Quick-Jump Navigation Bar
+   2. Sticky Product Category Navigation (Compact Engineering Tabs)
    ========================================================================== */
-.portfolio-subnav {
-  background: #ffffff;
-  border-bottom: 1px solid var(--ce-border);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+.portfolio-category-nav {
   position: sticky;
   top: 0;
-  z-index: 100;
-  padding: 12px 0;
+  z-index: 990;
+  background: #ffffff;
+  border-bottom: 1px solid var(--ce-border);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  padding: 8px 0;
+  transition: all 0.25s ease;
 }
 
-.portfolio-subnav-list {
+.category-nav-list {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding: 0;
+  padding: 2px 0;
   margin: 0;
   list-style: none;
   white-space: nowrap;
 }
 
-.portfolio-subnav-list::-webkit-scrollbar {
+.category-nav-list::-webkit-scrollbar {
   display: none;
 }
 
-.portfolio-subnav-link {
+.category-nav-btn {
   font-family: var(--font-montserrat);
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--ce-text-body);
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  background: transparent;
-  transition: all 0.2s ease;
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 7px 15px;
+  border-radius: 4px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-}
-
-.portfolio-subnav-link:hover,
-.portfolio-subnav-link.active {
-  background: var(--ce-green-subtle);
-  color: var(--ce-green);
-  border-color: var(--ce-green-border);
-}
-
-/* ==========================================================================
-   3. Editorial Product Cards Redesign
-   ========================================================================== */
-.portfolio-section {
-  padding: 70px 0 30px;
-  background: #fdfdfe;
-}
-
-.editorial-card {
-  background: #ffffff;
-  border: 1px solid var(--ce-border);
-  border-radius: var(--ce-radius-card);
-  padding: 44px 40px;
-  margin-bottom: 48px;
-  box-shadow: var(--ce-shadow-card);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.35s ease;
-  position: relative;
-  overflow: hidden;
-  scroll-margin-top: 90px;
-}
-
-/* Scroll Animation Base State */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.35s ease,
-              border-color 0.35s ease;
-  will-change: opacity, transform;
-}
-
-.reveal-on-scroll.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.editorial-card:hover {
-  border-color: rgba(0, 154, 78, 0.35);
-  box-shadow: var(--ce-shadow-hover);
-  transform: translateY(-4px);
-}
-
-/* Editorial Card Components */
-.editorial-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 5px 14px;
-  background: var(--ce-green-subtle);
-  border: 1px solid var(--ce-green-border);
-  border-radius: 999px;
-  color: var(--ce-green);
-  font-family: var(--font-montserrat);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-
-.editorial-badge i {
-  font-size: 12px;
-}
-
-.editorial-title {
-  font-family: var(--font-montserrat);
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.3;
-  color: var(--ce-text-title);
-  margin-bottom: 14px;
-  letter-spacing: -0.015em;
-}
-
-.editorial-desc {
-  font-family: var(--font-inter);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.68;
-  color: var(--ce-text-body);
-  margin-bottom: 22px;
-}
-
-.editorial-desc b,
-.editorial-desc strong {
-  color: var(--ce-text-strong);
-  font-weight: 600;
-}
-
-/* ==========================================================================
-   4. Technical Specifications Box
-   ========================================================================== */
-.editorial-specs-box {
-  background: var(--ce-bg-surface);
-  border: 1px solid #edf2f7;
-  border-radius: 10px;
-  padding: 22px 24px;
-  margin-bottom: 28px;
-}
-
-.editorial-specs-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-montserrat);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  color: var(--ce-text-strong);
-  margin-bottom: 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e9edf2;
-}
-
-.editorial-specs-header i {
-  color: var(--ce-green);
-  font-size: 14px;
-}
-
-.editorial-spec-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.editorial-spec-list li {
-  font-family: var(--font-inter);
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--ce-text-body);
-  margin-bottom: 12px;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.editorial-spec-list li:last-child {
-  margin-bottom: 0;
-}
-
-.editorial-spec-icon {
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
   flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: rgba(0, 154, 78, 0.12);
-  color: var(--ce-green);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  margin-top: 2px;
 }
 
-.editorial-spec-list b,
-.editorial-spec-list strong {
-  font-weight: 600;
-  color: var(--ce-text-strong);
+.category-nav-btn i {
+  font-size: 11px;
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+.category-nav-btn:hover {
+  background: var(--ce-green-subtle);
+  color: var(--ce-green);
+  border-color: var(--ce-green);
+}
+
+.category-nav-btn:hover i {
+  color: var(--ce-green);
+}
+
+.category-nav-btn.active {
+  background: var(--ce-green);
+  color: #ffffff;
+  border-color: var(--ce-green);
+  box-shadow: 0 2px 8px rgba(0, 154, 78, 0.25);
+}
+
+.category-nav-btn.active i {
+  color: #ffffff;
 }
 
 /* ==========================================================================
-   5. Product HD Imagery Container & Image Animations
+   3. Product Grid & Industrial Engineering Card Architecture
    ========================================================================== */
-.editorial-img-col {
-  height: 100%;
+.portfolio-grid-section {
+  padding: 25px 0 35px;
+  background: #f8fafc;
 }
 
-.editorial-img-wrap {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  height: 100%;
-  min-height: 380px;
-  background: var(--ce-dark);
-  box-shadow: 0 6px 18px rgba(0, 26, 46, 0.08);
+.portfolio-grid-intro {
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.editorial-img-wrap img {
-  width: 100%;
-  height: 100%;
-  min-height: 380px;
-  max-height: 460px;
-  object-fit: cover;
-  display: block;
-  transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-}
-
-.editorial-card:hover .editorial-img-wrap img {
-  transform: scale(1.03);
-}
-
-.editorial-img-tag {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  background: rgba(0, 26, 46, 0.82);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 6px 14px;
-  border-radius: 6px;
-  color: #ffffff;
+.portfolio-grid-intro h3 {
   font-family: var(--font-montserrat);
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--ce-dark);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.portfolio-grid-intro p {
+  color: #64748b;
+  font-size: 14px;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Product Card Component (Industrial Technical Aesthetic) */
+.product-card {
+  background: #ffffff;
+  border: 1px solid #d8e2ec;
+  border-top: 3.5px solid var(--ce-dark);
+  border-radius: var(--ce-radius-card);
+  padding: 16px;
+  box-shadow: var(--ce-shadow-card);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease,
+              border-color 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ce-shadow-hover);
+  border-color: var(--ce-green);
+  border-top-color: var(--ce-green);
+}
+
+/* Topbar with Category & Reference Code */
+.product-card-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #edf2f7;
+  font-family: var(--font-montserrat);
+}
+
+.product-card-cat {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--ce-green);
+  text-transform: uppercase;
   letter-spacing: 0.5px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  pointer-events: none;
+  gap: 5px;
 }
 
-.editorial-img-tag i {
-  color: var(--ce-yellow);
+.product-card-cat i {
+  font-size: 11px;
 }
 
-/* ==========================================================================
-   6. Premium Button System
-   ========================================================================== */
-.editorial-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-/* Primary Button (Theme Yellow) */
-.btn-crony-primary {
-  font-family: var(--font-montserrat);
-  font-size: 14px;
-  font-weight: 600;
+.product-card-code {
+  font-size: 10px;
+  font-weight: 700;
+  color: #475569;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  background: #f1f5f9;
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1px solid #e2e8f0;
   letter-spacing: 0.3px;
-  background-color: var(--ce-yellow);
+}
+
+/* Card Image Container */
+.product-card-img-wrap {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: #001a2e;
+  margin-bottom: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.product-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.product-card:hover .product-card-img-wrap img {
+  transform: scale(1.03);
+}
+
+/* Embedded Technical Tag */
+.product-card-tag {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(0, 26, 46, 0.88);
+  backdrop-filter: blur(4px);
+  color: var(--ce-yellow);
+  font-family: var(--font-montserrat);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 200, 11, 0.4);
+}
+
+/* Card Body */
+.product-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Title & Description */
+.product-card-title {
+  font-family: var(--font-montserrat);
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--ce-text-title);
+  margin-bottom: 8px;
+  min-height: 44px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.product-card-desc {
+  font-family: var(--font-inter);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ce-text-body);
+  margin-bottom: 12px;
+  min-height: 58px;
+}
+
+/* Engineering Parameters Matrix (Technical Sheet Layout) */
+.product-card-spec-matrix {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 2px 0;
+  margin-bottom: 14px;
+}
+
+.spec-matrix-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  border-bottom: 1px solid #edf2f7;
+  font-family: var(--font-inter);
+}
+
+.spec-matrix-row:last-child {
+  border-bottom: none;
+}
+
+.spec-key {
+  color: #64748b;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  width: 38%;
+  flex-shrink: 0;
+}
+
+.spec-val {
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 12px;
+  text-align: right;
+  width: 62%;
+  white-space: normal;
+}
+
+/* Card Action Buttons Toolbar */
+.product-card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+  padding-top: 6px;
+}
+
+.btn-card-details {
+  flex: 1;
+  font-family: var(--font-montserrat);
+  font-size: 12px;
+  font-weight: 700;
   color: var(--ce-dark);
-  border: 1.5px solid var(--ce-yellow);
-  padding: 12px 24px;
-  border-radius: 6px;
+  background: #ffffff;
+  border: 1.5px solid var(--ce-dark);
+  padding: 9px 8px;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 5px;
+  transition: all 0.2s ease;
+  line-height: 1.2;
+}
+
+.btn-card-details:hover {
+  background: var(--ce-dark);
+  color: #ffffff;
+}
+
+.btn-card-quote {
+  flex: 1;
+  font-family: var(--font-montserrat);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ce-dark);
+  background: var(--ce-yellow);
+  border: 1.5px solid var(--ce-yellow);
+  padding: 9px 8px;
+  border-radius: 4px;
+  text-align: center;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 200ms ease,
-              border-color 200ms ease,
-              color 200ms ease,
-              transform 200ms ease,
-              box-shadow 200ms ease;
-  line-height: 1.4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+  line-height: 1.2;
 }
 
-.btn-crony-primary i {
-  font-size: 14px;
-  transition: transform 200ms ease;
-}
-
-.btn-crony-primary:hover {
-  background-color: var(--ce-green);
+.btn-card-quote:hover {
+  background: var(--ce-green);
   border-color: var(--ce-green);
   color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 154, 78, 0.25);
-}
-
-.btn-crony-primary:hover i {
-  transform: translateX(4px);
-}
-
-/* Secondary Button (Bordered / Inverted) */
-.btn-crony-secondary {
-  font-family: var(--font-montserrat);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  background-color: transparent;
-  color: var(--ce-dark);
-  border: 1.5px solid var(--ce-dark);
-  padding: 12px 24px;
-  border-radius: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 200ms ease,
-              border-color 200ms ease,
-              color 200ms ease,
-              transform 200ms ease,
-              box-shadow 200ms ease;
-  line-height: 1.4;
-}
-
-.btn-crony-secondary i {
-  font-size: 14px;
-  transition: transform 200ms ease;
-}
-
-.btn-crony-secondary:hover {
-  background-color: var(--ce-dark);
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 26, 46, 0.14);
-}
-
-.btn-crony-secondary:hover i {
-  transform: translateX(4px);
-}
-
-/* Secondary Inverted for Dark Backgrounds */
-.btn-crony-white {
-  font-family: var(--font-montserrat);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  background-color: #ffffff;
-  color: var(--ce-dark);
-  border: 1.5px solid #ffffff;
-  padding: 12px 24px;
-  border-radius: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 200ms ease,
-              border-color 200ms ease,
-              color 200ms ease,
-              transform 200ms ease,
-              box-shadow 200ms ease;
-  line-height: 1.4;
-}
-
-.btn-crony-white i {
-  font-size: 14px;
-  transition: transform 200ms ease;
-}
-
-.btn-crony-white:hover {
-  background-color: transparent;
-  color: #ffffff;
-  border-color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.15);
-}
-
-.btn-crony-white:hover i {
-  transform: translateX(4px);
 }
 
 /* ==========================================================================
-   7. Premium CTA Section Enhancement
+   4. Technical Details Modal & Offcanvas Styles
+   ========================================================================== */
+.modal-header-crony {
+  background: linear-gradient(135deg, #001a2e 0%, #0a253d 100%);
+  color: #ffffff;
+  padding: 22px 28px;
+  border-bottom: 3px solid var(--ce-green);
+}
+
+.modal-header-crony .modal-title {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.modal-header-crony .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.modal-body-crony {
+  padding: 28px;
+  background: #ffffff;
+}
+
+.detail-modal-tabs {
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 24px;
+  gap: 8px;
+}
+
+.detail-modal-tabs .nav-link {
+  font-family: var(--font-montserrat);
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  padding: 10px 16px;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.detail-modal-tabs .nav-link:hover {
+  color: var(--ce-green);
+}
+
+.detail-modal-tabs .nav-link.active {
+  color: var(--ce-green);
+  border-bottom-color: var(--ce-green);
+  background: transparent;
+}
+
+.detail-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.detail-spec-table th {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  padding: 10px 14px;
+  border-bottom: 1px solid #e2e8f0;
+  width: 35%;
+}
+
+.detail-spec-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.detail-spec-table tr:last-child th,
+.detail-spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+.detail-modal-footer {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  padding: 16px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   5. Enquiry / Request Quote Modal Styles
+   ========================================================================== */
+.quote-form-group {
+  margin-bottom: 16px;
+}
+
+.quote-form-group label {
+  font-family: var(--font-montserrat);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.quote-form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #0f172a;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #ffffff;
+}
+
+.quote-form-control:focus {
+  outline: none;
+  border-color: var(--ce-green);
+  box-shadow: 0 0 0 3px rgba(0, 154, 78, 0.15);
+}
+
+.quote-form-control:read-only {
+  background-color: #f1f5f9;
+  cursor: not-allowed;
+}
+
+.btn-submit-quote {
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 700;
+  background: var(--ce-yellow);
+  color: var(--ce-dark);
+  border: 1.5px solid var(--ce-yellow);
+  padding: 12px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-submit-quote:hover {
+  background: var(--ce-green);
+  border-color: var(--ce-green);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   6. CTA Section Enhancement
    ========================================================================== */
 .portfolio-cta-section {
-  padding: 40px 0 80px;
+  padding: 10px 0 35px;
 }
 
 .portfolio-cta-card {
   position: relative;
   background: linear-gradient(135deg, #001a2e 0%, #0a253d 50%, #001a2e 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--ce-radius-card);
-  padding: 60px 48px;
-  box-shadow: 0 20px 45px -10px rgba(0, 26, 46, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 26px 24px;
+  box-shadow: 0 12px 30px -8px rgba(0, 26, 46, 0.35);
   text-align: center;
   overflow: hidden;
-}
-
-.portfolio-cta-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(0, 154, 78, 0.18) 0%, transparent 70%);
-  pointer-events: none;
 }
 
 .portfolio-cta-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 5px 14px;
+  padding: 4px 12px;
   background: rgba(255, 200, 11, 0.12);
   border: 1px solid rgba(255, 200, 11, 0.3);
-  border-radius: 999px;
+  border-radius: 4px;
   color: var(--ce-yellow);
   font-family: var(--font-montserrat);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
-  margin-bottom: 18px;
+  margin-bottom: 8px;
 }
 
 .portfolio-cta-title {
   font-family: var(--font-montserrat);
   font-weight: 700;
-  font-size: 34px;
+  font-size: 24px;
   line-height: 1.25;
   color: #ffffff;
-  margin-bottom: 16px;
-  letter-spacing: -0.015em;
+  margin-bottom: 8px;
 }
 
 .portfolio-cta-desc {
   font-family: var(--font-inter);
-  font-weight: 400;
-  font-size: 16.5px;
-  line-height: 1.65;
+  font-size: 14px;
   color: #cbd5e1;
-  max-width: 720px;
-  margin: 0 auto 32px;
+  max-width: 680px;
+  margin: 0 auto 18px;
 }
 
 .portfolio-cta-actions {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
+.btn-crony-primary {
+  font-family: var(--font-montserrat);
+  font-size: 13.5px;
+  font-weight: 600;
+  background-color: var(--ce-yellow);
+  color: var(--ce-dark);
+  border: 1.5px solid var(--ce-yellow);
+  padding: 10px 22px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.btn-crony-primary:hover {
+  background-color: var(--ce-green);
+  border-color: var(--ce-green);
+  color: #ffffff;
+}
+
+.btn-crony-white {
+  font-family: var(--font-montserrat);
+  font-size: 13.5px;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: var(--ce-dark);
+  border: 1.5px solid #ffffff;
+  padding: 10px 22px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.btn-crony-white:hover {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
 /* ==========================================================================
-   8. Responsive Refinements
+   7. Animation & Responsive Styles
    ========================================================================== */
-@media (max-width: 991px) {
-  .editorial-card {
-    padding: 34px 28px;
-    margin-bottom: 36px;
+.fade-in-card {
+  animation: cardFadeIn 0.4s ease forwards;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
-  .editorial-title {
-    font-size: 24px;
-  }
-  .editorial-img-wrap,
-  .editorial-img-wrap img {
-    min-height: 320px;
-    max-height: 360px;
-  }
-  .portfolio-cta-card {
-    padding: 44px 28px;
-  }
-  .portfolio-cta-title {
-    font-size: 28px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 768px) {
-  .portfolio-hero {
-    padding: 95px 0 65px;
+@media (max-width: 991px) {
+  .bannr.portfolio-hero-banner {
+    padding-top: 170px;
+    padding-bottom: 70px;
   }
-  .portfolio-hero-title {
-    font-size: 34px;
+  .bannr.portfolio-hero-banner .bannr-text h2 {
+    font-size: 38px;
   }
-  .portfolio-hero-desc {
-    font-size: 15.5px;
+  .product-card-title {
+    font-size: 17px;
+    min-height: auto;
   }
-  .editorial-card {
-    padding: 26px 18px;
-    margin-bottom: 30px;
+  .product-card-desc {
+    min-height: auto;
   }
-  .editorial-title {
+}
+
+@media (max-width: 576px) {
+  .bannr.portfolio-hero-banner {
+    padding-top: 150px;
+    padding-bottom: 60px;
+  }
+  .bannr.portfolio-hero-banner .bannr-text h2 {
+    font-size: 30px;
+  }
+  .product-card-actions {
+    flex-direction: column;
+  }
+  .btn-card-details,
+  .btn-card-quote {
+    width: 100%;
+  }
+  .portfolio-cta-title {
     font-size: 22px;
   }
-  .editorial-desc {
-    font-size: 15px;
-  }
-  .editorial-specs-box {
-    padding: 16px 16px;
-  }
-  .editorial-spec-list li {
-    font-size: 14px;
-    gap: 10px;
-  }
-  .editorial-img-wrap,
-  .editorial-img-wrap img {
-    min-height: 250px;
-    max-height: 280px;
-  }
-  .editorial-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .editorial-actions .btn-crony-primary,
-  .editorial-actions .btn-crony-secondary {
-    width: 100%;
-  }
-  .portfolio-cta-title {
-    font-size: 24px;
-  }
-  .portfolio-cta-desc {
-    font-size: 15px;
-  }
-  .portfolio-cta-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .portfolio-cta-actions .btn-crony-primary,
-  .portfolio-cta-actions .btn-crony-white {
-    width: 100%;
-  }
 }
 
-/* ==========================================================================
-   9. Accessibility & Reduced Motion
-   ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
-  .portfolio-hero-bg,
-  .portfolio-hero-eyebrow,
-  .portfolio-hero-title,
-  .portfolio-hero-desc,
-  .portfolio-breadcrumb,
-  .reveal-on-scroll,
-  .editorial-card,
-  .editorial-img-wrap img,
-  .btn-crony-primary,
-  .btn-crony-secondary,
-  .btn-crony-white {
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-    opacity: 1 !important;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

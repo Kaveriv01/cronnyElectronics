@@ -23,43 +23,93 @@
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/preloader.js"></script>
   <style>
+    .contact-info-strip {
+      margin-bottom: 40px;
+    }
+    .contact-info-card {
+      background: #ffffff;
+      border: 1px solid #eaedf1;
+      border-radius: 14px;
+      padding: 22px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      height: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+    }
+    .contact-info-card:hover {
+      border-color: #f05a28;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(240, 90, 40, 0.1);
+    }
+    .contact-info-card .icon-box {
+      width: 50px;
+      height: 50px;
+      background: rgba(240, 90, 40, 0.1);
+      color: #f05a28;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .contact-info-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 3px;
+    }
+    .contact-info-card p, .contact-info-card a {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 0;
+      line-height: 1.4;
+      text-decoration: none;
+    }
+    .contact-info-card a:hover {
+      color: #f05a28;
+    }
+
+    /* Modern Jodo-style Contact Form */
     .contact-form-wrapper {
       background: #ffffff;
       border: 1px solid #eef0f3;
-      border-radius: 12px;
-      padding: 40px 35px;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.04);
+      height: 100%;
     }
     .contact-form-wrapper h3 {
-      font-size: 24px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 8px;
-    }
-    .contact-form-wrapper p {
-      color: #666;
-      font-size: 14.5px;
-      margin-bottom: 25px;
+      font-size: 32px;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 26px;
+      letter-spacing: -0.5px;
     }
     .form-group-custom {
       margin-bottom: 20px;
     }
     .form-group-custom label {
-      font-size: 13.5px;
-      font-weight: 600;
-      color: #333;
-      margin-bottom: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #374151;
+      margin-bottom: 8px;
       display: block;
     }
     .form-control-custom {
       width: 100%;
-      height: 50px;
-      padding: 10px 18px;
-      border: 1px solid #dcdfe4;
-      border-radius: 8px;
-      font-size: 14.5px;
-      color: #333;
-      background: #fdfdfd;
+      height: 52px;
+      padding: 12px 20px;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      font-size: 15px;
+      color: #1f2937;
+      background: #fafafa;
       transition: all 0.25s ease;
     }
     .form-control-custom:focus {
@@ -68,54 +118,97 @@
       background: #ffffff;
       box-shadow: 0 0 0 3px rgba(240, 90, 40, 0.12);
     }
+    .form-control-custom::placeholder {
+      color: #9ca3af;
+      font-size: 14.5px;
+    }
     textarea.form-control-custom {
-      height: 140px;
+      height: 135px;
       resize: vertical;
     }
-    .contact-info-card {
+
+    /* Interactive Map Container with Floating Card */
+    .map-container-wrap {
+      position: relative;
+      height: 100%;
+      min-height: 580px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e5e7eb;
+      background: #f8fafc;
+    }
+    .map-container-wrap iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 580px;
+      border: 0;
+      display: block;
+    }
+    .map-floating-card {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 5;
       background: #ffffff;
-      border: 1px solid #eaedf1;
-      border-radius: 10px;
-      padding: 24px;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: flex-start;
-      gap: 18px;
-      transition: all 0.25s ease;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.02);
+      border-radius: 12px;
+      padding: 16px 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      max-width: 290px;
     }
-    .contact-info-card:hover {
-      border-color: #f05a28;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    }
-    .contact-info-card .icon-box {
-      width: 50px;
-      height: 50px;
-      background: rgba(240, 90, 40, 0.1);
-      color: #f05a28;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      flex-shrink: 0;
-    }
-    .contact-info-card h4 {
-      font-size: 16px;
+    .map-floating-card h4 {
+      font-size: 18px;
       font-weight: 700;
       color: #1a1a1a;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
+      line-height: 1.25;
     }
-    .contact-info-card p, .contact-info-card a {
-      font-size: 14.5px;
-      color: #555;
-      margin-bottom: 0;
-      line-height: 1.5;
+    .map-floating-card p {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .map-card-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-map-open {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a73e8;
+      color: #ffffff !important;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: 8px;
       text-decoration: none;
+      transition: background 0.25s, transform 0.25s;
     }
-    .contact-info-card a:hover {
-      color: #f05a28;
+    .btn-map-open:hover {
+      background: #1557b0;
+      transform: translateY(-2px);
+      color: #ffffff;
+    }
+    .btn-map-dir {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: #e8f0fe;
+      color: #1a73e8 !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .btn-map-dir:hover {
+      background: #d2e3fc;
+      transform: translateY(-2px);
     }
   </style>
 </head>
@@ -216,54 +309,91 @@
     </div>
   </header>
 
-  <!-- Banner Section -->
-  <section style="background-image: url(assets/img/projects-background.jpg); background-size: cover; background-position: center;" class="bannr">
-    <div class="container">
-      <div class="bannr-text">
-        <h2>Contact Us</h2>
-        <p>Connect With Crony Electronics Engineering &amp; Technical Consultation Desk</p>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-          </li>
-          <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
-        </ol>
-      </div>
-    </div>
+  <!-- Banner Section (Clear Banner with Silent Blur on Hover) -->
+  <section class="bannr clear-banner" aria-label="Contact Us Banner">
+    <div class="bannr-bg-wrap" style="background-image: url('assets/img/contact-banner.jpg');"></div>
   </section>
 
-  <!-- Main Contact Section -->
+  <!-- Main Contact Section with Form and Map -->
   <section class="gap" id="contact-page">
     <div class="container">
-      <div class="row">
+      <!-- Top 4 Info Cards -->
+      <div class="row contact-info-strip">
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <div class="contact-info-card">
+            <div class="icon-box">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <h4>Landline Phone</h4>
+              <p><a href="tel:+912222032030">91-22-22032030</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <div class="contact-info-card">
+            <div class="icon-box">
+              <i class="fa-solid fa-mobile-screen"></i>
+            </div>
+            <div>
+              <h4>Mobile / WhatsApp</h4>
+              <p><a href="tel:+919323566600">91-9323566600</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <div class="contact-info-card">
+            <div class="icon-box">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <h4>Official Email</h4>
+              <p><a href="mailto:info@cronyelectronics.com">info@cronyelectronics.com</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="contact-info-card">
+            <div class="icon-box">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <div>
+              <h4>Headquarters</h4>
+              <p>Mumbai, Maharashtra, India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Form + Map Row (Jodo Style) -->
+      <div class="row align-items-stretch">
         <!-- Contact Form Column -->
-        <div class="col-lg-7">
+        <div class="col-lg-6 mb-4 mb-lg-0">
           <div class="contact-form-wrapper">
-            <h3>Send an Inquiry</h3>
-            <p>Fill out the form below and our technical team will respond within 24 hours.</p>
+            <h3>Send a Message</h3>
             <form id="contact-page-form" method="post">
               <div class="row">
                 <div class="col-md-6 form-group-custom">
-                  <label>Full Name *</label>
-                  <input type="text" class="form-control-custom" name="full_name" placeholder="Enter your full name" required="">
+                  <label>First Name *</label>
+                  <input type="text" class="form-control-custom" name="first_name" placeholder="First Name" required="">
                 </div>
                 <div class="col-md-6 form-group-custom">
-                  <label>Email Address *</label>
-                  <input type="email" class="form-control-custom" name="email_address" placeholder="name@company.com" required="">
+                  <label>Last Name</label>
+                  <input type="text" class="form-control-custom" name="last_name" placeholder="Last Name">
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 form-group-custom">
-                  <label>Phone / Mobile *</label>
-                  <input type="tel" class="form-control-custom" name="phone_number" placeholder="e.g. +91 98765 43210" required="">
+                  <label>Email Address *</label>
+                  <input type="email" class="form-control-custom" name="email_address" placeholder="Email Address" required="">
                 </div>
                 <div class="col-md-6 form-group-custom">
-                  <label>Company / Organization</label>
-                  <input type="text" class="form-control-custom" name="company_name" placeholder="Company Name">
+                  <label>Phone Number</label>
+                  <input type="tel" class="form-control-custom" name="phone_number" placeholder="Phone Number">
                 </div>
               </div>
               <div class="form-group-custom">
-                <label>Select Product / Solution of Interest</label>
+                <label>Product / Solution of Interest</label>
                 <select class="form-control-custom" name="product_interest">
                   <option value="Rubber Flooring (Industry & Trade)">Rubber Flooring (Industry &amp; Trade) - nora®</option>
                   <option value="Elastoclad HR Heat Reflective Coating">Elastoclad HR Heat Reflective Coating</option>
@@ -276,78 +406,38 @@
                 </select>
               </div>
               <div class="form-group-custom">
-                <label>Project Details / Message *</label>
-                <textarea class="form-control-custom" name="message" placeholder="Describe your requirement, surface area, or equipment parameters..." required=""></textarea>
+                <label>Message *</label>
+                <textarea class="form-control-custom" name="message" placeholder="Your space, your way, where do we start?" required=""></textarea>
               </div>
-              <button type="submit" class="btn" style="padding: 14px 34px; font-size: 16px;">
-                <i class="fa-solid fa-paper-plane me-2"></i> Submit Inquiry
+              <button type="submit" class="btn" style="padding: 14px 34px; font-size: 16px; border-radius: 8px;">
+                <i class="fa-solid fa-paper-plane me-2"></i> Send Message
               </button>
             </form>
           </div>
         </div>
 
-        <!-- Contact Info Column -->
-        <div class="col-lg-5 mt-5 mt-lg-0">
-          <div class="heading text-start" style="margin-bottom: 25px;">
-            <img src="assets/img/heading-img.png" alt="heading icon">
-            <span>Direct Communications</span>
-            <h2>Get In Touch</h2>
-          </div>
-
-          <div class="contact-info-card">
-            <div class="icon-box">
-              <i class="fa-solid fa-phone"></i>
+        <!-- Google Map of Mumbai with Floating Info Card -->
+        <div class="col-lg-6">
+          <div class="map-container-wrap">
+            <div class="map-floating-card">
+              <h4>Mumbai</h4>
+              <p>Mumbai, Maharashtra, India</p>
+              <div class="map-card-actions">
+                <a href="https://maps.google.com/?q=Mumbai,Maharashtra,India" target="_blank" class="btn-map-open">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Maps
+                </a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Mumbai,Maharashtra,India" target="_blank" class="btn-map-dir" title="Get Directions">
+                  <i class="fa-solid fa-diamond-turn-right"></i>
+                </a>
+              </div>
             </div>
-            <div>
-              <h4>Landline Phone</h4>
-              <p><a href="tel:+912222032030">91-22-22032030</a></p>
-            </div>
-          </div>
-
-          <div class="contact-info-card">
-            <div class="icon-box">
-              <i class="fa-solid fa-mobile-screen"></i>
-            </div>
-            <div>
-              <h4>Mobile / WhatsApp</h4>
-              <p><a href="tel:+919323566600">91-9323566600</a></p>
-            </div>
-          </div>
-
-          <div class="contact-info-card">
-            <div class="icon-box">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div>
-              <h4>Official Email</h4>
-              <p><a href="mailto:info@cronyelectronics.com">info@cronyelectronics.com</a></p>
-            </div>
-          </div>
-
-          <div class="contact-info-card">
-            <div class="icon-box">
-              <i class="fa-solid fa-globe"></i>
-            </div>
-            <div>
-              <h4>Official Website</h4>
-              <p><a href="https://cronyelectronics.com" target="_blank">www.cronyelectronics.com</a></p>
-            </div>
-          </div>
-
-          <div class="contact-info-card">
-            <div class="icon-box">
-              <i class="fa-solid fa-map-location-dot"></i>
-            </div>
-            <div>
-              <h4>Operational Reach</h4>
-              <p>Pan-India Supply &amp; Technical Support (Serving 500+ Corporate Clients Across All Regions)</p>
-            </div>
-          </div>
-
-          <div class="p-4 mt-3 text-center" style="background: #fff8f5; border: 1px dashed #f05a28; border-radius: 10px;">
-            <h5 style="font-weight: 700; color: #1a1a1a; margin-bottom: 8px;">Download Official Introduction</h5>
-            <p style="font-size: 13.5px; color: #666; margin-bottom: 12px;">Get our corporate profile including client references &amp; capabilities.</p>
-            <a href="Crony introduction letter.pdf" download class="btn" style="padding: 10px 22px; font-size: 14px;">Download Profile PDF</a>
+            <iframe 
+              src="https://maps.google.com/maps?q=Mumbai,%20Maharashtra,%20India&t=&z=12&ie=UTF8&iwloc=&output=embed" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Crony Electronics Mumbai Location Map">
+            </iframe>
           </div>
         </div>
       </div>
@@ -497,6 +587,13 @@
   <script src="assets/js/sweetalert.min.js"></script> 
   <script src="assets/js/custom.js"></script>
   <script>
+    // Auto-select product from URL query params
+    const urlParams = new URLSearchParams(window.location.search);
+    const prodParam = urlParams.get('product');
+    if (prodParam && prodParam.toLowerCase().includes('rubber')) {
+      $('select[name="product_interest"]').val('Rubber Flooring (Industry & Trade)');
+    }
+
     $('#contact-page-form').on('submit', function(e) {
       e.preventDefault();
       swal({

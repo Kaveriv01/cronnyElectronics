@@ -181,7 +181,7 @@ section {
     background-size: cover;
 }
 .gap {
-    padding: 120px 0;
+    padding: 50px 0;
 }
 .no-top{
     padding-top: 0;
@@ -1287,11 +1287,12 @@ span#progress-value i {
     margin-bottom: 24px;
 }
 .heading {
-    width: 68%;
+    width: 92%;
+    max-width: 1100px;
     margin: auto;
-    padding-bottom: 50px;
+    padding-bottom: 45px;
 }
-.heading span {
+.heading > span {
     text-transform: uppercase;
     font-weight: 900;
     color: var(--common-colour);
@@ -1301,6 +1302,9 @@ span#progress-value i {
 }
 .heading h2 {
     font-weight: 800;
+    font-size: clamp(22px, 2.5vw, 32px);
+    line-height: 1.35;
+    color: #000000;
 } 
 .hover-img figure img {
     margin-left: 30px;
@@ -3762,39 +3766,86 @@ span.swiper-pagination-bullet {
     background-color: var(--common-colour);
     border: 0;
 }
-/* 52. bannr */
+/* 52. bannr - Global Architecture with Silent Blur on Hover */
 .bannr {
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 84%, 0% 100%);
-    padding-top: 280px;
-    padding-bottom: 100px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 86%, 0% 100%);
+    padding-top: 240px;
+    padding-bottom: 85px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+.bannr .bannr-bg-wrap {
+    position: absolute;
+    inset: -12px;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    transition: filter 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: filter, transform;
+}
+.bannr:hover .bannr-bg-wrap {
+    filter: blur(5px);
+    transform: scale(1.03);
 }
 .bannr:before {
     content: "";
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: #000;
-    opacity: .5;
+    opacity: .50;
     position: absolute;
-    clip-path: polygon(0 0, 100% 0, 100% 84%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 86%, 0% 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+.bannr .container,
+.bannr-text {
+    position: relative;
+    z-index: 2;
+}
+/* Clear Banner Variant (No Text, No Dark Overlay) */
+.bannr.clear-banner {
+    padding: 0;
+    height: 380px;
+}
+.bannr.clear-banner:before {
+    display: none !important;
+}
+@media (max-width: 991px) {
+    .bannr.clear-banner {
+        height: 290px;
+    }
+}
+@media (max-width: 576px) {
+    .bannr.clear-banner {
+        height: 230px;
+    }
 }
 .bannr-text {
     position: relative;
     z-index: 1;
 }
 .bannr-text h2 {
-    font-size: 70px;
+    font-size: 52px;
     text-transform: uppercase;
     font-weight: 800;
     color: #fff;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
 }
 .bannr-text p {
-    color: #fff;
-    font-size: 22px;
-    line-height: 36px;
-    padding-top: 20px;
-    width: 53%;
+    color: #f1f5f9;
+    font-size: 18px;
+    line-height: 28px;
+    padding-top: 8px;
+    max-width: 780px;
+    margin-bottom: 0;
 }
 /* 53. breadcrumb */
 .breadcrumb-item+.breadcrumb-item::before {
@@ -3805,9 +3856,11 @@ span.swiper-pagination-bullet {
 }
 ol.breadcrumb {
     margin: 0;
-    padding: 20px 30px;
+    padding: 12px 24px;
     background-color: var(--common-colour);
-    margin-top: 70px;
+    margin-top: 28px;
+    display: inline-flex;
+    border-radius: 4px;
 }
 ol.breadcrumb a i {
     padding-right: 10px;

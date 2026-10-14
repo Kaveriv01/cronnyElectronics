@@ -632,7 +632,7 @@
     width: 50%;
   }
   .gap {
-    padding: 100px 0;
+    padding: 50px 0;
   }
   span.swiper-pagination-bullet {
     width: 78px;
@@ -815,7 +815,7 @@
 }
 @media(max-width: 993px){
   .gap {
-    padding: 80px 0;
+    padding: 50px 0;
   }
   .no-top{
     padding-top: 0;
@@ -1242,7 +1242,7 @@
 }
 @media(max-width: 576px){
     .gap {
-      padding: 60px 0;
+      padding: 40px 0;
     }
     .no-bottom{
       padding-bottom: 0;
