@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Crony Electronics Pvt Ltd - Energy Saving Since 1993</title>
-  <meta name="description" content="Crony Electronics Pvt Ltd is involved into energy saving products & activities since 1993. Learn about our history, our aim, quality assurances, strengths, and patronage.">
+  <title>About Us | Crony Electronics Pvt Ltd - Energy Saving Solutions Since 1993</title>
+  <meta name="description" content="Crony Electronics Pvt Ltd is involved into energy saving products & activities since 1993. Pioneers in AC digital energy savers, Elastoclad HR heat reflective coating, removable thermal insulation sleeves, VRP voltage stabilizers, and industrial robotics.">
   <link rel="icon" href="assets/img/favicon.png">
   <!-- CSS only -->
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
@@ -23,197 +23,108 @@
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/preloader.js"></script>
   <style>
-    .about-sec-heading {
-      margin-bottom: 25px;
-    }
-    .about-sec-heading h2 {
-      font-size: 32px;
-      font-weight: 700;
-      color: #1a1a1a;
-      position: relative;
-      padding-bottom: 12px;
-    }
-    .about-sec-heading h2::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 60px;
-      height: 3px;
-      background: #f05a28;
-    }
-    .about-sec-heading.text-center h2::after {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .lead-paragraph {
-      font-size: 16px;
-      line-height: 1.85;
-      color: #4a4a4a;
-      margin-bottom: 16px;
-    }
-    .our-aim-quote-box {
-      background: #fff8f5;
-      border-left: 5px solid #f05a28;
-      border-radius: 8px;
-      padding: 26px 32px;
-      margin: 30px 0;
-      box-shadow: 0 5px 20px rgba(240, 90, 40, 0.07);
-    }
-    .our-aim-quote-box h3 {
-      color: #1a1a1a;
-      font-weight: 700;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 22px;
-    }
-    .our-aim-quote-box p {
-      font-style: italic;
-      color: #2b2b2b;
-      font-size: 17px;
-      line-height: 1.7;
-      margin-bottom: 0;
-      font-weight: 500;
-    }
-    .content-card {
-      background: #ffffff;
-      border: 1px solid #eef0f3;
-      border-radius: 10px;
-      padding: 30px 26px;
-      height: 100%;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+    .energy-projects {
       transition: all 0.3s ease;
-    }
-    .content-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-      border-color: #f05a28;
-    }
-    .content-card-icon {
-      width: 52px;
-      height: 52px;
-      background: rgba(240, 90, 40, 0.1);
-      color: #f05a28;
+      padding: 15px 12px;
       border-radius: 8px;
+    }
+    .energy-projects:hover {
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transform: translateY(-3px);
+    }
+    .energy-projects a {
+      font-weight: 700;
+      color: #1a1a1a;
+      font-size: 18px;
+      margin-bottom: 8px;
+      display: inline-block;
+      transition: color 0.25s;
+    }
+    .energy-projects a:hover {
+      color: #f05a28;
+    }
+    .energy-projects p {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #666;
+      margin-bottom: 0;
+    }
+    .partner.swiper-slide {
+      background: #ffffff;
+      border: 1px solid #edf0f5;
+      border-radius: 14px;
+      padding: 20px 25px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
-      margin-bottom: 20px;
+      height: 140px;
+      min-height: 140px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+      transition: all 0.35s ease;
     }
-    .content-card h4 {
+    .partner.swiper-slide:hover {
+      border-color: #f05a28;
+      box-shadow: 0 12px 30px rgba(240, 90, 40, 0.16);
+      transform: translateY(-5px);
+    }
+    .partner.swiper-slide img {
+      max-height: 90px;
+      max-width: 200px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: none !important;
+      -webkit-filter: none !important;
+      opacity: 1 !important;
+      transition: all 0.35s ease;
+    }
+    .partner.swiper-slide:hover img {
+      transform: scale(1.08);
+    }
+    .strength-card {
+      background: #ffffff;
+      border: 1px solid #edf0f4;
+      border-radius: 12px;
+      padding: 30px 24px;
+      height: 100%;
+      transition: all 0.35s ease;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.03);
+    }
+    .strength-card:hover {
+      border-color: #f05a28;
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(240, 90, 40, 0.1);
+    }
+    .strength-card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: rgba(240, 90, 40, 0.1);
+      color: #f05a28;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+    .strength-card:hover .strength-card-icon {
+      background: #f05a28;
+      color: #ffffff;
+      box-shadow: 0 8px 18px rgba(240, 90, 40, 0.3);
+    }
+    .strength-card h4 {
       font-size: 19px;
       font-weight: 700;
       color: #1a1a1a;
       margin-bottom: 12px;
     }
-    .content-card p {
-      font-size: 14.5px;
+    .strength-card p {
+      font-size: 14px;
       color: #666;
       line-height: 1.65;
       margin-bottom: 0;
-    }
-    .product-list-card {
-      background: #ffffff;
-      border: 1px solid #eaedf1;
-      border-radius: 8px;
-      padding: 22px 20px;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      transition: all 0.25s ease;
-    }
-    .product-list-card:hover {
-      border-color: #f05a28;
-      transform: translateX(6px);
-      box-shadow: 0 5px 18px rgba(0,0,0,0.05);
-    }
-    .product-list-card i {
-      font-size: 22px;
-      color: #f05a28;
-      min-width: 26px;
-    }
-    .product-list-card h5 {
-      font-size: 16px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 0;
-    }
-    .patron-badge {
-      background: #ffffff;
-      border: 1px solid #eaedf1;
-      border-radius: 10px;
-      padding: 24px 16px;
-      text-align: center;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.25s ease;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-    }
-    .patron-badge:hover {
-      border-color: #f05a28;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
-      transform: translateY(-4px);
-    }
-    .patron-badge img {
-      height: 50px;
-      max-width: 140px;
-      object-fit: contain;
-      margin-bottom: 12px;
-      transition: transform 0.25s ease;
-    }
-    .patron-badge:hover img {
-      transform: scale(1.06);
-    }
-    .patron-badge h5 {
-      font-size: 15px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 0;
-    }
-    .strength-box {
-      display: flex;
-      align-items: flex-start;
-      gap: 18px;
-      padding: 20px 22px;
-      background: #ffffff;
-      border: 1px solid #edf0f2;
-      border-radius: 8px;
-      margin-bottom: 16px;
-      transition: all 0.25s ease;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.02);
-    }
-    .strength-box:hover {
-      border-color: #f05a28;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-      transform: translateX(6px);
-    }
-    .strength-box i {
-      font-size: 22px;
-      color: #f05a28;
-      margin-top: 2px;
-      min-width: 26px;
-    }
-    .strength-box h5 {
-      font-size: 17px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 4px;
-    }
-    .strength-box p {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 0;
-      line-height: 1.55;
-    }
-    .bg-light-soft {
-      background-color: #fbfbfc;
     }
   </style>
 </head>
@@ -230,16 +141,16 @@
           <div>
             <div class="phone-data">
               <div class="phone">
-                <i class="fa-solid fa-phone" style="display:inline-flex; align-items:center; justify-content:center; color:#fff;"></i>
+                <i class="flaticon-iphone"></i>
                 <span>Phone:</span><a href="tel:+912222032030">91-22-22032030</a>
               </div>
               <div class="phone d-flex align-items-center">
-                <i class="fa-solid fa-mobile-screen" style="display:inline-flex; align-items:center; justify-content:center; color:#fff;"></i>
+                <i class="flaticon-iphone"></i>
                 <span>Mobile:</span><a href="tel:+919323566600">91-9323566600</a>
               </div>
               <div class="phone d-flex align-items-center">
-                <i class="fa-solid fa-globe" style="display:inline-flex; align-items:center; justify-content:center; color:#fff;"></i>
-                <span>Website:</span><a href="https://cronyelectronics.com">www.cronyelectronics.com</a>
+                <i class="flaticon-link"></i>
+                <span>Website:</span><a class="me-3" href="https://cronyelectronics.com">www.cronyelectronics.com</a>
               </div>
             </div>
           </div>
@@ -254,7 +165,7 @@
     <div class="bottom-bar">
       <div class="container">
         <div class="bottom-bar-text">
-          <a href="index.html"><img src="assets/img/logo.png" alt="Crony Electronics Logo" style="height: 60px; width: auto; object-fit: contain;"></a>
+          <a href="index.html"><img src="assets/img/logo.png" alt="Crony Electronics" style="height: 60px; width: auto; object-fit: contain;"></a>
           <nav class="navbar">
             <ul class="navbar-links">
               <li class="navbar-dropdown"><a href="index.html">Home</a></li>
@@ -298,7 +209,7 @@
     <div class="mobile-nav hmburger-menu" id="mobile-nav" style="display:none;">
       <div class="res-log">
         <a href="index.html">
-          <img src="assets/img/logo.png" alt="Crony Electronics Logo" class="white-logo" style="height: 50px; width: auto;">
+          <img src="assets/img/logo.png" alt="Crony Electronics" class="white-logo" style="height: 50px; width: auto;">
         </a>
       </div>
       <ul>
@@ -321,9 +232,9 @@
     </div>
     <div class="mobile-nav desktop-menu">
       <h2>Crony Electronics Pvt Ltd</h2>
-      <p class="des">We are involved into energy saving products &amp; activities since 1993.</p>
+      <p class="des">Pioneering energy saving products and innovative industrial solutions since 1993.</p>
       <figure>
-        <img src="assets/img/energy-projects.png" alt="Crony Facility">
+        <img src="assets/img/energy-projects.png" alt="Energy Projects">
       </figure>
       <h3>Get in touch</h3>
       <p class="num"><a href="tel:+912222032030">Phone: 91-22-22032030</a></p>
@@ -337,8 +248,8 @@
     </div>
   </header>
 
-  <!-- Banner Section -->
-  <section style="background-image: url('assets/img/about-banner.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat;" class="bannr">
+  <!-- BoltX Banner Section -->
+  <section style="background-image: url('assets/img/bannr-img.jpg');" class="bannr">
     <div class="container">
       <div class="bannr-text">
         <h2>About Us</h2>
@@ -353,482 +264,494 @@
     </div>
   </section>
 
-  <!-- Section: About Crony Electronics Pvt Ltd. & Our Aim -->
-  <section class="gap" id="about-crony">
+  <!-- BoltX Section 1: Welcome to Crony Electronics & Accordion -->
+  <section class="gap" style="padding-bottom: 40px;">
     <div class="container">
-      <div class="about-sec-heading">
-        <h2>About Crony Electronics Pvt Ltd.</h2>
+      <div class="heading">
+        <img src="assets/img/heading-img.png" alt="Crony Energy">
+        <span>Welcome to Crony Electronics Pvt Ltd</span>
+        <h2>Over Three Decades of Engineering Excellence &amp; Energy Conservation</h2>
       </div>
       <div class="row align-items-center">
-        <div class="col-lg-7">
-          <div class="about-text-content">
-            <p class="lead-paragraph">Crony Electronics Pvt Ltd is involved into energy saving products &amp; activities since 1993. We have strived for performance &amp; optimum output for our customers ever since. Energy saving product for Air conditioners were the first to be introduced by us in 1994.</p>
-            <p class="lead-paragraph">As a mark of excellence in our field the company has grown leaps &amp; bounds. This is proven by the fact that we cater to the likes of ONGC, Railways, L&amp;T, M&amp;M, Cipla, Kirloskar Brothers Ltd, Hindalco, Sesa Goa &amp; so on. Our wings are spread across all the geographical regions of India.</p>
-            <p class="lead-paragraph">Our continuous efforts as a team have resulted in first of its kind microprocessor based digital energy saving product for AC way back in 1997. The product still runs as a favourite in the scenario of changing technologies goes to prove its efficiency, reliability &amp; performance for more than 2 Decades now</p>
-            <p class="lead-paragraph">We are presently catering to around 500 corporate customers with this technology &amp; the customer are ever increasing. Just goes to show the sort of confidence customers show in our products.</p>
-            <p class="lead-paragraph">Our latest step towards energy management &amp; improving the efficiency of the industries is HEAT reflective coating (Elastoclad HR) used on the exterior of rooftops, walls etc. This coating helps in reducing the surface to surface temperature by 10 to 12 degree Celsius. The thermography results of these coatings prove the efficiency &amp; claim of product. Apart from reducing of surface to surface temperature this coat also acts as a waterproofing agent for the applied surfaces. The whole idea is to give multiple advantages with one product.</p>
-            <p class="lead-paragraph">Innovation &amp; savings has always aspired our range of products hence our latest product in the kitty is Removable Thermal Insulation Sleeves to aid the typical scenario of helping customers save on power as the product can take care of the most troubled areas like flanges, valves etc that require frequent servicing &amp; maintenance making it extremely difficult to replace the conventional mode of insulation. Our latest removable thermal insulation sleeves are a perfect solution for these troubled areas. These sleeves could be removed &amp; re installed by any one more over helps save a Huge amount of energy cost &amp; inventory cost. The product is custom built to fit any shape &amp; size of unit.</p>
-            <p class="lead-paragraph">Our sincere effort is to give multiple utility with our products &amp; maximize the profits for our customers. We pledge to give the best &amp; involve ourselves in many new innovations to come to optimize the safety energy efficiency of our customers at minimum cost.</p>
-
-            <!-- Our Aim Block -->
-            <div class="our-aim-quote-box">
-              <h3><i class="fa-solid fa-bullseye" style="color: #f05a28;"></i> Our Aim</h3>
-              <p>“To maximize the safety &amp; savings of our clients on power and stay dedicated &amp; determined to give the best.”</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-5">
-          <div class="experience-img mt-4 mt-lg-0">
-            <img src="assets/img/energy-projects.png" alt="Crony Energy Facility">
-            <div class="count-style">
-              <img src="assets/img/solar-panel.png" alt="solar-panel">
-              <h2 data-max="500"><span>+</span></h2>
-              <p>Corporate Customers</p> 
-            </div>
-            <div class="count-style two">
-              <img src="assets/img/windmill.png" alt="windmill">
-              <h2 data-max="1993"><span></span></h2>
-              <p>In Business Since</p> 
-            </div>
-          </div>
-          <div class="director-renewable mt-4 p-4" style="background:#ffffff; border:1px solid #eaedf1; border-radius:8px;">
-            <div class="director-profile">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80" alt="Maulik Shah">
-              <div>
-                <h4 style="font-size:18px; font-weight:700; margin-bottom:4px;">Maulik Shah</h4>
-                <span style="font-size:13.5px; color:#777;">Director, Crony Electronics Pvt Ltd</span>
-              </div>
-            </div>
-            <div class="director-signature">
-              <img src="assets/img/signature.png" alt="signature">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: Comprehensive Product Range -->
-  <section class="gap bg-light-soft" id="comprehensive-product-range">
-    <div class="container">
-      <div class="about-sec-heading">
-        <h2>Comprehensive Product Range</h2>
-      </div>
-      <div class="row mb-4">
-        <div class="col-lg-12">
-          <p class="lead-paragraph">
-            Our all inclusive assortment comprises of Digi Guard, Eco Max, Removable thermal insulation jacket and Heat reflecting coating(elastoclad HR).Apart from our showcased range of products, we also manufacture the following:
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="product-list-card">
-            <i class="fa-solid fa-microchip"></i>
-            <h5>Energy saving microprocessor devise for air conditioners</h5>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="product-list-card">
-            <i class="fa-solid fa-shield-halved"></i>
-            <h5>Digi Guard</h5>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="product-list-card">
-            <i class="fa-solid fa-leaf"></i>
-            <h5>Eco Max</h5>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="product-list-card">
-            <i class="fa-solid fa-bolt"></i>
-            <h5>Servo &amp; Step up stabilizer</h5>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="product-list-card">
-            <i class="fa-solid fa-circle-radiation"></i>
-            <h5>Removable thermal insulation jacket</h5>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="product-list-card">
-            <i class="fa-solid fa-temperature-arrow-down"></i>
-            <h5>Heat reflecting coating (Elastoclad HR)</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: Quality Assurances -->
-  <section class="gap" id="quality-assurances">
-    <div class="container">
-      <div class="about-sec-heading">
-        <h2>Quality Assurances</h2>
-      </div>
-      <div class="row mb-4">
-        <div class="col-lg-12">
-          <p class="lead-paragraph">
-            We give complete quality assurances for all our products through our stringent quality checks. Various electrical testings are done to check the workability of the products. The products are also tested for robust structure, durability, reliability, accuracy, raw materials etc. All these tests are conducted by our quality controllers who keep a strict vigil on the entire production stages. We also make it a point to adhere to relevant quality norms that add to our company's credibility in the market. The presence of modern gadgetry to test the products enables us to check them for accuracy and quality. These tests also ensure a trouble free, long and dependable operation minus the drawbacks.
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="content-card">
-            <div class="content-card-icon">
-              <i class="fa-solid fa-flask-vial"></i>
-            </div>
-            <h4>Stringent Electrical Testing</h4>
-            <p>Comprehensive electrical testing is performed to verify workability, insulation resistance, and accurate operational cycles under varying industrial load conditions.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="content-card">
-            <div class="content-card-icon">
-              <i class="fa-solid fa-certificate"></i>
-            </div>
-            <h4>Relevant Quality Norms &amp; GMP</h4>
-            <p>Full compliance with recognized industry quality norms, good manufacturing practices (GMP), and rigorous material standards adding credibility in the market.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="content-card">
-            <div class="content-card-icon">
-              <i class="fa-solid fa-user-check"></i>
-            </div>
-            <h4>Quality Controllers Vigil</h4>
-            <p>Expert quality controllers supervise every stage from raw materials through production, utilizing modern test gadgetry for long, dependable operation.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: Customer Satisfaction -->
-  <section class="gap bg-light-soft" id="customer-satisfaction">
-    <div class="container">
-      <div class="about-sec-heading">
-        <h2>Customer Satisfaction</h2>
-      </div>
-      <div class="row align-items-center">
-        <div class="col-lg-7">
-          <p class="lead-paragraph">
-            We believe in formulating customer centric policies that help in keeping the clients satisfied. Our focus is on listening to their queries and suggestions and customizing the products according to it. Our technicians work in close coordination with the customers which helps them in getting a better understanding of their requirement. Such exercises also help in building the trust of the client in our company and maintain healthy relations with them. Through our expertise in the field, we are able to customize the products to the satisfaction of the client within the stipulated time frame.
-          </p>
-          <div class="mt-4">
-            <a href="contact.html" class="btn">Contact Our Technical Team</a>
-          </div>
-        </div>
-        <div class="col-lg-5 mt-4 mt-lg-0">
-          <div class="p-4" style="background:#ffffff; border:1px solid #eaedf1; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.03);">
-            <h4 style="font-size:18px; font-weight:700; color:#1a1a1a; margin-bottom:15px; display:flex; align-items:center; gap:10px;">
-              <i class="fa-solid fa-handshake" style="color:#f05a28;"></i> Customer-Centric Commitment
-            </h4>
-            <ul style="list-style:none; padding:0; margin:0;">
-              <li style="margin-bottom:12px; font-size:14.5px; color:#555; display:flex; align-items:flex-start; gap:10px;">
-                <i class="fa-solid fa-check" style="color:#f05a28; margin-top:4px;"></i> Active listening to customer queries &amp; custom specifications
-              </li>
-              <li style="margin-bottom:12px; font-size:14.5px; color:#555; display:flex; align-items:flex-start; gap:10px;">
-                <i class="fa-solid fa-check" style="color:#f05a28; margin-top:4px;"></i> On-site technician coordination for complete operational clarity
-              </li>
-              <li style="margin-bottom:12px; font-size:14.5px; color:#555; display:flex; align-items:flex-start; gap:10px;">
-                <i class="fa-solid fa-check" style="color:#f05a28; margin-top:4px;"></i> High trust, healthy relations, and long-term partnerships
-              </li>
-              <li style="font-size:14.5px; color:#555; display:flex; align-items:flex-start; gap:10px;">
-                <i class="fa-solid fa-check" style="color:#f05a28; margin-top:4px;"></i> Precise customization delivered strictly within stipulated timeframes
-              </li>
+        <div class="col-lg-6">
+          <div class="solar-power-save">
+            <p><strong>Crony Electronics Pvt Ltd</strong> is involved into energy saving products &amp; activities since 1993. We have strived for performance &amp; optimum output for our customers ever since. Energy saving product for Air conditioners were the first to be introduced by us in 1994.</p>
+            <p>As a mark of excellence in our field the company has grown leaps &amp; bounds. This is proven by the fact that we cater to the likes of ONGC, Railways, L&amp;T, M&amp;M, Patni Computers, Cipla, Kirloskar Brothers Ltd, Hindalco, Sesa Goa &amp; so on. Our wings are spread across all the geographical regions of India.</p>
+            <ul class="list-style mb-0"> 
+              <li>First Microprocessor AC Digital Energy Saver in India (1997)</li>
+              <li>Pioneered ILLUMINATOR Electronic Ballast in India (2007)</li>
+              <li>Serving Over 500 Corporate Customers Across India</li>
+              <li>Fastest Solid State Voltage Regulator: 20ms VRP (3 to 360 KVA)</li>
             </ul>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: Our Patronage & Brand Partnerships -->
-  <section class="gap" id="our-patronage">
-    <div class="container">
-      <div class="about-sec-heading text-center" style="max-width: 850px; margin: 0 auto 40px;">
-        <h2>Our Patronage &amp; Brand Partners</h2>
-        <p class="lead-paragraph" style="margin-top: 15px;">
-          We have won accolades for our enduring efforts in the field of energy saving and power protection since 1993. Trusted by 500+ premier corporations, public sector enterprises, and global industrial leaders across India.
-        </p>
-      </div>
-
-      <!-- Corporate Client & Brand Grid -->
-      <div class="row g-3">
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/ongc.png" alt="ONGC">
-            <h5>ONGC</h5>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/indian-railways.png" alt="Indian Railways">
-            <h5>Indian Railways</h5>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/larsen-toubro.png" alt="L&T">
-            <h5>Larsen &amp; Toubro (L&amp;T)</h5>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/mahindra.png" alt="Mahindra & Mahindra">
-            <h5>Mahindra &amp; Mahindra</h5>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/kirloskar.png" alt="Kirloskar Brothers Ltd">
-            <h5>Kirloskar Brothers Ltd</h5>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/hindalco.png" alt="Hindalco">
-            <h5>Hindalco</h5>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/client-wipro.svg" alt="Wipro">
-            <h5>Wipro</h5>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/client-hpcl.svg" alt="HPCL">
-            <h5>HPCL</h5>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/client-iocl.svg" alt="IOCL">
-            <h5>IOCL</h5>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/client-cipla.svg" alt="Cipla">
-            <h5>Cipla</h5>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/client-wockhardt.svg" alt="Wockhardt">
-            <h5>Wockhardt</h5>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/client-usvitamins.svg" alt="US Vitamins">
-            <h5>US Vitamins</h5>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/client-gtl.svg" alt="Global Telesystems">
-            <h5>Global Telesystems</h5>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="patron-badge">
-            <img src="assets/img/partners/client-nora.svg" alt="nora systems">
-            <h5>nora® by Interface</h5>
+        <div class="col-lg-6">
+          <div class="accordion two">
+            <div class="accordion-item active">
+              <a href="#" class="heading">
+                <i class="flaticon-solar-panel-1"></i>
+                <div class="title">Microprocessor AC Digital Energy Savers (Since 1997)</div>
+              </a>
+              <div class="content" style="display: block;">
+                <p>Our continuous efforts as a team with Eata Electronics resulted in first of its kind microprocessor based digital energy saving product for AC way back in 1997. The product still runs as a favourite in the scenario of changing technologies goes to prove its efficiency, reliability &amp; performance for more than 2 Decades now. We are presently catering to around 500 corporate customers with this technology &amp; the customers are ever increasing.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a href="#" class="heading">
+                <i class="flaticon-solar-panels"></i>
+                <div class="title">Elastoclad HR &amp; Glass IR Blocking Coatings</div>
+              </a>
+              <div class="content">
+                <p>Our latest step towards energy management is HEAT reflective coating (Elastoclad HR) on rooftops and exterior walls, reducing surface-to-surface temperature by 10 to 12&deg;C with certified thermography results and dual waterproofing benefits. Furthermore, our IR blocking transparent coating for glass facades blocks up to 95% of IR rays, curtailing ambient heat while ensuring clear visual transparency.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a href="#" class="heading">
+                <i class="flaticon-solar-panel"></i>
+                <div class="title">Removable Thermal Insulation Sleeves</div>
+              </a>
+              <div class="content">
+                <p>Custom-built removable thermal insulation sleeves engineered specifically for troubled areas like flanges, valves, pumps, and pipes that require frequent maintenance. Traditional insulation is difficult and expensive to replace; our removable sleeves can be effortlessly removed and re-installed by anyone, saving huge energy costs and inventory expenses.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a href="#" class="heading">
+                <i class="flaticon-battery"></i>                
+                <div class="title">VRP Voltage Regulators, Brilantor Daylight &amp; 64 Robots</div>
+              </a>
+              <div class="content">
+                <p>Sensitive equipment demands flawless power conditions. Our VRP (Voltage Regulation with Precision) solid-state units regulate voltage dips and rises in just 20 milliseconds &mdash; one of the fastest in the world (3 KVA to 360 KVA). We also deliver Brilantor Natural Daylight providing up to 400 lux without power or heat, plus up to 64 specialized robotic automation models.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: Our Strengths -->
-  <section class="gap bg-light-soft" id="our-strengths">
+  <!-- BoltX Video & Fun Facts Section -->
+  <div class="gap no-top" style="padding-bottom: 60px;">
     <div class="container">
-      <div class="about-sec-heading">
-        <h2>Our Strengths</h2>
-      </div>
-      <div class="row mb-4">
-        <div class="col-lg-12">
-          <p class="lead-paragraph">
-            The various aspects that have contributed to the tremendous success witnessed by our company are:
-          </p>
+      <div class="blog-details" style="margin-bottom: 45px;">
+        <div class="video position-relative" style="overflow: hidden; border-radius: 14px; box-shadow: 0 16px 45px rgba(0,0,0,0.12);">
+          <video autoplay muted loop playsinline width="100%" poster="assets/img/about-banner.jpg" style="width: 100%; height: auto; max-height: 520px; object-fit: cover; display: block; border-radius: 14px;">
+            <source src="assets/video/solar-panel.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
+      </div>
+      <div class="row section-fun-facts">
+        <div class="col-lg-4">
+          <div class="fun-facts">
+            <i class="flaticon-wind-energy"></i>
+            <div>
+              <h2 data-max="500"><span>+</span></h2>
+              <span>Corporate Customers</span>
+            </div>
+            <img src="assets/img/bolt-fun.png" alt="bolt">
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="fun-facts">
+            <i class="flaticon-solar-panel-1"></i>
+            <div>
+              <h2 data-max="1993"><span></span></h2>
+              <span>Pioneering Since</span>
+            </div>
+            <img src="assets/img/bolt-fun.png" alt="bolt">
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="fun-facts">
+            <i class="flaticon-link"></i>
+            <div>
+              <h2 data-max="64"><span>+</span></h2>
+              <span>Specialized Robots &amp; Solutions</span>
+            </div>
+            <img src="assets/img/bolt-fun.png" alt="bolt">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BoltX Sustainable Energy Section -->
+  <section class="section-sustainable" style="background-image: url('assets/img/sustainable-services.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="img-sustainable">
+            <img src="assets/img/sustainable.png" alt="Sustainable Energy">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="sustainable-text">
+            <div class="heading two">
+              <span>Sustainable Energy &amp; Conservation</span>
+              <h2>Pioneering Innovations for Industrial Savings &amp; Safety</h2>
+            </div>
+            <div class="progresbar">
+              <div class="progressbar">
+                <div class="circle" data-percent="95">
+                  <div>95%</div>
+                </div>
+                <span style="font-size: 13px; font-weight: 600; color: #fff; margin-top: 6px; display: block;">IR Blocking</span>
+              </div>
+              <div class="progressbar">
+                <div class="circle two" data-percent="90">
+                  <div>20ms</div>
+                </div>
+                <span style="font-size: 13px; font-weight: 600; color: #fff; margin-top: 6px; display: block;">VRP Regulation</span>
+              </div>
+              <div class="progressbar">
+                <div class="circle three" data-percent="99">
+                  <div>99%</div>
+                </div>
+                <span style="font-size: 13px; font-weight: 600; color: #fff; margin-top: 6px; display: block;">Client Trust</span>
+              </div>
+            </div>
+            <p>Our sincere effort is to give multiple utility with our products &amp; maximize profits for our customers. We pledge to give the best &amp; involve ourselves in many new innovations to optimize the safety &amp; energy efficiency of our customers at minimum cost.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BoltX Section: Comprehensive Product Range & Solutions -->
+  <section class="gap no-bottom">
+    <div class="container">
+      <div class="heading">
+        <img src="assets/img/heading-img.png" alt="Products">
+        <span>Engineered For Maximum Energy Efficiency</span>
+        <h2>Comprehensive Product Range &amp; Innovations</h2>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-4">
+          <div class="energy-projects">
+            <div><i class="flaticon-charge"></i></div>
+            <div>
+              <a href="products.html#digiguard">Digi Guard &amp; Eco Max</a>
+              <p>Microprocessor-based digital energy saving devices for air conditioners, proven for over two decades across 500+ corporate clients.</p>
+            </div>
+          </div>
+          <div class="energy-projects">
+            <div><i class="flaticon-solar-energy-1"></i></div>
+            <div>
+              <a href="products.html#thermal">Elastoclad HR Coating</a>
+              <p>Heat reflective coating reducing rooftop and wall temperatures by 10 to 12&deg;C with dual waterproofing protection.</p>
+            </div>
+          </div>
+          <div class="energy-projects">
+            <div><i class="flaticon-water-energy"></i></div>
+            <div>
+              <a href="products.html#thermal">IR Blocking Glass Façade Coat</a>
+              <p>Blocks up to 95% of Infrared radiation on glass windows and façades without compromising optical clarity.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="energy-projects-img text-center">
+            <img class="w-100" src="assets/img/energy-projects.png" alt="Crony Range">
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="energy-projects">
+            <div><i class="flaticon-eco-house"></i></div>
+            <div>
+              <a href="products.html#sleeves">Removable Insulation Sleeves</a>
+              <p>Custom-built thermal jackets for valves, flanges, and piping &mdash; reusable, easy to install, saving massive energy costs.</p>
+            </div>
+          </div>
+          <div class="energy-projects">
+            <div><i class="flaticon-solar-panels"></i></div>
+            <div>
+              <a href="products.html#power">20ms VRP Stabilizers</a>
+              <p>Solid-state Voltage Regulation with Precision (3 KVA to 360 KVA), ultra-fast 20 millisecond response to safeguard critical machinery.</p>
+            </div>
+          </div>
+          <div class="energy-projects">
+            <div><i class="flaticon-low-price"></i></div>
+            <div>
+              <a href="products.html#daylight">Daylight &amp; 64 Robotics Types</a>
+              <p>Brilantor zero-power natural daylighting (up to 400 lux) and 64 automated industrial robotic systems for modern plants.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BoltX Section: Customer Satisfaction & Testimonials -->
+  <section class="section-customer" style="background-image: url('assets/img/customer-background.png');">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="heading two">
+            <img src="assets/img/heading-img-two.png" alt="Reviews">
+            <span>Customer Satisfaction &amp; Trust</span>
+            <h2>What Industry Leaders Say About Our Energy Solutions</h2>
+          </div>
+          <div class="nav-c-slider">
+            <a class="next-slide nav-active" href="JavaScript:void(0)" data-slide="1">
+              <img class="animate__animated animate__fadeIn" src="assets/img/c-slider-1.jpg" alt="Client 1">
+            </a>
+            <a class="next-slide" href="JavaScript:void(0)" data-slide="2">
+              <img class="animate__animated animate__fadeIn" src="assets/img/c-slider-2.jpg" alt="Client 2">
+            </a>
+            <a class="next-slide" href="JavaScript:void(0)" data-slide="3">
+              <img class="animate__animated animate__fadeIn" src="assets/img/c-slider-3.jpg" alt="Client 3">
+            </a>
+            <a class="next-slide" href="JavaScript:void(0)" data-slide="4">
+              <img class="animate__animated animate__fadeIn" src="assets/img/c-slider-4.jpg" alt="Client 4">
+            </a>
+          </div>
+          <div class="customer">
+            <h5>Customer satisfaction is very important to us</h5>
+            <ul class="star">
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="c-slider">
+            <div>
+              <img src="assets/img/double-quote.png" alt="Quote">
+              <p>“Crony's microprocessor AC energy savers have delivered consistent, measurable energy savings across our corporate buildings for years. Their technical competence and reliability are unmatched.”</p>
+              <ul>
+                <li><h3>Chief Electrical Engineer</h3></li>
+                <li><h5>Heavy Engineering Division</h5></li>
+              </ul>
+            </div>
+            <div>
+              <img src="assets/img/double-quote.png" alt="Quote">
+              <p>“The Elastoclad HR heat-reflective coating reduced our facility rooftop surface temperatures by over 11&deg;C. The ambient working conditions improved dramatically, lowering our HVAC loads.”</p>
+              <ul>
+                <li><h3>Plant &amp; Facility Head</h3></li>
+                <li><h5>Industrial Manufacturing Plant</h5></li>
+              </ul>
+            </div>
+            <div>
+              <img src="assets/img/double-quote.png" alt="Quote">
+              <p>“Their Removable Thermal Insulation Sleeves solved our persistent valve maintenance problems. Inspection times were cut down by 80% and surface heat loss was eliminated completely.”</p>
+              <ul>
+                <li><h3>Maintenance Manager</h3></li>
+                <li><h5>Petrochemical &amp; Refinery Operations</h5></li>
+              </ul>
+            </div>
+            <div>
+              <img src="assets/img/double-quote.png" alt="Quote">
+              <p>“The 20-millisecond VRP voltage stabilizer has protected our sensitive automated equipment against grid voltage fluctuations without a single glitch. A truly top-notch engineering product.”</p>
+              <ul>
+                <li><h3>Head of Electrical Infrastructure</h3></li>
+                <li><h5>Precision Manufacturing Unit</h5></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BoltX Section: Core Strengths & Quality Assurances -->
+  <section class="gap">
+    <div class="container">
+      <div class="heading">
+        <img src="assets/img/heading-img.png" alt="Strengths">
+        <span>Why Corporates Choose Crony Electronics</span>
+        <h2>Our Core Strengths &amp; Quality Assurances</h2>
       </div>
       <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="strength-box">
-            <i class="fa-solid fa-tags"></i>
-            <div>
-              <h5>Industry leading prices</h5>
-              <p>Competitive and value-maximizing pricing delivering high return on investment for clients.</p>
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+          <div class="strength-card">
+            <div class="strength-card-icon">
+              <i class="fa-solid fa-award"></i>
             </div>
+            <h4>30+ Years Pioneering Record</h4>
+            <p>In business since 1993, pioneering India's first AC energy savers in 1994 and the first digital microprocessor units in 1997. We combine deep domain expertise with continuous research and development.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+          <div class="strength-card">
+            <div class="strength-card-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h4>Rigorous Quality &amp; Thermography Validation</h4>
+            <p>Every product undergoes exhaustive performance evaluation, ISO-compliant quality checks, and independent thermographic inspection to certify temperature drops and electrical efficiency.</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6">
-          <div class="strength-box">
-            <i class="fa-solid fa-industry"></i>
-            <div>
-              <h5>Sophisticated infrastructure</h5>
-              <p>Modern manufacturing apparatus and advanced testing instruments ensuring precision output.</p>
+          <div class="strength-card">
+            <div class="strength-card-icon">
+              <i class="fa-solid fa-map-location-dot"></i>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="strength-box">
-            <i class="fa-solid fa-flask-vial"></i>
-            <div>
-              <h5>Strong research and development</h5>
-              <p>In-house R&amp;D team committed to continuous product innovation and power efficiency breakthroughs.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="strength-box">
-            <i class="fa-solid fa-warehouse"></i>
-            <div>
-              <h5>Capacious warehouse</h5>
-              <p>Extensive inventory and storage capacity ensuring seamless supply chain and quick order fulfillment.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="strength-box">
-            <i class="fa-solid fa-box"></i>
-            <div>
-              <h5>Suitable packing</h5>
-              <p>Heavy-duty, protective industrial packaging guaranteeing defect-free transport across India.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="strength-box">
-            <i class="fa-solid fa-truck-fast"></i>
-            <div>
-              <h5>On time delivery</h5>
-              <p>Dependable logistical coordination adhering strictly to stipulated project timelines.</p>
-            </div>
+            <h4>Pan-India Corporate Support</h4>
+            <p>Our wings are spread across all geographical regions of India, delivering custom-engineered solutions, rapid deployment, and dedicated technical service to more than 500 marquee corporate clients.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <footer style="background-image: url(assets/img/footer-line.png);">
+  <!-- BoltX Section: Esteemed Corporate Patronage Slider -->
+  <div class="container gap no-top">
+    <div class="clients-text text-center mb-4">
+      <h3 style="font-size: 26px; font-weight: 700; color: #1a1a1a;">Esteemed Corporate Patronage</h3>
+      <p style="color: #666; font-size: 15px; margin-bottom: 0;">Trusted by India's largest public sector enterprises and private industrial conglomerates</p>
+    </div>
+    <div class="swiper clients-slider">
+      <div class="swiper-wrapper">
+        <div class="partner swiper-slide">
+          <img alt="ONGC" src="assets/img/partners/ongc.png">
+        </div>
+        <div class="partner swiper-slide">
+          <img alt="Indian Railways" src="assets/img/partners/indian-railways.png">
+        </div>
+        <div class="partner swiper-slide">
+          <img alt="Larsen &amp; Toubro" src="assets/img/partners/larsen-toubro.png">
+        </div>
+        <div class="partner swiper-slide">
+          <img alt="Mahindra &amp; Mahindra" src="assets/img/partners/mahindra.png">
+        </div>
+        <div class="partner swiper-slide">
+          <img alt="Cipla" src="assets/img/partners/client-cipla.svg">
+        </div>
+        <div class="partner swiper-slide">
+          <img alt="Kirloskar Brothers" src="assets/img/partners/kirloskar.png">
+        </div>
+        <div class="partner swiper-slide">
+          <img alt="Hindalco" src="assets/img/partners/hindalco.png">
+        </div>
+        <div class="partner swiper-slide">
+          <img alt="IOCL" src="assets/img/partners/client-iocl.svg">
+        </div>
+        <div class="partner swiper-slide">
+          <img alt="HPCL" src="assets/img/partners/client-hpcl.svg">
+        </div>
+        <div class="partner swiper-slide">
+          <img alt="Wipro" src="assets/img/partners/client-wipro.svg">
+        </div>
+        <div class="partner swiper-slide">
+          <img alt="Wockhardt" src="assets/img/partners/client-wockhardt.svg">
+        </div>
+        <div class="partner swiper-slide">
+          <img alt="GTL" src="assets/img/partners/client-gtl.svg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BoltX Footer -->
+  <footer style="background-image: url('assets/img/footer-line.png');">
     <div class="container">
       <div class="footer-top">
         <div class="row">
           <div class="col-lg-6">
             <div class="logo">
               <img src="assets/img/logo.png" alt="Crony Electronics Logo" style="height: 60px; width: auto; object-fit: contain;">
-              <p><b>Crony Electronics Pvt Ltd.</b><br>We are involved into energy saving products &amp; activities since 1993.</p>
+              <p>Crony Electronics Pvt Ltd is committed to optimizing energy efficiency, industrial safety, and sustainable savings through cutting-edge technology and proven performance since 1993.</p>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="subscribe">
-              <h3>Connect With Us</h3>
-              <p>Get in touch with our technical sales team for quotations, site audits, and product datasheets.</p>
+              <h3>Subscribe to Updates</h3>
+              <p>Stay informed about our latest energy saving technologies and case studies.</p>
               <form role="form" class="get-subscribee" id="subscribe-form" method="post"> 
-                <input type="email" name="Email_Address" placeholder="Enter your business email" required="">
-                <button type="submit" class="btn bk">Inquire</button>
+                <input type="email" name="Email_Address" placeholder="Enter your corporate email here" required="">
+                <button type="submit" class="btn bk">Subscribe</button>
               </form>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <!-- Contact Us Column -->
         <div class="col-lg-4 col-md-6">
           <div class="widget-title">
-            <h3>contact us</h3>
+            <h3>Contact Us</h3>
             <div class="boder"></div>
             <div class="get-in-touch">
-              <div><i>
-                <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_94_1710)">
-                    <path d="M12.3379 7.11523C10.6713 7.11523 9.31538 8.47115 9.31538 10.1377C9.31538 11.8043 10.6713 13.1602 12.3379 13.1602C14.0045 13.1602 15.3604 11.8043 15.3604 10.1377C15.3604 8.47115 14.0045 7.11523 12.3379 7.11523Z" fill="black"/>
-                    <path d="M19.4104 3.44324C17.5213 1.55407 15.0095 0.513672 12.3379 0.513672C9.66623 0.513672 7.15444 1.55407 5.26532 3.44324C3.37611 5.33245 2.33571 7.8442 2.33571 10.5158C2.33571 15.9205 7.44603 20.4158 10.1915 22.8309C10.573 23.1665 10.9024 23.4563 11.1648 23.7014C11.4937 24.0087 11.9157 24.1623 12.3378 24.1623C12.7599 24.1623 13.182 24.0087 13.5108 23.7015C13.7733 23.4563 14.1028 23.1665 14.4842 22.8309C17.2297 20.4159 22.34 15.9205 22.34 10.5159C22.34 7.8442 21.2996 5.33245 19.4104 3.44324ZM12.3379 14.5457C9.90739 14.5457 7.93009 12.5684 7.93009 10.1379C7.93009 7.70739 9.90739 5.73009 12.3379 5.73009C14.7684 5.73009 16.7457 7.70739 16.7457 10.1379C16.7457 12.5684 14.7683 14.5457 12.3379 14.5457Z" fill="black"/>
-                  </g>
-                </svg>
-              </i></div>
               <div>
-                <span>Website:</span>
-                <h6><a href="https://cronyelectronics.com">www.cronyelectronics.com</a></h6>
+                <i class="flaticon-iphone"></i>
+              </div>
+              <div>
+                <span>Phone Numbers:</span> 
+                <h6><a href="tel:+912222032030">91-22-22032030</a> / <a href="tel:+919323566600">91-9323566600</a></h6>
               </div>
             </div>
             <div class="get-in-touch">
-              <div><i>
-                <svg width="23" height="23" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_94_1733)">
-                    <path d="M15.31 0H7.65726C6.30674 0.00153143 5.21234 1.09593 5.211 2.44646V20.5537C5.21234 21.9042 6.30674 22.9986 7.65726 22.9999H15.31C16.6605 22.9986 17.7549 21.9042 17.7565 20.5537V2.44646C17.7549 1.09593 16.6605 0.00153143 15.31 0ZM11.4837 20.9092C10.9062 20.9092 10.4381 20.4411 10.4381 19.8636C10.4381 19.2862 10.9062 18.8182 11.4837 18.8182C12.0611 18.8182 12.5291 19.2862 12.5291 19.8636C12.5291 20.4411 12.0611 20.9092 11.4837 20.9092ZM13.0519 3.13636H9.91554C9.62687 3.13636 9.39275 2.90225 9.39275 2.61357C9.39275 2.3249 9.62687 2.09097 9.91554 2.09097H13.0519C13.3406 2.09097 13.5745 2.3249 13.5745 2.61357C13.5745 2.90225 13.3406 3.13636 13.0519 3.13636Z" fill="black"/>
-                  </g>
-                </svg>
-              </i></div>
               <div>
-                <span>Phone:</span> 
-                <h6><a href="tel:+912222032030">91-22-22032030</a></h6>
+                <i class="flaticon-link"></i>
+              </div>
+              <div>
+                <span>Email &amp; Web:</span> 
+                <h6><a href="mailto:info@cronyelectronics.com">info@cronyelectronics.com</a></h6>
+                <span><a href="https://cronyelectronics.com" style="color: #bbb;">www.cronyelectronics.com</a></span>
               </div>
             </div>
             <div class="get-in-touch">
-              <div><i>
-                <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_94_1722)">
-                    <path d="M1.49888 15.54C1.09073 15.54 0.759857 15.8709 0.759857 16.2791C0.759857 16.6872 1.09073 17.0181 1.49888 17.0181H4.45496C4.8631 17.0181 5.19398 16.6872 5.19398 16.2791C5.19398 15.8709 4.8631 15.54 4.45496 15.54H1.49888Z" fill="black"/>
-                    <path d="M1.49888 18.4961C1.09073 18.4961 0.759857 18.827 0.759857 19.2351C0.759857 19.6433 1.09073 19.9741 1.49888 19.9741H7.41104C7.81919 19.9741 8.15006 19.6433 8.15006 19.2351C8.15006 18.827 7.81919 18.4961 7.41104 18.4961H1.49888Z" fill="black"/>
-                    <path d="M3.57686 5.5292L3.4696 5.44045C3.77349 5.02219 4.09688 4.71454 4.51514 4.41066C5.81023 3.46973 7.65765 3.46973 11.3525 3.46973H13.3232C17.018 3.46973 18.8655 3.46973 20.1605 4.41066C20.5788 4.71454 20.8767 4.98848 21.1806 5.40674L21.0568 5.52982L18.7827 7.80394C17.1256 9.46098 15.9343 10.65 14.9068 11.4341C13.8963 12.205 13.1316 12.5142 12.3377 12.5142C11.5438 12.5142 10.7791 12.205 9.76863 11.4341C8.74109 10.65 7.54977 9.46098 5.89273 7.80394L3.97792 5.88913L3.57686 5.5292Z" fill="black"/>
-                    <path d="M2.48424 12.3383C2.48424 9.737 2.48424 8.05142 2.81258 6.82958L2.961 6.96279L4.88757 8.88935C6.49594 10.4977 7.7564 11.7582 8.87207 12.6094C10.014 13.4807 11.0908 13.9926 12.3377 13.9926C13.5846 13.9926 14.6614 13.4807 15.8034 12.6094C16.919 11.7582 18.1795 10.4977 19.7879 8.88937L21.8598 6.81738C22.1914 8.04019 22.1914 9.72833 22.1914 12.3383C22.1914 16.0331 22.1914 17.8805 21.2505 19.1756C20.9466 19.5939 20.5788 19.9617 20.1605 20.2656C18.8655 21.2065 17.018 21.2065 13.3232 21.2065H11.3525C9.94503 21.2065 8.80564 21.2065 7.86274 21.1545C8.73343 20.9503 9.38176 20.1687 9.38176 19.2358C9.38176 18.1474 8.49944 17.2651 7.41104 17.2651H6.16204C6.32971 16.9752 6.42568 16.6387 6.42568 16.2797C6.42568 15.1913 5.54336 14.309 4.45496 14.309H2.49134C2.48424 13.7167 2.48424 13.063 2.48424 12.3383Z" fill="black"/>
-                  </g>
-                </svg>
-              </i></div>
               <div>
-                <span>Mobile:</span> 
-                <h6><a href="tel:+919323566600">91-9323566600</a></h6>
+                <i class="flaticon-placeholder"></i>
+              </div>
+              <div>
+                <span class="pt-2 pb-0">Crony Electronics Pvt Ltd, Serving Over 500 Corporate Clients Across All Indian Regions</span>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- use full link Column -->
         <div class="col-lg-4 col-md-6">
           <div class="widget-title">
-            <h3>use full link</h3>
+            <h3>Quick Links</h3>
             <div class="boder"></div>
             <ul>
               <li><i class="fa-solid fa-caret-right"></i><a href="index.html">Home</a></li>
               <li><i class="fa-solid fa-caret-right"></i><a href="about.html">About Us</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="products.html">All Products</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="products.html#sleeves">Thermal Insulation Sleeves</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="products.html#thermal">Elastoclad HR Coating</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="products.html#power">VRP Voltage Regulators</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="products.html#flooring">Rubber Flooring</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="faq.html">FAQs</a></li>
               <li><i class="fa-solid fa-caret-right"></i><a href="contact.html">Contact Us</a></li>
             </ul>
           </div>
         </div>
-
-        <!-- Our Products Column -->
         <div class="col-lg-4 col-md-6">
           <div class="widget-title mb-0">
-            <h3>Our Products</h3>
+            <h3>Key Capabilities</h3>
             <div class="boder"></div>
-            <ul>
-              <li><i class="fa-solid fa-caret-right"></i><a href="index.html#sleeves">Insulation Cover</a></li>
-              <li><i class="fa-solid fa-caret-right"></i><a href="index.html#thermal">Elastoclad HR</a></li>
-              <li><i class="fa-solid fa-caret-right"></i><a href="index.html#services">Digi Guard &amp; Eco Max</a></li>
-              <li><i class="fa-solid fa-caret-right"></i><a href="index.html#power">Servo &amp; Step up stabilizer</a></li>
+            <ul class="recent-news mb-0">
+              <li>
+                <figure>
+                  <img src="assets/img/energy-projects.png" alt="Digi Guard" style="width: 70px; height: 60px; object-fit: cover; border-radius: 6px;">
+                </figure>
+                <div>
+                  <span style="color: #f05a28; font-weight: 600;">Since 1994</span>
+                  <a href="products.html#digiguard">Microprocessor AC Energy Conservation</a>
+                </div>
+              </li>
+              <li class="pb-0">
+                <figure>
+                  <img src="assets/img/sustainable.png" alt="Thermal Insulation" style="width: 70px; height: 60px; object-fit: cover; border-radius: 6px;">
+                </figure>
+                <div>
+                  <span style="color: #f05a28; font-weight: 600;">Custom Solutions</span>
+                  <a href="products.html#sleeves">Removable Thermal Jackets &amp; Elastoclad HR</a>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <div class="footer-bottom-text">
-          <h6><b>&copy; Copyright 2017-23 Crony Elecrtronics Pvt. Ltd.</b> - Designed by: Fiveone Digital</h6>
+          <h6><b>&copy; Copyright 2017-23 Crony Elecrtronics Pvt. Ltd.</b> - Designed and developed by Digital Vigyapan</h6>
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="Crony introduction letter.pdf" download>Download Company Profile</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -836,30 +759,30 @@
     <img src="assets/img/footer-icon.png" alt="footer-icon" class="footer-icon">
   </footer> 
 
-  <!-- search-popup -->
+  <!-- Search Popup -->
   <div class="search-popup">
     <button class="close-search"><i class="fa-solid fa-xmark"></i></button>
     <form method="post" action="#">
-      <p>What are you looking for?</p>
+      <p>What energy saving solution are you looking for?</p>
       <div class="form-group">
-        <input type="search" name="search-field" value="" placeholder="Search products or solutions..." required="">
+        <input type="search" name="search-field" placeholder="Search products, coatings, stabilizers..." required="">
         <button type="submit"><i class="fa fa-search"></i></button> 
       </div>
     </form>
   </div>
 
-  <!-- progress -->
+  <!-- Progress Back to Top -->
   <div id="progress">
     <span id="progress-value"><i class="fa-solid fa-up-long"></i></span>
   </div>
 
-  <!-- Bootstrap Js -->
+  <!-- Scripts -->
   <script src="assets/js/bootstrap.min.js"></script>
-  <!-- fancybox -->
   <script src="assets/js/jquery.fancybox.min.js"></script>
   <script src="assets/js/slick.min.js"></script>
   <script src="assets/js/swiper.js"></script>
   <script src="assets/js/sweetalert.min.js"></script> 
+  <script src="assets/js/circle-progres.js"></script>
   <script src="assets/js/contact.js"></script>
   <script src="assets/js/custom.js"></script>
 </body>
