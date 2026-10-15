@@ -208,6 +208,52 @@
   gap: 6px;
 }
 
+/* Auto-Scanning Indicator Badge */
+.ba-auto-status {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(13, 39, 77, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.ba-blink-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #FFC80B;
+  box-shadow: 0 0 8px #FFC80B;
+  animation: baPulseDot 1.4s infinite ease-in-out;
+}
+
+@keyframes baPulseDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(0.65);
+  }
+}
+
+
 /* Metrics Comparison Grid */
 .ba-metrics-grid {
   display: grid;

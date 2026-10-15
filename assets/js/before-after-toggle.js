@@ -2,24 +2,30 @@
  * Before / After Interactive Comparison Slider
  * Crony Electronics Pvt Ltd
  *
- * Ensures the split line is always centered in the middle (50%) on load/refresh,
- * with smooth interactive dragging and touch gestures.
+ * Supports both:
+ * 1. Manual interactive drag slider (centered at 50% on load)
+ * 2. Smooth auto-playing gliding animation (continuously reveals Before & After without dragging)
  */
 
 (function () {
   'use strict';
 
-  function initBeforeAfter() {
-    const container = document.querySelector('.ba-viewport');
-    if (!container) return;
+  function setupViewport(container) {
+    if (!container || container.dataset.baInitialized) return;
+    container.dataset.baInitialized = 'true';
 
     const badgeBefore = container.querySelector('.ba-badge-before');
     const badgeAfter = container.querySelector('.ba-badge-after');
     const hint = container.querySelector('.ba-hint');
+    const isAutoPlay = container.getAttribute('data-auto-play') === 'true';
 
-    // Always starts exactly at 50% in the middle
     let currentPos = 50;
     let isDragging = false;
+    let isHovered = false;
+    let resumeTimeout = null;
+    let animFrameId = null;
+    let startTime = null;
+    let pausedTimeOffset = 0;
 
     function setPosition(pos, animated = false) {
       pos = Math.max(0, Math.min(100, pos));
@@ -33,6 +39,7 @@
       }
 
       container.style.setProperty('--ba-pos', `${pos}%`);
+      container.setAttribute('aria-valuenow', Math.round(pos));
 
       // Dynamic badge opacity based on slider position
       if (badgeBefore) {
@@ -49,6 +56,43 @@
           if (hint && hint.parentNode) hint.remove();
         }, 350);
       }
+    }
+
+    // Auto-glide continuous animation loop
+    function startAutoGlide() {
+      if (!isAutoPlay) return;
+
+      const minPos = 18;
+      const maxPos = 82;
+      const amp = (maxPos - minPos) / 2; // 32
+      const mid = (minPos + maxPos) / 2; // 50
+      const duration = 5400; // ms for one full cycle
+
+      function loop(timestamp) {
+        // Sleep when tab is hidden
+        if (container.offsetParent === null) {
+          animFrameId = requestAnimationFrame(loop);
+          return;
+        }
+
+        if (!isDragging && !isHovered) {
+          if (!startTime) {
+            startTime = timestamp - pausedTimeOffset;
+          }
+          const elapsed = timestamp - startTime;
+          // Smooth sinusoidal wave with gentle deceleration at extremes
+          const rad = ((elapsed % duration) / duration) * 2 * Math.PI;
+          const pos = mid + amp * Math.sin(rad);
+          setPosition(pos, false);
+        } else {
+          if (startTime) {
+            pausedTimeOffset = timestamp - startTime;
+          }
+        }
+        animFrameId = requestAnimationFrame(loop);
+      }
+
+      animFrameId = requestAnimationFrame(loop);
     }
 
     // Pointer calculation
@@ -81,6 +125,21 @@
       }
     }
 
+    // Hover detection to pause on inspect
+    container.addEventListener('mouseenter', function () {
+      isHovered = true;
+      clearTimeout(resumeTimeout);
+    });
+
+    container.addEventListener('mouseleave', function () {
+      clearTimeout(resumeTimeout);
+      resumeTimeout = setTimeout(() => {
+        isHovered = false;
+        startTime = null;
+        pausedTimeOffset = 0;
+      }, 1500);
+    });
+
     // Mouse events
     container.addEventListener('mousedown', onStart);
     window.addEventListener('mousemove', onMove);
@@ -100,7 +159,7 @@
     // Keyboard support (Arrow keys)
     container.setAttribute('tabindex', '0');
     container.setAttribute('role', 'slider');
-    container.setAttribute('aria-label', 'Before and after thermal audit difference slider');
+    container.setAttribute('aria-label', 'Before and after difference comparison slider');
     container.setAttribute('aria-valuemin', '0');
     container.setAttribute('aria-valuemax', '100');
     container.setAttribute('aria-valuenow', '50');
@@ -121,13 +180,34 @@
       }
     });
 
-    // Strictly center in the middle (50%) on website load/refresh
+    // Initialize position at 50%
     setPosition(50, false);
+
+    // Start auto glide if configured
+    if (isAutoPlay) {
+      startAutoGlide();
+    }
+  }
+
+  function initAll() {
+    document.querySelectorAll('.ba-viewport').forEach(setupViewport);
+
+    // Bootstrap Tab listener to wake up hidden viewports when tab is switched
+    const tabButtons = document.querySelectorAll('button[data-bs-toggle="pill"], button[data-bs-toggle="tab"]');
+    tabButtons.forEach(btn => {
+      btn.addEventListener('shown.bs.tab', function () {
+        document.querySelectorAll('.ba-viewport').forEach(vp => {
+          if (vp.offsetParent !== null) {
+            setupViewport(vp);
+          }
+        });
+      });
+    });
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initBeforeAfter);
+    document.addEventListener('DOMContentLoaded', initAll);
   } else {
-    initBeforeAfter();
+    initAll();
   }
 })();

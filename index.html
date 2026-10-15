@@ -369,7 +369,7 @@
           <div class="row align-items-center">
             <div class="col-lg-7">
               <div class="ba-comparison-wrapper">
-                <div class="ba-viewport">
+                <div class="ba-viewport" id="ba-viewport-thermal">
                   <!-- After Layer (Underneath) -->
                   <div class="ba-layer ba-layer-after">
                     <img src="assets/img/thermal-building-after.jpg" alt="After Crony Elastoclad HR Application">
@@ -460,9 +460,80 @@
         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
           <div class="row align-items-center">
             <div class="col-lg-7">
-              <div class="tab-img">
-                <img src="assets/img/Industrial Flooring Showcase.png" alt="Industrial Flooring Showcase" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);">
-                <img src="assets/img/bolt-img.png" alt="img" class="bolt-img">
+              <div class="ba-comparison-wrapper">
+                <div class="ba-viewport" id="ba-viewport-flooring" data-auto-play="true">
+                  <!-- After Layer (Underneath: New norament 925 Rubber Floor) -->
+                  <div class="ba-layer ba-layer-after">
+                    <img src="assets/img/flooring-after.jpg" alt="After norament 925 Heavy Duty Rubber Floor Installation" style="object-position: center 65%;">
+                  </div>
+                  <!-- Before Layer (Clipped on top: Damaged Concrete & Cracks) -->
+                  <div class="ba-layer ba-layer-before">
+                    <img src="assets/img/flooring-before.jpg" alt="Before Damaged Industrial Concrete Floor" style="object-position: center 65%;">
+                  </div>
+
+                  <!-- Floating Status Badges -->
+                  <div class="ba-badge ba-badge-before">
+                    <i class="fa-solid fa-triangle-exclamation"></i> BEFORE: Damaged Concrete
+                  </div>
+                  <div class="ba-badge ba-badge-after">
+                    <i class="fa-solid fa-circle-check"></i> AFTER: norament® 925 Floor
+                  </div>
+
+                  <!-- Divider Line & Auto-Animated Slider Handle -->
+                  <div class="ba-divider-line"></div>
+                  <div class="ba-handle" title="Auto comparing Before & After">
+                    <div class="ba-handle-arrows">
+                      <i class="fa-solid fa-chevron-left"></i>
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </div>
+
+                  <!-- Live Auto Scanning Indicator -->
+                  <div class="ba-auto-status">
+                    <span class="ba-blink-dot"></span>
+                    <span>AUTO SCANNING</span>
+                  </div>
+                </div>
+
+                <!-- Live Metrics Difference Cards for Flooring -->
+                <div class="ba-metrics-grid">
+                  <div class="ba-metric-card">
+                    <div class="ba-metric-label">Forklift Load</div>
+                    <div class="ba-metric-diff">
+                      <span class="ba-val-before">2 N/mm²</span>
+                      <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                      <span class="ba-val-after">6 N/mm²</span>
+                    </div>
+                    <span class="ba-val-tag ba-tag-green">3x Load Resistance</span>
+                  </div>
+                  <div class="ba-metric-card">
+                    <div class="ba-metric-label">ESD Resistance</div>
+                    <div class="ba-metric-diff">
+                      <span class="ba-val-before">Static Risk</span>
+                      <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                      <span class="ba-val-after">10⁶–10⁹ Ω</span>
+                    </div>
+                    <span class="ba-val-tag ba-tag-blue">10-Yr Guarantee</span>
+                  </div>
+                  <div class="ba-metric-card">
+                    <div class="ba-metric-label">Cleanroom Grade</div>
+                    <div class="ba-metric-diff">
+                      <span class="ba-val-before">Dusty</span>
+                      <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                      <span class="ba-val-after">ISO Cl. 3</span>
+                    </div>
+                    <span class="ba-val-tag ba-tag-amber">GMP Grade A</span>
+                  </div>
+                  <div class="ba-metric-card">
+                    <div class="ba-metric-label">Coating Needs</div>
+                    <div class="ba-metric-diff">
+                      <span class="ba-val-before">Frequent</span>
+                      <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                      <span class="ba-val-after">Zero Coat</span>
+                    </div>
+                    <span class="ba-val-tag ba-tag-green">Lifetime Economy</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-lg-5">
