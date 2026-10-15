@@ -4943,3 +4943,84 @@ textarea.crony-form-control {
 .crony-card-content a:hover {
     color: var(--common-colour);
 }
+
+/* ==========================================================================
+   Brochure Download Modal & Footer CTA
+   ========================================================================== */
+.footer-brochure-box {
+  background: linear-gradient(135deg, rgba(255, 200, 11, 0.12), rgba(0, 26, 46, 0.45));
+  border: 1.5px dashed var(--theme-colour, #FFC80B);
+  border-radius: 10px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+.btn-download-brochure {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--theme-colour, #FFC80B);
+  color: #0b1c33 !important;
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 9px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(255, 200, 11, 0.3);
+  text-decoration: none;
+}
+.btn-download-brochure:hover {
+  background-color: #e6b306;
+  color: #000000 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 200, 11, 0.45);
+}
+.brochure-form-group {
+  margin-bottom: 15px;
+}
+.brochure-form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 5px;
+}
+.brochure-form-control {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+.brochure-form-control:focus {
+  outline: none;
+  border-color: #FFC80B;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 200, 11, 0.25);
+}
+.btn-brochure-submit {
+  background-color: #FFC80B;
+  color: #0b1c33;
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 11px 24px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(255, 200, 11, 0.35);
+}
+.btn-brochure-submit:hover {
+  background-color: #e6b306;
+  color: #000000;
+  transform: translateY(-1px);
+}

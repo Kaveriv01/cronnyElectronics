@@ -760,7 +760,7 @@
   <footer style="background-image: url('assets/img/footer-line.png');">
     <div class="container">
       <div class="footer-top">
-        <div class="row">
+        <div class="row align-items-center">
           <div class="col-lg-6">
             <div class="logo">
               <img src="assets/img/logo.png" alt="Crony Electronics Logo" style="height: 60px; width: auto; object-fit: contain;">
@@ -775,6 +775,15 @@
                 <input type="email" name="Email_Address" placeholder="Enter your corporate email here" required="">
                 <button type="submit" class="btn bk">Subscribe</button>
               </form>
+              <div class="footer-brochure-box">
+                <div>
+                  <h5 style="color: #ffffff; font-size: 14px; margin-bottom: 2px; font-weight: 700;"><i class="fa-solid fa-file-pdf text-warning me-1"></i> Crony Official Brochure</h5>
+                  <p style="color: #cbd5e1; font-size: 12px; margin: 0;">Download our complete 30+ years energy solutions catalog (PDF)</p>
+                </div>
+                <button type="button" class="btn-download-brochure open-brochure-modal-btn">
+                  <i class="fa-solid fa-download me-1"></i> Download Brochure
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -827,6 +836,7 @@
               <li><i class="fa-solid fa-caret-right"></i><a href="products.html#flooring">Rubber Flooring</a></li>
               <li><i class="fa-solid fa-caret-right"></i><a href="faq.html">FAQs</a></li>
               <li><i class="fa-solid fa-caret-right"></i><a href="contact.html">Contact Us</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="javascript:void(0)" class="open-brochure-modal-btn" style="color: #FFC80B; font-weight: 700;"><i class="fa-solid fa-file-pdf me-1"></i> Download Brochure</a></li>
             </ul>
           </div>
         </div>
@@ -861,7 +871,7 @@
         <div class="footer-bottom-text">
           <h6><b>&copy; Copyright 2017-23 Crony Elecrtronics Pvt. Ltd.</b> - Designed and developed by Digital Vigyapan</h6>
           <ul>
-            <li><a href="Crony introduction letter.pdf" download>Download Company Profile</a></li>
+            <li><a href="javascript:void(0)" class="open-brochure-modal-btn"><i class="fa-solid fa-file-pdf text-warning me-1"></i> Download Brochure</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -870,6 +880,96 @@
     </div>
     <img src="assets/img/footer-icon.png" alt="footer-icon" class="footer-icon">
   </footer> 
+
+  <!-- Modal: Information Fill-up Form for Brochure Download (Gated Content) -->
+  <div class="modal fade" id="brochureDownloadModal" tabindex="-1" aria-labelledby="brochureDownloadModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,26,46,0.35);">
+        <div class="modal-header modal-header-crony">
+          <div>
+            <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #FFC80B; margin-bottom: 4px;">Crony Electronics Pvt Ltd</div>
+            <h4 class="modal-title" id="brochureDownloadModalLabel" style="color: #ffffff; margin: 0; font-weight: 700; font-size: 20px;">Download Company Brochure</h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <!-- Form Container -->
+        <div id="brochureFormContainer">
+          <form id="brochureDownloadForm">
+            <div class="modal-body modal-body-crony">
+              <p style="font-size: 13px; color: #64748b; margin-bottom: 18px; line-height: 1.5;">
+                Please fill in your details below to instantly download our corporate profile, energy-saving case studies, and engineering catalogs (PDF).
+              </p>
+              
+              <div class="brochure-form-group">
+                <label for="brochureFullName">Full Name <span style="color: #ef4444;">*</span></label>
+                <input type="text" class="brochure-form-control" id="brochureFullName" name="full_name" placeholder="e.g. Rajesh Sharma" required>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6 brochure-form-group">
+                  <label for="brochureEmail">Work / Personal Email <span style="color: #ef4444;">*</span></label>
+                  <input type="email" class="brochure-form-control" id="brochureEmail" name="email" placeholder="name@company.com" required>
+                </div>
+                <div class="col-md-6 brochure-form-group">
+                  <label for="brochurePhone">Mobile / WhatsApp <span style="color: #ef4444;">*</span></label>
+                  <input type="tel" class="brochure-form-control" id="brochurePhone" name="phone" placeholder="+91 98765 43210" required>
+                </div>
+              </div>
+              
+              <div class="brochure-form-group">
+                <label for="brochureCompany">Company / Organization <span style="color: #ef4444;">*</span></label>
+                <input type="text" class="brochure-form-control" id="brochureCompany" name="company" placeholder="e.g. Larsen &amp; Toubro / ONGC / Plant" required>
+              </div>
+
+              <div class="brochure-form-group">
+                <label for="brochureProductInterest">Product Area of Interest</label>
+                <select class="brochure-form-control" id="brochureProductInterest" name="product_interest">
+                  <option value="All Solutions &amp; Company Overview">All Products &amp; Solutions (Complete Profile)</option>
+                  <option value="Elastoclad HR Heat Reflective Coating">Elastoclad HR Heat Reflective Coating</option>
+                  <option value="Removable Thermal Insulation Jackets">Removable Thermal Insulation Jackets &amp; Sleeves</option>
+                  <option value="20ms High-Speed VRP Voltage Regulators">20ms VRP Voltage Regulators &amp; Stabilizers</option>
+                  <option value="Industrial Rubber Floorings">Industrial Rubber Floorings (nora®)</option>
+                  <option value="Microprocessor AC Energy Optimization">Microprocessor AC Energy Optimization</option>
+                  <option value="Natural Daylight &amp; Industrial Robotics">Natural Daylight &amp; Industrial Robotics</option>
+                </select>
+              </div>
+
+              <div style="font-size: 11.5px; color: #94a3b8; display: flex; align-items: center; gap: 6px; margin-top: 10px;">
+                <i class="fa-solid fa-lock" style="color: #10b981;"></i> Your information is kept strictly confidential.
+              </div>
+            </div>
+            
+            <div class="modal-footer" style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 14px 28px; display: flex; justify-content: space-between; align-items: center;">
+              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal" style="border-radius: 6px;">Close</button>
+              <button type="submit" class="btn btn-brochure-submit" id="btnSubmitBrochure" style="width: auto; padding: 10px 24px;">
+                <i class="fa-solid fa-download me-1"></i> Submit &amp; Download Brochure
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Success State Container (Shown after form submission) -->
+        <div id="brochureSuccessContainer" style="display: none; padding: 36px 28px; text-align: center; background: #ffffff;">
+          <div style="width: 70px; height: 70px; border-radius: 50%; background: #ecfdf5; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 18px;">
+            <i class="fa-solid fa-circle-check" style="font-size: 42px; color: #10b981;"></i>
+          </div>
+          <h4 style="font-size: 22px; font-weight: 800; color: #0f172a; margin-bottom: 8px;" id="brochureSuccessName">Thank You!</h4>
+          <p style="font-size: 14px; color: #475569; margin-bottom: 20px;">
+            Your details have been submitted successfully.<br>
+            <strong style="color: #0f172a;">Your brochure download has started automatically!</strong>
+          </p>
+          <div style="background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 14px; margin-bottom: 20px;">
+            <p style="font-size: 12.5px; color: #64748b; margin-bottom: 8px;">If your download didn't begin automatically, click the button below:</p>
+            <a href="Crony introduction letter.pdf" download="Crony-Electronics-Company-Brochure.pdf" id="brochureManualDownloadLink" class="btn btn-sm" style="background: #FFC80B; color: #000; font-weight: 700; border-radius: 6px; padding: 7px 16px;">
+              <i class="fa-solid fa-file-arrow-down me-1"></i> Click to Download PDF
+            </a>
+          </div>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal" style="border-radius: 6px; padding: 6px 20px;">Close Window</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Search Popup -->
   <div class="search-popup">

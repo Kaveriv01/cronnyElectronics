@@ -587,4 +587,65 @@ jQuery(document).ready(function($) {
     $('.navbar-links li a, .mobile-nav > ul > li > a').removeClass('active').removeAttr('style');
     $(this).addClass('active').css({ 'color': '#FFC80B', 'border-bottom': '5px solid #FFC80B' });
   });
+
+  /* -------------------------------------------------------------------------
+     Brochure Download Modal & Gated Form Logic
+     Only downloads AFTER user fills out and submits the verification form
+     ------------------------------------------------------------------------- */
+  $(document).on('click', '.open-brochure-modal-btn', function(e) {
+    e.preventDefault();
+    if ($('#brochureDownloadForm').length) {
+      $('#brochureDownloadForm')[0].reset();
+      $('#brochureFormContainer').show();
+      $('#brochureSuccessContainer').hide();
+      
+      var modalEl = document.getElementById('brochureDownloadModal');
+      if (modalEl && typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+        var modalInstance = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+        modalInstance.show();
+      } else {
+        $('#brochureDownloadModal').modal('show');
+      }
+    }
+  });
+
+  $(document).on('submit', '#brochureDownloadForm', function(e) {
+    e.preventDefault();
+    
+    var fullName = $('#brochureFullName').val().trim();
+    var email = $('#brochureEmail').val().trim();
+    var phone = $('#brochurePhone').val().trim();
+    var company = $('#brochureCompany').val().trim();
+    var interest = $('#brochureProductInterest').val();
+
+    if (!fullName || !email || !phone || !company) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    // Display personalized success container
+    $('#brochureSuccessName').text('Thank You, ' + fullName + '!');
+    $('#brochureFormContainer').hide();
+    $('#brochureSuccessContainer').fadeIn(300);
+
+    // Determine targeted brochure file
+    var brochureFile = 'Crony introduction letter.pdf';
+    var downloadName = 'Crony-Electronics-Company-Brochure.pdf';
+    if (interest && interest.indexOf('Rubber Floorings') !== -1) {
+      brochureFile = 'Industry & trade rubber floorings.pdf';
+      downloadName = 'Crony-Industry-Trade-Rubber-Floorings-Guide.pdf';
+    }
+
+    $('#brochureManualDownloadLink').attr('href', brochureFile).attr('download', downloadName);
+
+    // Gated Download: Trigger download ONLY after form submission
+    setTimeout(function() {
+      var triggerLink = document.createElement('a');
+      triggerLink.href = brochureFile;
+      triggerLink.download = downloadName;
+      document.body.appendChild(triggerLink);
+      triggerLink.click();
+      document.body.removeChild(triggerLink);
+    }, 600);
+  });
 });
