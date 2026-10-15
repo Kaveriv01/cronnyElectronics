@@ -69,8 +69,10 @@
       const duration = 5400; // ms for one full cycle
 
       function loop(timestamp) {
-        // Sleep when tab is hidden
+        // Sleep and reset timing when tab is hidden
         if (container.offsetParent === null) {
+          startTime = null;
+          pausedTimeOffset = 0;
           animFrameId = requestAnimationFrame(loop);
           return;
         }

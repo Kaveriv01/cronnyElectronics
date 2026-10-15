@@ -553,9 +553,80 @@
         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
           <div class="row align-items-center">
             <div class="col-lg-7">
-              <div class="tab-img">
-                <img src="assets/img/Power Protection and Robotics Factory Infographic.png" alt="Power Protection and Robotics Factory Infographic" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);">
-                <img src="assets/img/bolt-img.png" alt="img" class="bolt-img">
+              <div class="ba-comparison-wrapper">
+                <div class="ba-viewport" id="ba-viewport-power" data-auto-play="true">
+                  <!-- After Layer (Underneath: VRP 20ms Solid-State Regulation) -->
+                  <div class="ba-layer ba-layer-after">
+                    <img src="assets/img/power-vrp-after.jpg" alt="After Crony VRP 20ms Solid-State Voltage Regulation" style="object-position: center 32%;">
+                  </div>
+                  <!-- Before Layer (Clipped on top: Voltage Sag & Halted CNC) -->
+                  <div class="ba-layer ba-layer-before">
+                    <img src="assets/img/power-vrp-before.jpg" alt="Before Voltage Sag and Machine Trip" style="object-position: center 32%;">
+                  </div>
+
+                  <!-- Floating Status Badges -->
+                  <div class="ba-badge ba-badge-before">
+                    <i class="fa-solid fa-triangle-exclamation"></i> BEFORE: 175V Sag (Halted CNC)
+                  </div>
+                  <div class="ba-badge ba-badge-after">
+                    <i class="fa-solid fa-bolt"></i> AFTER: 400V (20ms VRP Active)
+                  </div>
+
+                  <!-- Divider Line & Auto-Animated Slider Handle -->
+                  <div class="ba-divider-line"></div>
+                  <div class="ba-handle" title="Auto comparing Before & After">
+                    <div class="ba-handle-arrows">
+                      <i class="fa-solid fa-chevron-left"></i>
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </div>
+
+                  <!-- Live Auto Scanning Indicator -->
+                  <div class="ba-auto-status">
+                    <span class="ba-blink-dot"></span>
+                    <span>AUTO SCANNING</span>
+                  </div>
+                </div>
+
+                <!-- Live Metrics Difference Cards for Power & Voltage -->
+                <div class="ba-metrics-grid">
+                  <div class="ba-metric-card">
+                    <div class="ba-metric-label">Response Speed</div>
+                    <div class="ba-metric-diff">
+                      <span class="ba-val-before">500ms</span>
+                      <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                      <span class="ba-val-after">&lt;20ms</span>
+                    </div>
+                    <span class="ba-val-tag ba-tag-green">25x Faster Correction</span>
+                  </div>
+                  <div class="ba-metric-card">
+                    <div class="ba-metric-label">Supply Voltage</div>
+                    <div class="ba-metric-diff">
+                      <span class="ba-val-before">175V Sag</span>
+                      <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                      <span class="ba-val-after">400V Pure</span>
+                    </div>
+                    <span class="ba-val-tag ba-tag-blue">Pure Sine Wave</span>
+                  </div>
+                  <div class="ba-metric-card">
+                    <div class="ba-metric-label">CNC Downtime</div>
+                    <div class="ba-metric-diff">
+                      <span class="ba-val-before">Frequent</span>
+                      <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                      <span class="ba-val-after">Zero Trip</span>
+                    </div>
+                    <span class="ba-val-tag ba-tag-amber">Continuous Production</span>
+                  </div>
+                  <div class="ba-metric-card">
+                    <div class="ba-metric-label">Technology</div>
+                    <div class="ba-metric-diff">
+                      <span class="ba-val-before">Motor Servo</span>
+                      <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                      <span class="ba-val-after">Solid-State</span>
+                    </div>
+                    <span class="ba-val-tag ba-tag-green">No Moving Parts</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-lg-5">
