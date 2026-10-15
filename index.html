@@ -369,49 +369,6 @@
           <div class="row align-items-center">
             <div class="col-lg-7">
               <div class="ba-comparison-wrapper">
-                <!-- Tutorial Walkthrough Strip (Customer Guidance) -->
-                <div class="ba-tutorial-strip">
-                  <div class="ba-tutorial-intro">
-                    <i class="fa-solid fa-lightbulb"></i>
-                    <span>Interactive Difference Guide:</span>
-                  </div>
-                  <div class="ba-tutorial-steps">
-                    <span class="ba-tutorial-step"><span class="ba-step-icon">1</span> <strong>Drag Center Handle</strong> left/right</span>
-                    <span class="ba-tutorial-step"><span class="ba-step-icon">2</span> <strong>Click Buttons</strong> for 1-click view</span>
-                    <span class="ba-tutorial-step"><span class="ba-step-icon">3</span> <strong>Auto Compare</strong> for hands-free rotation</span>
-                  </div>
-                  <button type="button" class="ba-replay-btn" id="ba-replay-tutorial">
-                    <i class="fa-solid fa-rotate-right"></i> Replay Demo
-                  </button>
-                </div>
-
-                <div class="ba-controls-bar">
-                  <div class="ba-toggle-group">
-                    <button type="button" class="ba-toggle-btn btn-before" data-mode="before">
-                      <i class="fa-solid fa-fire-flame-curved"></i> Before (Heat Loss)
-                    </button>
-                    <button type="button" class="ba-toggle-btn active btn-split" data-mode="split">
-                      <i class="fa-solid fa-arrows-left-right"></i> Split Slider
-                    </button>
-                    <button type="button" class="ba-toggle-btn btn-after" data-mode="after">
-                      <i class="fa-solid fa-snowflake"></i> After (Elastoclad HR)
-                    </button>
-                  </div>
-                  <div class="d-flex align-items-center gap-2">
-                    <div class="ba-live-badge">
-                      <span class="ba-blink-dot"></span>
-                      <span>LIVE DEMO</span>
-                    </div>
-                    <button type="button" class="ba-auto-btn" id="ba-auto-toggle" title="Auto animate difference">
-                      <i class="fa-solid fa-play"></i> Auto Compare
-                    </button>
-                    <div class="ba-diff-pill d-none d-sm-inline-flex">
-                      <span>Δ Temp</span>
-                      <span class="pill-drop">-24°C</span>
-                    </div>
-                  </div>
-                </div>
-
                 <div class="ba-viewport">
                   <!-- After Layer (Underneath) -->
                   <div class="ba-layer ba-layer-after">
@@ -430,15 +387,9 @@
                     <i class="fa-solid fa-shield-halved"></i> AFTER: Surface 44°C (-24°C)
                   </div>
 
-                  <!-- Blinking Animated Tutorial Bubble Attached to Handle -->
-                  <div class="ba-tutorial-bubble">
-                    <span class="ba-tutorial-hand">👆</span>
-                    <span class="ba-tutorial-text"><i class="fa-solid fa-arrows-left-right"></i> Drag Left / Right to Compare</span>
-                  </div>
-
                   <!-- Divider Line & Slider Handle -->
                   <div class="ba-divider-line"></div>
-                  <div class="ba-handle">
+                  <div class="ba-handle" title="Drag to compare Before & After">
                     <div class="ba-handle-arrows">
                       <i class="fa-solid fa-chevron-left"></i>
                       <i class="fa-solid fa-chevron-right"></i>
@@ -447,7 +398,7 @@
 
                   <!-- Interactive Drag Hint -->
                   <div class="ba-hint">
-                    <i class="fa-solid fa-arrows-left-right"></i> Drag center handle or click buttons to inspect difference
+                    <i class="fa-solid fa-arrows-left-right"></i> Drag center handle to inspect difference
                   </div>
                 </div>
 

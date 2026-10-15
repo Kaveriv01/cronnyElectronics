@@ -1,246 +1,22 @@
 /* ==========================================================================
-   Before / After Interactive Toggle & Tutorial Comparison Component
+   Before / After Interactive Comparison Slider
    Crony Electronics Pvt Ltd - Elastoclad HR Thermal Auditing
+   Line is centered at exactly 50% on load and refresh.
    ========================================================================== */
 
 .ba-comparison-wrapper {
   position: relative;
   background: #ffffff;
   border-radius: 16px;
-  padding: 16px;
+  padding: 14px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.06);
   margin-bottom: 20px;
 }
 
-/* Tutorial Walkthrough Strip (Customer Guidance) */
-.ba-tutorial-strip {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  background: linear-gradient(135deg, #0d274d 0%, #163e77 100%);
-  color: #ffffff;
-  padding: 10px 16px;
-  border-radius: 12px;
-  margin-bottom: 14px;
-  box-shadow: 0 4px 14px rgba(13, 39, 77, 0.2);
-}
-
-.ba-tutorial-intro {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  font-size: 13px;
-  color: #FFC80B;
-}
-
-.ba-tutorial-steps {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.ba-tutorial-step {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: #e2e8f0;
-}
-
-.ba-tutorial-step strong {
-  color: #ffffff;
-}
-
-.ba-step-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  background: rgba(255, 200, 11, 0.2);
-  color: #FFC80B;
-  border-radius: 50%;
-  font-size: 10px;
-  font-weight: 800;
-}
-
-.ba-replay-btn {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #ffffff;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 700;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-}
-
-.ba-replay-btn:hover {
-  background: #FFC80B;
-  color: #0d274d;
-  border-color: #FFC80B;
-}
-
-/* Toolbar Controls */
-.ba-controls-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.ba-toggle-group {
-  display: inline-flex;
-  background: #f1f4f8;
-  padding: 4px;
-  border-radius: 30px;
-  gap: 4px;
-  border: 1px solid #e2e8f0;
-}
-
-.ba-toggle-btn {
-  border: none;
-  background: transparent;
-  padding: 8px 16px;
-  border-radius: 24px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #475569;
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  user-select: none;
-  outline: none;
-}
-
-.ba-toggle-btn:hover {
-  color: #0f172a;
-  background: rgba(255, 255, 255, 0.6);
-}
-
-.ba-toggle-btn.active {
-  background: #0d274d;
-  color: #ffffff;
-  box-shadow: 0 3px 10px rgba(13, 39, 77, 0.25);
-}
-
-.ba-toggle-btn.active.btn-before {
-  background: #dc2626;
-  color: #ffffff;
-  box-shadow: 0 3px 10px rgba(220, 38, 38, 0.3);
-}
-
-.ba-toggle-btn.active.btn-after {
-  background: #009A4E;
-  color: #ffffff;
-  box-shadow: 0 3px 10px rgba(0, 154, 78, 0.3);
-}
-
-.ba-toggle-btn.active.btn-split {
-  background: #0d274d;
-  color: #FFC80B;
-}
-
-.ba-auto-btn {
-  background: #fff;
-  border: 1px solid #cbd5e1;
-  padding: 8px 14px;
-  border-radius: 24px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #334155;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-}
-
-.ba-auto-btn:hover {
-  background: #f8fafc;
-  border-color: #94a3b8;
-}
-
-.ba-auto-btn.running {
-  background: #FFC80B;
-  color: #0d274d;
-  border-color: #FFC80B;
-  box-shadow: 0 0 12px rgba(255, 200, 11, 0.45);
-}
-
-/* Blinking Live Indicator Badge */
-.ba-live-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(13, 39, 77, 0.08);
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #0d274d;
-  border: 1px solid rgba(13, 39, 77, 0.15);
-}
-
-.ba-blink-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #10b981;
-  display: inline-block;
-  animation: baBlinkPulse 1.4s infinite;
-}
-
-@keyframes baBlinkPulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.8);
-  }
-  50% {
-    transform: scale(1.25);
-    opacity: 0.9;
-    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
-  }
-}
-
-/* Difference Status Pill */
-.ba-diff-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #f8fafc;
-  padding: 6px 14px;
-  border-radius: 20px;
-  border: 1px solid #e2e8f0;
-  font-size: 12px;
-  font-weight: 600;
-  color: #1e293b;
-}
-
-.ba-diff-pill .pill-drop {
-  color: #009A4E;
-  font-weight: 700;
-  background: rgba(0, 154, 78, 0.12);
-  padding: 2px 8px;
-  border-radius: 12px;
-}
-
 /* Main Viewport */
 .ba-viewport {
+  --ba-pos: 50%;
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 2;
@@ -248,8 +24,9 @@
   overflow: hidden;
   user-select: none;
   cursor: ew-resize;
-  background: #000;
+  background: #0d274d;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  outline: none;
 }
 
 .ba-layer {
@@ -269,10 +46,12 @@
   pointer-events: none;
 }
 
+/* After Layer (Underneath / Right side) */
 .ba-layer-after {
   z-index: 1;
 }
 
+/* Before Layer (Clipped / Left side) */
 .ba-layer-before {
   z-index: 2;
   clip-path: polygon(0 0, var(--ba-pos, 50%) 0, var(--ba-pos, 50%) 100%, 0 100%);
@@ -281,12 +60,11 @@
 
 .ba-viewport.animating .ba-layer-before,
 .ba-viewport.animating .ba-divider-line,
-.ba-viewport.animating .ba-handle,
-.ba-viewport.animating .ba-tutorial-bubble {
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+.ba-viewport.animating .ba-handle {
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Divider Line */
+/* Divider Line Centered at 50% */
 .ba-divider-line {
   position: absolute;
   top: 0;
@@ -300,7 +78,7 @@
   pointer-events: none;
 }
 
-/* Handle Knob with Blinking Radar Rings */
+/* Handle Knob Centered at 50% */
 .ba-handle {
   position: absolute;
   top: 50%;
@@ -375,71 +153,6 @@
   color: #0d274d;
 }
 
-/* Animated Floating Tutorial Callout Attached to Handle */
-.ba-tutorial-bubble {
-  position: absolute;
-  top: calc(50% - 75px);
-  left: var(--ba-pos, 50%);
-  transform: translateX(-50%);
-  background: rgba(13, 39, 77, 0.95);
-  color: #ffffff;
-  padding: 6px 14px;
-  border-radius: 20px;
-  border: 2px solid #FFC80B;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-  z-index: 7;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-  animation: baTutorialBounce 2s infinite ease-in-out;
-  transition: opacity 0.3s ease;
-}
-
-.ba-tutorial-bubble::after {
-  content: '';
-  position: absolute;
-  bottom: -7px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 7px 7px 0 7px;
-  border-style: solid;
-  border-color: #FFC80B transparent transparent transparent;
-}
-
-.ba-tutorial-hand {
-  font-size: 16px;
-  display: inline-block;
-  animation: baHandWiggle 1.5s infinite;
-}
-
-.ba-tutorial-text {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: #FFC80B;
-  text-transform: uppercase;
-}
-
-@keyframes baTutorialBounce {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-6px);
-  }
-}
-
-@keyframes baHandWiggle {
-  0%, 100% {
-    transform: translateX(-3px);
-  }
-  50% {
-    transform: translateX(3px);
-  }
-}
-
 /* Floating Badges */
 .ba-badge {
   position: absolute;
@@ -500,7 +213,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
-  margin-top: 16px;
+  margin-top: 14px;
 }
 
 .ba-metric-card {
@@ -585,33 +298,7 @@
   }
 }
 
-@media (max-width: 768px) {
-  .ba-tutorial-strip {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .ba-tutorial-steps {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-}
-
 @media (max-width: 576px) {
-  .ba-controls-bar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .ba-toggle-group {
-    width: 100%;
-    justify-content: space-between;
-  }
-  .ba-toggle-btn {
-    padding: 7px 10px;
-    font-size: 11px;
-    flex: 1;
-    justify-content: center;
-  }
   .ba-metrics-grid {
     grid-template-columns: 1fr;
   }
@@ -622,12 +309,5 @@
   .ba-handle {
     width: 44px;
     height: 44px;
-  }
-  .ba-tutorial-bubble {
-    top: calc(50% - 60px);
-    padding: 4px 10px;
-  }
-  .ba-tutorial-text {
-    font-size: 9px;
   }
 }
