@@ -529,3 +529,28 @@
   padding: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
+
+/* Unified Menubar: Same Base Color (#ffffff), Yellow (#FFC80B) on Click, Active & Hover */
+.navbar-links li > a {
+  color: #ffffff;
+  border-bottom: 5px solid transparent;
+  transition: color 0.25s ease, border-bottom 0.25s ease;
+}
+
+.navbar-links li:hover > a,
+.navbar-links li > a:hover,
+.navbar-links li > a:focus,
+.navbar-links li > a:active,
+.navbar-links li.active > a,
+.navbar-links li > a.active {
+  color: #FFC80B !important;
+  border-bottom: 5px solid #FFC80B !important;
+}
+
+.mobile-nav > ul > li > a:hover,
+.mobile-nav > ul > li > a:focus,
+.mobile-nav > ul > li > a:active,
+.mobile-nav > ul > li.active > a,
+.mobile-nav > ul > li > a.active {
+  color: #FFC80B !important;
+}

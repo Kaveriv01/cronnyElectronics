@@ -408,15 +408,22 @@ li.menu-item-children > a:before {
     width: 8px;
     height: 8px;
 }
-.navbar-links li:hover > a {
-    border-bottom: 5px solid var(--theme-colour);
-}
 .navbar-links li > a {
     border-bottom: 5px solid transparent;
-    color: white;
+    color: #ffffff;
     text-transform: capitalize;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+.navbar-links li:hover > a,
+.navbar-links li > a:hover,
+.navbar-links li > a:focus,
+.navbar-links li > a:active,
+.navbar-links li.active > a,
+.navbar-links li > a.active {
+    color: var(--theme-colour, #FFC80B) !important;
+    border-bottom: 5px solid var(--theme-colour, #FFC80B) !important;
 }
 li.sub-menu-item-children:after {
     content: "";
@@ -643,6 +650,15 @@ i#nav-icon4 {
 .mobile-nav > ul > li > a {
     font-size: 16px;
     line-height: 30px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+.mobile-nav > ul > li > a:hover,
+.mobile-nav > ul > li > a:focus,
+.mobile-nav > ul > li > a:active,
+.mobile-nav > ul > li.active > a,
+.mobile-nav > ul > li > a.active {
+    color: var(--theme-colour, #FFC80B) !important;
 }
 .mobile-nav > ul > li.menu-item-has-children > ul.sub-menu {
     padding-left: 25px;

@@ -581,4 +581,10 @@ jQuery(document).ready(function($) {
       }
     });
   }
+
+  /* Menubar click effect: highlight clicked item in theme yellow */
+  $('.navbar-links li a, .mobile-nav > ul > li > a').on('click', function() {
+    $('.navbar-links li a, .mobile-nav > ul > li > a').removeClass('active').removeAttr('style');
+    $(this).addClass('active').css({ 'color': '#FFC80B', 'border-bottom': '5px solid #FFC80B' });
+  });
 });
