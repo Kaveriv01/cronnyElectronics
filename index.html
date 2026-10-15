@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- responsive -->
   <link rel="stylesheet" href="assets/css/responsive.css"> 
+  <!-- before after comparison toggle -->
+  <link rel="stylesheet" href="assets/css/before-after-toggle.css"> 
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/preloader.js"></script>
 </head>
@@ -366,9 +368,128 @@
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
           <div class="row align-items-center">
             <div class="col-lg-7">
-              <div class="tab-img">
-                <img src="assets/img/Thermal Building Efficiency Before and After.png" alt="Thermal Building Efficiency Before and After" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);">
-                <img src="assets/img/bolt-img.png" alt="img" class="bolt-img">
+              <div class="ba-comparison-wrapper">
+                <!-- Tutorial Walkthrough Strip (Customer Guidance) -->
+                <div class="ba-tutorial-strip">
+                  <div class="ba-tutorial-intro">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span>Interactive Difference Guide:</span>
+                  </div>
+                  <div class="ba-tutorial-steps">
+                    <span class="ba-tutorial-step"><span class="ba-step-icon">1</span> <strong>Drag Center Handle</strong> left/right</span>
+                    <span class="ba-tutorial-step"><span class="ba-step-icon">2</span> <strong>Click Buttons</strong> for 1-click view</span>
+                    <span class="ba-tutorial-step"><span class="ba-step-icon">3</span> <strong>Auto Compare</strong> for hands-free rotation</span>
+                  </div>
+                  <button type="button" class="ba-replay-btn" id="ba-replay-tutorial">
+                    <i class="fa-solid fa-rotate-right"></i> Replay Demo
+                  </button>
+                </div>
+
+                <div class="ba-controls-bar">
+                  <div class="ba-toggle-group">
+                    <button type="button" class="ba-toggle-btn btn-before" data-mode="before">
+                      <i class="fa-solid fa-fire-flame-curved"></i> Before (Heat Loss)
+                    </button>
+                    <button type="button" class="ba-toggle-btn active btn-split" data-mode="split">
+                      <i class="fa-solid fa-arrows-left-right"></i> Split Slider
+                    </button>
+                    <button type="button" class="ba-toggle-btn btn-after" data-mode="after">
+                      <i class="fa-solid fa-snowflake"></i> After (Elastoclad HR)
+                    </button>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="ba-live-badge">
+                      <span class="ba-blink-dot"></span>
+                      <span>LIVE DEMO</span>
+                    </div>
+                    <button type="button" class="ba-auto-btn" id="ba-auto-toggle" title="Auto animate difference">
+                      <i class="fa-solid fa-play"></i> Auto Compare
+                    </button>
+                    <div class="ba-diff-pill d-none d-sm-inline-flex">
+                      <span>Δ Temp</span>
+                      <span class="pill-drop">-24°C</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ba-viewport">
+                  <!-- After Layer (Underneath) -->
+                  <div class="ba-layer ba-layer-after">
+                    <img src="assets/img/thermal-building-after.jpg" alt="After Crony Elastoclad HR Application">
+                  </div>
+                  <!-- Before Layer (Clipped on top) -->
+                  <div class="ba-layer ba-layer-before">
+                    <img src="assets/img/thermal-building-before.jpg" alt="Before Thermal Heat Loss Audit">
+                  </div>
+
+                  <!-- Floating Status Badges -->
+                  <div class="ba-badge ba-badge-before">
+                    <i class="fa-solid fa-fire"></i> BEFORE: Surface 68°C
+                  </div>
+                  <div class="ba-badge ba-badge-after">
+                    <i class="fa-solid fa-shield-halved"></i> AFTER: Surface 44°C (-24°C)
+                  </div>
+
+                  <!-- Blinking Animated Tutorial Bubble Attached to Handle -->
+                  <div class="ba-tutorial-bubble">
+                    <span class="ba-tutorial-hand">👆</span>
+                    <span class="ba-tutorial-text"><i class="fa-solid fa-arrows-left-right"></i> Drag Left / Right to Compare</span>
+                  </div>
+
+                  <!-- Divider Line & Slider Handle -->
+                  <div class="ba-divider-line"></div>
+                  <div class="ba-handle">
+                    <div class="ba-handle-arrows">
+                      <i class="fa-solid fa-chevron-left"></i>
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </div>
+
+                  <!-- Interactive Drag Hint -->
+                  <div class="ba-hint">
+                    <i class="fa-solid fa-arrows-left-right"></i> Drag center handle or click buttons to inspect difference
+                  </div>
+                </div>
+
+                <!-- Live Metrics Difference Cards -->
+                <div class="ba-metrics-grid">
+                  <div class="ba-metric-card">
+                    <div class="ba-metric-label">Rooftop Temp</div>
+                    <div class="ba-metric-diff">
+                      <span class="ba-val-before">68°C</span>
+                      <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                      <span class="ba-val-after">44°C</span>
+                    </div>
+                    <span class="ba-val-tag ba-tag-green">-24°C Cool Down</span>
+                  </div>
+                  <div class="ba-metric-card">
+                    <div class="ba-metric-label">IR Heat Shield</div>
+                    <div class="ba-metric-diff">
+                      <span class="ba-val-before">0%</span>
+                      <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                      <span class="ba-val-after">95%</span>
+                    </div>
+                    <span class="ba-val-tag ba-tag-blue">Infrared Blocked</span>
+                  </div>
+                  <div class="ba-metric-card">
+                    <div class="ba-metric-label">HVAC Energy</div>
+                    <div class="ba-metric-diff">
+                      <span class="ba-val-before">100%</span>
+                      <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                      <span class="ba-val-after">70%</span>
+                    </div>
+                    <span class="ba-val-tag ba-tag-amber">Up to 30% Saved</span>
+                  </div>
+                  <div class="ba-metric-card">
+                    <div class="ba-metric-label">Roof Protection</div>
+                    <div class="ba-metric-diff">
+                      <span class="ba-val-before">UV Leak</span>
+                      <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                      <span class="ba-val-after">Sealed</span>
+                    </div>
+                    <span class="ba-val-tag ba-tag-green">Waterproof Barrier</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col-lg-5">
@@ -910,5 +1031,6 @@
 <script src="assets/js/sweetalert.min.js"></script> 
 <script src="assets/js/contact.js"></script>
 <script src="assets/js/custom.js"></script>
+<script src="assets/js/before-after-toggle.js"></script>
 </body>
 </html>
