@@ -554,3 +554,92 @@
 .mobile-nav > ul > li > a.active {
   color: #FFC80B !important;
 }
+
+/* Perfect Width Alignment for Footer Subscribe Form & Brochure Box */
+.subscribe form {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-top: 14px !important;
+  box-sizing: border-box !important;
+}
+
+.subscribe input {
+  flex: 1 1 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: 56px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  outline: none !important;
+  background-color: #ffffff !important;
+  border: none !important;
+  border-radius: 4px !important;
+  color: #444 !important;
+  margin-right: 15px !important;
+  box-sizing: border-box !important;
+}
+
+.subscribe form .btn {
+  height: 56px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  padding: 0 35px !important;
+  border-radius: 4px !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.footer-brochure-box {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: rgba(0, 0, 0, 0.22) !important;
+  border: 1.5px dashed var(--theme-colour, #FFC80B) !important;
+  border-radius: 6px !important;
+  padding: 14px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  margin-top: 18px !important;
+}
+
+.footer-brochure-box > div {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.btn-download-brochure {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  background-color: var(--theme-colour, #FFC80B) !important;
+  color: #0b1c33 !important;
+  font-weight: 800 !important;
+  font-size: 13.5px !important;
+  height: 48px !important;
+  padding: 0 24px !important;
+  border-radius: 4px !important;
+  border: none !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 12px rgba(255, 200, 11, 0.3) !important;
+  text-decoration: none !important;
+}
+
+@media (max-width: 576px) {
+  .footer-brochure-box {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: left !important;
+    gap: 12px !important;
+  }
+  .btn-download-brochure {
+    width: 100% !important;
+  }
+}
