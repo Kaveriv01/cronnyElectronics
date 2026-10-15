@@ -20,6 +20,8 @@
   <!-- responsive -->
   <link rel="stylesheet" href="assets/css/responsive.css"> 
   <link rel="stylesheet" href="assets/css/color.css">
+  <!-- before after comparison toggle -->
+  <link rel="stylesheet" href="assets/css/before-after-toggle.css">
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/preloader.js"></script>
   <style>
@@ -251,6 +253,139 @@
   <!-- BoltX Banner Section (Clear Banner with Silent Blur on Hover) -->
   <section class="bannr clear-banner" aria-label="About Us Banner">
     <div class="bannr-bg-wrap" style="background-image: url('assets/img/about-banner.jpg');"></div>
+  </section>
+
+  <!-- Interactive Thermal & Energy Saving Difference Section (30+ Years of Excellence) -->
+  <section class="about-diff-section" id="energy-difference">
+    <div class="container">
+      <span class="about-eyebrow">ABOUT CRONY ELECTRONICS</span>
+      <h2 class="about-main-heading">30+ Years of Energy Saving Excellence</h2>
+      
+      <div class="row align-items-center">
+        <!-- Left Column: Story & 3 Pillars -->
+        <div class="col-lg-6">
+          <div class="about-story-wrap pe-lg-4">
+            <h3 class="about-story-title">Pioneering Industrial Thermal &amp; Energy Management <span class="text-orange">Since 1993</span></h3>
+            <p class="about-story-lead">For over three decades, Crony Electronics Pvt Ltd has engineered proven energy-saving and asset protection solutions. First introducing dedicated AC energy systems in 1994 and microprocessor digital controllers in 1997 with Eata Electronics, we help commercial facilities and industrial plants achieve verified reductions in electricity consumption.</p>
+            
+            <ul class="about-check-list">
+              <li class="about-check-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <strong>Microprocessor AC Optimization:</strong> Co-developed digital controllers regulating HVAC compressors to cut power draw by 15% to 30% with zero cooling loss.
+                </div>
+              </li>
+              <li class="about-check-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <strong>Elastoclad Heat-Reflective Roof Barrier:</strong> Blocks up to 85% of solar infrared rays, reducing building surface temperatures by 10°C–12°C and lowering HVAC load.
+                </div>
+              </li>
+              <li class="about-check-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <strong>20ms Solid-State Voltage Regulation (VRP):</strong> One of the world's fastest solid-state stabilizers (3 to 360 kVA), safeguarding sensitive automation, CNCs, and electronics.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Toggle & Before/After House Graphic Slider -->
+        <div class="col-lg-6">
+          <div class="about-interactive-panel">
+            <!-- Toggle Switch Bar -->
+            <div class="crony-diff-toggle-wrap">
+              <span class="toggle-hint-curve">Toggle to see our work difference <i class="fa-solid fa-arrow-turn-down"></i></span>
+              <div class="crony-switch-box">
+                <span class="switch-label label-without active">Without Crony</span>
+                <button type="button" class="crony-toggle-switch" id="aboutDiffToggle" aria-label="Toggle Without Crony and With Crony">
+                  <span class="toggle-knob"></span>
+                </button>
+                <span class="switch-label label-with">With Crony</span>
+              </div>
+            </div>
+
+            <!-- Comparison Slider -->
+            <div class="ba-comparison-wrapper about-ba-wrapper">
+              <div class="ba-viewport about-house-viewport" id="ba-viewport-about-house" data-auto-play="true">
+                <!-- After Layer (Underneath: With Crony) -->
+                <div class="ba-layer ba-layer-after">
+                  <img src="assets/img/about-house-after.jpg" alt="With Crony - Cool Room &amp; Heat Reflected Roof">
+                </div>
+                <!-- Before Layer (Clipped: Without Crony) -->
+                <div class="ba-layer ba-layer-before">
+                  <img src="assets/img/about-house-before.jpg" alt="Without Crony - Harsh Sun &amp; Overheated Room">
+                </div>
+
+                <!-- Floating Status Badges -->
+                <div class="ba-badge ba-badge-before">
+                  <i class="fa-solid fa-fire"></i> Without Crony
+                </div>
+                <div class="ba-badge ba-badge-after">
+                  <i class="fa-solid fa-shield-halved"></i> With Crony
+                </div>
+
+                <!-- Divider Line & Slider Handle -->
+                <div class="ba-divider-line"></div>
+                <div class="ba-handle" title="Drag to compare Before &amp; After">
+                  <div class="ba-handle-arrows">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </div>
+
+                <!-- Live Auto Scanning Indicator -->
+                <div class="ba-auto-status">
+                  <span class="ba-blink-dot"></span>
+                  <span>AUTO SCANNING</span>
+                </div>
+              </div>
+
+              <!-- Metrics Comparison Grid -->
+              <div class="ba-metrics-grid">
+                <div class="ba-metric-card">
+                  <div class="ba-metric-label">Indoor Temp</div>
+                  <div class="ba-metric-diff">
+                    <span class="ba-val-before">38°C</span>
+                    <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="ba-val-after">24°C</span>
+                  </div>
+                  <span class="ba-val-tag ba-tag-green">-14°C Cool Down</span>
+                </div>
+                <div class="ba-metric-card">
+                  <div class="ba-metric-label">Solar Heat Ingress</div>
+                  <div class="ba-metric-diff">
+                    <span class="ba-val-before">100%</span>
+                    <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="ba-val-after">15%</span>
+                  </div>
+                  <span class="ba-val-tag ba-tag-blue">85% Blocked</span>
+                </div>
+                <div class="ba-metric-card">
+                  <div class="ba-metric-label">HVAC Power Draw</div>
+                  <div class="ba-metric-diff">
+                    <span class="ba-val-before">High</span>
+                    <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="ba-val-after">-30%</span>
+                  </div>
+                  <span class="ba-val-tag ba-tag-amber">Up to 30% Saved</span>
+                </div>
+                <div class="ba-metric-card">
+                  <div class="ba-metric-label">Occupant Comfort</div>
+                  <div class="ba-metric-diff">
+                    <span class="ba-val-before">Stress</span>
+                    <span class="ba-val-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="ba-val-after">Optimal</span>
+                  </div>
+                  <span class="ba-val-tag ba-tag-green">100% Relaxed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- BoltX Section 1: Welcome to Crony Electronics & Accordion -->
@@ -776,5 +911,6 @@
   <script src="assets/js/circle-progres.js"></script>
   <script src="assets/js/contact.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="assets/js/before-after-toggle.js"></script>
 </body>
 </html>

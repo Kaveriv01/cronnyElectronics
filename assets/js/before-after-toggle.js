@@ -49,6 +49,24 @@
         badgeAfter.style.opacity = pos > 88 ? '0' : '1';
       }
 
+      // Sync with About Us toggle switch if present
+      if (container.id === 'ba-viewport-about-house') {
+        const toggleBtn = document.getElementById('aboutDiffToggle');
+        const labelWithout = document.querySelector('.label-without');
+        const labelWith = document.querySelector('.label-with');
+        if (toggleBtn) {
+          if (pos <= 45) {
+            toggleBtn.classList.add('is-with');
+            if (labelWith) labelWith.classList.add('active');
+            if (labelWithout) labelWithout.classList.remove('active');
+          } else if (pos >= 55) {
+            toggleBtn.classList.remove('is-with');
+            if (labelWithout) labelWithout.classList.add('active');
+            if (labelWith) labelWith.classList.remove('active');
+          }
+        }
+      }
+
       // Hide hint once interacted
       if (hint && hint.style.opacity !== '0') {
         hint.style.opacity = '0';
@@ -57,6 +75,8 @@
         }, 350);
       }
     }
+
+    container.baSetPosition = setPosition;
 
     // Auto-glide continuous animation loop
     function startAutoGlide() {
@@ -191,8 +211,45 @@
     }
   }
 
+  function setupAboutToggle() {
+    const toggleBtn = document.getElementById('aboutDiffToggle');
+    const labelWithout = document.querySelector('.label-without');
+    const labelWith = document.querySelector('.label-with');
+    const houseViewport = document.getElementById('ba-viewport-about-house');
+
+    if (!toggleBtn || !houseViewport) return;
+
+    function switchTo(isWith) {
+      if (typeof houseViewport.baSetPosition === 'function') {
+        houseViewport.baSetPosition(isWith ? 0 : 100, true);
+      }
+      if (isWith) {
+        toggleBtn.classList.add('is-with');
+        if (labelWith) labelWith.classList.add('active');
+        if (labelWithout) labelWithout.classList.remove('active');
+      } else {
+        toggleBtn.classList.remove('is-with');
+        if (labelWithout) labelWithout.classList.add('active');
+        if (labelWith) labelWith.classList.remove('active');
+      }
+    }
+
+    toggleBtn.addEventListener('click', function () {
+      const isCurrentlyWith = toggleBtn.classList.contains('is-with');
+      switchTo(!isCurrentlyWith);
+    });
+
+    if (labelWithout) {
+      labelWithout.addEventListener('click', () => switchTo(false));
+    }
+    if (labelWith) {
+      labelWith.addEventListener('click', () => switchTo(true));
+    }
+  }
+
   function initAll() {
     document.querySelectorAll('.ba-viewport').forEach(setupViewport);
+    setupAboutToggle();
 
     // Bootstrap Tab listener to wake up hidden viewports when tab is switched
     const tabButtons = document.querySelectorAll('button[data-bs-toggle="pill"], button[data-bs-toggle="tab"]');
