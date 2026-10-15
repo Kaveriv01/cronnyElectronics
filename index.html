@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="assets/css/responsive.css"> 
   <!-- before after comparison toggle -->
   <link rel="stylesheet" href="assets/css/before-after-toggle.css"> 
+  <!-- product category portfolio styles -->
+  <link rel="stylesheet" href="assets/css/portfolio-redesign.css"> 
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/preloader.js"></script>
 </head>
@@ -300,34 +302,132 @@
       <span>Industrial &amp; Energy Product Portfolio</span>
       <h2>Advanced Solutions for Heavy Industry &amp; Energy Efficiency</h2>
     </div>
-    <div class="row">
-      <div class="col-lg-4">
+    <!-- Product Category Navigation Filter Bar (Matching Products Page) -->
+    <nav class="portfolio-category-nav homepage-category-nav" id="homepage-category-nav" aria-label="Product categories navigation">
+      <ul class="category-nav-list" id="homepage-category-filter">
+        <li>
+          <button type="button" class="category-nav-btn active" data-filter="all">
+            <i class="fa-solid fa-border-all"></i> All Products
+          </button>
+        </li>
+        <li>
+          <button type="button" class="category-nav-btn" data-filter="flooring">
+            <i class="fa-solid fa-layer-group"></i> Flooring &amp; ESD
+          </button>
+        </li>
+        <li>
+          <button type="button" class="category-nav-btn" data-filter="thermal">
+            <i class="fa-solid fa-temperature-arrow-down"></i> Thermal Solutions
+          </button>
+        </li>
+        <li>
+          <button type="button" class="category-nav-btn" data-filter="power">
+            <i class="fa-solid fa-bolt"></i> Power Protection
+          </button>
+        </li>
+        <li>
+          <button type="button" class="category-nav-btn" data-filter="energy">
+            <i class="fa-solid fa-microchip"></i> Energy Efficiency
+          </button>
+        </li>
+        <li>
+          <button type="button" class="category-nav-btn" data-filter="daylight">
+            <i class="fa-solid fa-sun"></i> Daylighting
+          </button>
+        </li>
+        <li>
+          <button type="button" class="category-nav-btn" data-filter="robotics">
+            <i class="fa-solid fa-robot"></i> Industrial Robotics
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Product Category Filterable Cards Grid -->
+    <div class="row" id="homepage-product-grid">
+      <!-- 1. Flooring & ESD -->
+      <div class="col-lg-4 col-md-6 mb-4 homepage-product-col" data-category="flooring">
         <div class="services">
-          <i class="flaticon-battery"></i>
-          <h3><a href="#flooring">Rubber Flooring (Industry &amp; Trade)</a></h3>
-          <p>norament® &amp; noraplan® heavy-duty floor coverings from nora systems GmbH. Withstands 6 N/mm² dynamic forklift load, 10-year ESD warranty, and ISO Class 3 / GMP Grade A cleanrooms with zero coatings needed.</p>
-          <a href="#flooring"><i class="flaticon-right-up"></i></a>
+          <i class="fa-solid fa-layer-group"></i>
+          <h3><a href="products.html#flooring">Rubber Flooring (Industry &amp; Trade)</a></h3>
+          <p>norament® &amp; noraplan® heavy-duty rubber floor coverings from nora systems GmbH. Withstands 6 N/mm² dynamic forklift load, 10-year ESD warranty, and ISO Class 3 / GMP Grade A cleanrooms with zero coatings needed.</p>
+          <a href="products.html#flooring" title="Explore Flooring &amp; ESD"><i class="flaticon-right-up"></i></a>
           <img src="assets/img/factory-floor-transformation.png" alt="Rubber Flooring Before and After Transformation" style="width: calc(100% + 82px); max-width: calc(100% + 82px); height: 200px; object-fit: cover;">
         </div>
       </div>
-      <div class="col-lg-4">
+
+      <!-- 2. Thermal Solutions: Elastoclad HR -->
+      <div class="col-lg-4 col-md-6 mb-4 homepage-product-col" data-category="thermal">
         <div class="services">
-          <i class="flaticon-water-energy"></i>
-          <h3><a href="#thermal">Elastoclad HR &amp; IR Glass Shield</a></h3>
+          <i class="fa-solid fa-temperature-arrow-down"></i>
+          <h3><a href="products.html#thermal">Elastoclad HR &amp; IR Glass Shield</a></h3>
           <p>Elastoclad HR HEAT reflective exterior coating drops rooftop surface temperatures by 10 to 12°C with thermography verification and waterproofing. IR transparent coatings block 95% IR heat through glass façades.</p>
-          <a href="#thermal"><i class="flaticon-right-up"></i></a>
+          <a href="products.html#thermal" title="Explore Thermal Coatings"><i class="flaticon-right-up"></i></a>
           <img src="assets/img/heat-reflective-roof-transformation.png" alt="Heat Reflective Roof Transformation Before and After" style="width: calc(100% + 82px); max-width: calc(100% + 82px); height: 200px; object-fit: cover;">
         </div>
       </div>
-      <div class="col-lg-4">
+
+      <!-- 3. Thermal Solutions: Insulation Jackets -->
+      <div class="col-lg-4 col-md-6 mb-4 homepage-product-col" data-category="thermal">
         <div class="services">
-          <i class="flaticon-fossil-fuel"></i>
-          <h3><a href="#power">20ms VRP Voltage Regulators &amp; Robotics</a></h3>
-          <p>VRP Solid-State regulators (3 to 360 kVA) correcting voltage dips in 20 milliseconds — one of the fastest in the world. Plus Brilantor 400 lux daylighting and 64 types of autonomous cleaning and lifting robots.</p>
-          <a href="#power"><i class="flaticon-right-up"></i></a>
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3><a href="products.html#thermal">Thermal Insulation Jackets &amp; Sleeves</a></h3>
+          <p>Custom removable insulation jackets for pipeline valves, flanges, pumps, and exhaust manifolds. Cuts heat loss up to 90%, prevents personnel burn injuries, and withstands continuous heat up to 600°C.</p>
+          <a href="products.html#thermal" title="Explore Thermal Insulation Jackets"><i class="flaticon-right-up"></i></a>
+          <img src="assets/img/thermal-insulation-jackets-transformation.png" alt="Thermal Insulation Jackets Transformation" style="width: calc(100% + 82px); max-width: calc(100% + 82px); height: 200px; object-fit: cover;">
+        </div>
+      </div>
+
+      <!-- 4. Power Protection: VRP Voltage Regulators -->
+      <div class="col-lg-4 col-md-6 mb-4 homepage-product-col" data-category="power">
+        <div class="services">
+          <i class="fa-solid fa-bolt"></i>
+          <h3><a href="products.html#power">20ms High-Speed VRP Voltage Regulators</a></h3>
+          <p>Solid-state precision voltage regulation (3 kVA to 360 kVA). Corrects severe voltage sags and spikes in sub-20 milliseconds to safeguard sensitive CNCs, automation lines, and microprocessors from downtime.</p>
+          <a href="products.html#power" title="Explore Power Protection"><i class="flaticon-right-up"></i></a>
           <img src="assets/img/vrp-voltage-regulator-transformation.png" alt="20ms High-Speed VRP Voltage Regulators Transformation" style="width: calc(100% + 82px); max-width: calc(100% + 82px); height: 200px; object-fit: cover;">
         </div>
       </div>
+
+      <!-- 5. Energy Efficiency: DigiGuard EcoMax -->
+      <div class="col-lg-4 col-md-6 mb-4 homepage-product-col" data-category="energy">
+        <div class="services">
+          <i class="fa-solid fa-microchip"></i>
+          <h3><a href="products.html#energy">DigiGuard EcoMax AC Energy Savers</a></h3>
+          <p>Pioneering microprocessor-based digital energy saver for commercial air conditioners since 1997. Modulates compressor duty cycles based on thermodynamic saturation, reducing 15% to 30% kWh across 500+ clients.</p>
+          <a href="products.html#energy" title="Explore Energy Efficiency"><i class="flaticon-right-up"></i></a>
+          <img src="assets/img/product-digiguard-ecomax.jpg" alt="DigiGuard EcoMax AC Energy Savers" style="width: calc(100% + 82px); max-width: calc(100% + 82px); height: 200px; object-fit: cover;">
+        </div>
+      </div>
+
+      <!-- 6. Daylighting: Brilantor -->
+      <div class="col-lg-4 col-md-6 mb-4 homepage-product-col" data-category="daylight">
+        <div class="services">
+          <i class="fa-solid fa-sun"></i>
+          <h3><a href="products.html#daylight">Brilantor Natural Daylight Harvesting</a></h3>
+          <p>Advanced optical skylighting system delivering up to 400 lux natural, glare-free daylight into industrial factory sheds for 10 hours daily. Zero electricity consumption with 99% UV radiation block.</p>
+          <a href="products.html#daylight" title="Explore Daylighting"><i class="flaticon-right-up"></i></a>
+          <img src="assets/img/daylight-skylight-transformation.png" alt="Brilantor Daylight Harvesting Transformation" style="width: calc(100% + 82px); max-width: calc(100% + 82px); height: 200px; object-fit: cover;">
+        </div>
+      </div>
+
+      <!-- 7. Industrial Robotics -->
+      <div class="col-lg-4 col-md-6 mb-4 homepage-product-col" data-category="robotics">
+        <div class="services">
+          <i class="fa-solid fa-robot"></i>
+          <h3><a href="products.html#robotics">Industrial Autonomous Robotics (64 Types)</a></h3>
+          <p>Deploying up to 64 specialized robotic solutions: heavy-duty Nilfisk factory floor scrubbers, autonomous solar panel cleaners, AGV lifters, and sanitation robots to lower operational overhead.</p>
+          <a href="products.html#robotics" title="Explore Industrial Robotics"><i class="flaticon-right-up"></i></a>
+          <img src="assets/img/product-robotics-real.jpg" alt="Industrial Robotics Automated Cells" style="width: calc(100% + 82px); max-width: calc(100% + 82px); height: 200px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+
+    <!-- View All on Products Page CTA -->
+    <div class="text-center mt-2 mb-4">
+      <a href="products.html" class="theme-btn" style="padding: 12px 28px; font-weight: 700; font-size: 14.5px; display: inline-flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-list-check"></i> View Full 7-Product Specifications &amp; Request Quote <i class="flaticon-right-arrow ms-2"></i>
+      </a>
     </div>
   </div>
 </section>
@@ -1095,5 +1195,37 @@
 <script src="assets/js/contact.js"></script>
 <script src="assets/js/custom.js"></script>
 <script src="assets/js/before-after-toggle.js"></script>
+<script>
+  // Homepage Product Category Filtering Logic (Matching Products Page)
+  document.addEventListener('DOMContentLoaded', function () {
+    const filterButtons = document.querySelectorAll('#homepage-category-filter .category-nav-btn');
+    const productCards = document.querySelectorAll('#homepage-product-grid .homepage-product-col');
+
+    if (filterButtons.length && productCards.length) {
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          const filter = this.getAttribute('data-filter');
+
+          // Update active button state
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+
+          // Filter product cards with smooth animation
+          productCards.forEach(col => {
+            const cardCat = col.getAttribute('data-category');
+            if (filter === 'all' || cardCat === filter) {
+              col.style.display = 'block';
+              col.classList.remove('fade-in-card');
+              void col.offsetWidth; // Trigger reflow for animation
+              col.classList.add('fade-in-card');
+            } else {
+              col.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+  });
+</script>
 </body>
 </html>

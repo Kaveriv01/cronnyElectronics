@@ -208,6 +208,43 @@
   color: #ffffff;
 }
 
+/* Homepage Category Navigation & Card Flex Alignment */
+.portfolio-category-nav.homepage-category-nav {
+  position: static !important;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-top: 18px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.homepage-category-nav .category-nav-list {
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  .homepage-category-nav .category-nav-list {
+    justify-content: flex-start;
+  }
+}
+
+.homepage-product-col {
+  transition: all 0.3s ease;
+}
+
+.homepage-product-col .services {
+  height: calc(100% - 93px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.homepage-product-col .services p {
+  flex-grow: 1;
+}
+
 /* ==========================================================================
    3. Product Grid & Industrial Engineering Card Architecture
    ========================================================================== */
