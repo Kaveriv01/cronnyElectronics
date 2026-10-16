@@ -564,51 +564,115 @@
   box-sizing: border-box !important;
 }
 
+.subscribe form {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-top: 16px !important;
+  box-sizing: border-box !important;
+  gap: 12px !important;
+}
+
 .subscribe input {
   flex: 1 1 auto !important;
   width: auto !important;
   min-width: 0 !important;
-  height: 56px !important;
+  height: 52px !important;
   padding-left: 20px !important;
   padding-right: 20px !important;
   outline: none !important;
   background-color: #ffffff !important;
-  border: none !important;
-  border-radius: 4px !important;
-  color: #444 !important;
-  margin-right: 15px !important;
+  border: 1.5px solid transparent !important;
+  border-radius: 6px !important;
+  color: #1e293b !important;
+  font-size: 15px !important;
+  margin-right: 0 !important;
   box-sizing: border-box !important;
+  transition: all 0.25s ease !important;
 }
 
-.subscribe form .btn {
-  height: 56px !important;
+.subscribe input:focus {
+  border-color: #FFC80B !important;
+  box-shadow: 0 0 0 3px rgba(255, 200, 11, 0.3) !important;
+}
+
+.subscribe form .btn,
+.subscribe form .btn-subscribe {
+  height: 52px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  gap: 8px !important;
   white-space: nowrap !important;
-  padding: 0 35px !important;
-  border-radius: 4px !important;
+  padding: 0 32px !important;
+  border-radius: 6px !important;
   flex-shrink: 0 !important;
   box-sizing: border-box !important;
+  background-color: var(--theme-colour, #FFC80B) !important;
+  color: #0b1c33 !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  border: none !important;
+  cursor: pointer !important;
+  position: relative !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.subscribe form .btn:before,
+.subscribe form .btn:after,
+.subscribe form .btn-subscribe:before,
+.subscribe form .btn-subscribe:after {
+  display: none !important;
+  content: none !important;
+}
+
+.subscribe form .btn:hover,
+.subscribe form .btn-subscribe:hover {
+  background-color: #0b1c33 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25) !important;
 }
 
 .footer-brochure-box {
   width: 100% !important;
   box-sizing: border-box !important;
-  background: rgba(0, 0, 0, 0.22) !important;
-  border: 1.5px dashed var(--theme-colour, #FFC80B) !important;
-  border-radius: 6px !important;
+  background: rgba(0, 0, 0, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  border-radius: 8px !important;
   padding: 14px 20px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   gap: 16px !important;
   margin-top: 18px !important;
+  backdrop-filter: blur(4px) !important;
+  transition: all 0.25s ease !important;
+}
+
+.footer-brochure-box:hover {
+  border-color: rgba(255, 200, 11, 0.6) !important;
+  background: rgba(0, 0, 0, 0.24) !important;
 }
 
 .footer-brochure-box > div {
   flex: 1 1 auto !important;
   min-width: 0 !important;
+}
+
+.footer-brochure-box h5 {
+  color: #ffffff !important;
+  font-size: 14px !important;
+  margin-bottom: 3px !important;
+  font-weight: 700 !important;
+}
+
+.footer-brochure-box p {
+  color: #e2e8f0 !important;
+  font-size: 12.5px !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .btn-download-brochure {
@@ -619,20 +683,42 @@
   background-color: var(--theme-colour, #FFC80B) !important;
   color: #0b1c33 !important;
   font-weight: 800 !important;
-  font-size: 13.5px !important;
+  font-size: 14px !important;
   height: 48px !important;
   padding: 0 24px !important;
-  border-radius: 4px !important;
+  border-radius: 6px !important;
   border: none !important;
   cursor: pointer !important;
   flex-shrink: 0 !important;
   white-space: nowrap !important;
+  position: relative !important;
   transition: all 0.25s ease !important;
-  box-shadow: 0 4px 12px rgba(255, 200, 11, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
   text-decoration: none !important;
 }
 
+.btn-download-brochure:before,
+.btn-download-brochure:after {
+  display: none !important;
+  content: none !important;
+}
+
+.btn-download-brochure:hover {
+  background-color: #0b1c33 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25) !important;
+}
+
 @media (max-width: 576px) {
+  .subscribe form {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .subscribe form .btn,
+  .subscribe form .btn-subscribe {
+    width: 100% !important;
+  }
   .footer-brochure-box {
     flex-direction: column !important;
     align-items: stretch !important;
@@ -643,3 +729,4 @@
     width: 100% !important;
   }
 }
+
