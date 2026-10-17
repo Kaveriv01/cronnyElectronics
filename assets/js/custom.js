@@ -307,6 +307,150 @@ window.onload = calcScrollValue;
       $('.c-slider').slick('slickGoTo', slideno - 1, true);
     });
 
+/*-------------------- 08b. cert-cards-slider (Swiper - 4 Cards Auto-Slider) ----------------------------*/
+    if ($(".cert-cards-slider").length && typeof Swiper !== 'undefined') {
+      var certSwiper = new Swiper(".cert-cards-slider", {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        loop: true,
+        speed: 800,
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true,
+        },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        breakpoints: {
+          1: {
+            slidesPerView: 1.25,
+            spaceBetween: 12,
+          },
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 14,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 16,
+          },
+          992: {
+            slidesPerView: 4,
+            spaceBetween: 18,
+          },
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+        },
+      });
+    }
+
+/*-------------------- 08c. Homepage Product Slider ----------------------------*/
+    if ($("#homepage-product-slider").length) {
+      var $prodSlider = $("#homepage-product-slider");
+      $prodSlider.slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 2500,
+        pauseOnHover: true,
+        infinite: true,
+        speed: 800,
+        cssEase: 'ease-in-out',
+        responsive: [
+          {
+            breakpoint: 1199,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
+
+      $(document).on('click', '.prod-prev-btn', function(e) {
+        e.preventDefault();
+        $prodSlider.slick('slickPrev');
+      });
+
+      $(document).on('click', '.prod-next-btn', function(e) {
+        e.preventDefault();
+        $prodSlider.slick('slickNext');
+      });
+
+      // Category filter buttons - smooth glide to matching product
+      $('#homepage-category-filter .category-nav-btn').on('click', function(e) {
+        e.preventDefault();
+        var filter = $(this).attr('data-filter');
+        $('#homepage-category-filter .category-nav-btn').removeClass('active');
+        $(this).addClass('active');
+
+        if (filter === 'all') {
+          $prodSlider.slick('slickGoTo', 0);
+        } else {
+          var targetIndex = -1;
+          $prodSlider.find('.slick-slide:not(.slick-cloned)').each(function() {
+            var $slide = $(this);
+            var cat = $slide.find('.homepage-product-slide').attr('data-category') || $slide.attr('data-category');
+            if (cat === filter && targetIndex === -1) {
+              targetIndex = $slide.data('slick-index');
+            }
+          });
+          if (targetIndex >= 0) {
+            $prodSlider.slick('slickGoTo', targetIndex);
+          }
+        }
+      });
+    }
+
+/*-------------------- 08d. blog-cards-slider (Swiper - Matching Featured Products Animation) ----------------------------*/
+    if ($(".blog-cards-slider").length && typeof Swiper !== 'undefined') {
+      var blogSwiper = new Swiper(".blog-cards-slider", {
+        slidesPerView: 3,
+        spaceBetween: 28,
+        loop: true,
+        speed: 800,
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true,
+        },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        navigation: {
+          nextEl: ".blog-next-btn",
+          prevEl: ".blog-prev-btn",
+        },
+        breakpoints: {
+          1: {
+            slidesPerView: 1,
+            spaceBetween: 16,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: 28,
+          },
+        },
+      });
+    }
 
 /*-------------------- 09. hero-one-slider ----------------------------*/
     if (typeof Swiper !== 'undefined') {
@@ -362,18 +506,19 @@ window.onload = calcScrollValue;
       slidesPerView: 4,
       spaceBetween: 30,
       loop: true,
-      speed:1000,
-      freeMode: true,
+      speed: 800,
       keyboard: {
         enabled: true,
         onlyInViewport: true,
       },
       autoplay: {
-        delay: 2000,
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
       },
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".project-next-btn, .swiper-button-next",
+        prevEl: ".project-prev-btn, .swiper-button-prev",
       },
       breakpoints: {
         1: {
@@ -589,23 +734,52 @@ jQuery(document).ready(function($) {
   });
 
   /* -------------------------------------------------------------------------
-     Brochure Download Modal & Gated Form Logic
-     Only downloads AFTER user fills out and submits the verification form
+     Brochure Download Modal & Direct Download Logic
      ------------------------------------------------------------------------- */
+  function executeBrochureDownload(file, filename) {
+    var filePath = file || 'Crony introduction letter.pdf';
+    var saveName = filename || 'Crony-Electronics-Company-Brochure.pdf';
+    var a = document.createElement('a');
+    a.href = filePath;
+    a.download = saveName;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function() {
+      if (a.parentNode) {
+        a.parentNode.removeChild(a);
+      }
+    }, 200);
+  }
+
   $(document).on('click', '.open-brochure-modal-btn', function(e) {
     e.preventDefault();
-    if ($('#brochureDownloadForm').length) {
-      $('#brochureDownloadForm')[0].reset();
+    var modalEl = document.getElementById('brochureDownloadModal');
+    if (modalEl) {
+      if ($('#brochureDownloadForm').length) {
+        $('#brochureDownloadForm')[0].reset();
+      }
       $('#brochureFormContainer').show();
       $('#brochureSuccessContainer').hide();
       
-      var modalEl = document.getElementById('brochureDownloadModal');
-      if (modalEl && typeof bootstrap !== 'undefined' && bootstrap.Modal) {
-        var modalInstance = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
-        modalInstance.show();
-      } else {
-        $('#brochureDownloadModal').modal('show');
+      try {
+        if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+          var modalInstance = (typeof bootstrap.Modal.getOrCreateInstance === 'function')
+            ? bootstrap.Modal.getOrCreateInstance(modalEl)
+            : (bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl));
+          modalInstance.show();
+        } else if (typeof $ !== 'undefined' && typeof $('#brochureDownloadModal').modal === 'function') {
+          $('#brochureDownloadModal').modal('show');
+        } else {
+          executeBrochureDownload();
+        }
+      } catch (err) {
+        console.error('Modal error:', err);
+        executeBrochureDownload();
       }
+    } else {
+      // Direct download fallback if modal element is not present on the current page
+      executeBrochureDownload();
     }
   });
 
@@ -623,11 +797,6 @@ jQuery(document).ready(function($) {
       return;
     }
 
-    // Display personalized success container
-    $('#brochureSuccessName').text('Thank You, ' + fullName + '!');
-    $('#brochureFormContainer').hide();
-    $('#brochureSuccessContainer').fadeIn(300);
-
     // Determine targeted brochure file
     var brochureFile = 'Crony introduction letter.pdf';
     var downloadName = 'Crony-Electronics-Company-Brochure.pdf';
@@ -636,16 +805,13 @@ jQuery(document).ready(function($) {
       downloadName = 'Crony-Industry-Trade-Rubber-Floorings-Guide.pdf';
     }
 
+    // Display personalized success container
+    $('#brochureSuccessName').text('Thank You, ' + fullName + '!');
+    $('#brochureFormContainer').hide();
+    $('#brochureSuccessContainer').fadeIn(300);
     $('#brochureManualDownloadLink').attr('href', brochureFile).attr('download', downloadName);
 
-    // Gated Download: Trigger download ONLY after form submission
-    setTimeout(function() {
-      var triggerLink = document.createElement('a');
-      triggerLink.href = brochureFile;
-      triggerLink.download = downloadName;
-      document.body.appendChild(triggerLink);
-      triggerLink.click();
-      document.body.removeChild(triggerLink);
-    }, 600);
+    // Trigger download immediately within user submission event
+    executeBrochureDownload(brochureFile, downloadName);
   });
 });

@@ -9,12 +9,15 @@
 
   <!-- Core Stylesheets -->
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
   <link rel="stylesheet" href="assets/css/fontawesome.min.css">
   <link rel="stylesheet" href="assets/font/flaticon_mycollection.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/swiper.css">
   <link rel="stylesheet" href="assets/css/before-after-toggle.css">
   <link rel="stylesheet" href="assets/css/blog.css">
+  <link rel="stylesheet" href="assets/css/portfolio-redesign.css">
 
   <script src="assets/js/jquery-3.6.0.min.js"></script>
 </head>
@@ -29,14 +32,14 @@
           <div class="phone-data">
             <div class="phone">
               <i class="flaticon-iphone"></i>
-              <span>Phone: </span><a href="tel:+912222032030">91-22-22032030</a>
+              <span>Phone:</span><a href="tel:+912222032030">91-22-22032030</a>
             </div>
-            <div class="phone d-flax align-items-center">
+            <div class="phone d-flex align-items-center">
               <i class="flaticon-iphone"></i>
-              <span>Mobile / WhatsApp: </span>
+              <span>Mobile / WhatsApp:</span>
               <a href="tel:+919323566600">91-9323566600</a>
             </div>
-            <div class="phone d-flax align-items-center">
+            <div class="phone d-flex align-items-center">
               <i>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0.833313 12.7083C0.488135 12.7083 0.208313 12.9882 0.208313 13.3333C0.208313 13.6785 0.488135 13.9583 0.833313 13.9583H3.33331C3.67849 13.9583 3.95831 13.6785 3.95831 13.3333C3.95831 12.9882 3.67849 12.7083 3.33331 12.7083H0.833313Z" fill="black"/>
@@ -45,15 +48,15 @@
                   <path d="M1.66663 9.99999C1.66663 7.80006 1.66663 6.37454 1.94431 5.34122L2.06983 5.45388L3.69916 7.08319C5.05938 8.44341 6.12537 9.50941 7.06891 10.2293C8.03468 10.9662 8.94529 11.3991 9.99988 11.3991C11.0544 11.3991 11.965 10.9662 12.9308 10.2293C13.8743 9.50941 14.9403 8.44341 16.3005 7.08321L18.0528 5.3309C18.3333 6.36504 18.3333 7.79274 18.3333 9.99999C18.3333 13.1247 18.3333 14.6872 17.5375 15.7824C17.2805 16.1362 16.9695 16.4472 16.6157 16.7042C15.5205 17.5 13.958 17.5 10.8333 17.5H9.16663C7.97633 17.5 7.01273 17.5 6.2153 17.456C6.95166 17.2833 7.49996 16.6223 7.49996 15.8333C7.49996 14.9128 6.75377 14.1667 5.83329 14.1667H4.77699C4.9188 13.9215 4.99996 13.6369 4.99996 13.3333C4.99996 12.4128 4.25377 11.6667 3.33329 11.6667H1.67263C1.66663 11.1657 1.66663 10.6129 1.66663 9.99999Z" fill="black"/>
                 </svg>
               </i>
-              <span>Official Email: </span>
-              <a class="me-3" href="mailto:info@cronyelectronics.com">info@cronyelectronics.com</a>
+              <span>Email:</span>
+              <a href="mailto:info@cronyelectronics.com">info@cronyelectronics.com</a>
             </div>
           </div>
         </div>
         <div class="social-media-text">
           <a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a>
           <a href="#"><i class="fa-brands fa-twitter"></i>Twitter</a>
-          <a href="#"><i class="fa-brands fa-linkedin"></i>Linked in</a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
         </div>
       </div>
     </div>
@@ -99,6 +102,11 @@
               <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path>
             </svg>
           </a>
+          <div class="header-search-button search-box-outer">
+            <a href="javascript:void(0)" class="search-btn">
+              <i class="flaticon-magnifying-glass"></i>
+            </a>
+          </div>
           <a href="Crony introduction letter.pdf" download class="btn">Download Profile</a>
         </div>
       </div>
@@ -145,17 +153,33 @@
 </header>
 
 <!-- ==========================================================================
-     Article Breadcrumb Bar
+     Article Hero Banner (Standard Architecture Matching All Inner Pages)
      ========================================================================== -->
-<div class="py-3 bg-light border-bottom">
-  <div class="container">
-    <ol class="blog-breadcrumb mb-0" style="color: #475569;" id="article-breadcrumb">
-      <li><a href="index.html" class="text-secondary"><i class="fa-solid fa-house"></i> Home</a></li>
-      <li><a href="blog.html" class="text-secondary">Blog</a></li>
-      <li class="active text-success fw-bold" id="breadcrumb-article-title">Article</li>
-    </ol>
+<section class="bannr article-hero-banner" id="article-hero-banner" aria-label="Article Banner">
+  <div class="bannr-bg-wrap" id="article-banner-bg" style="background-image: url('assets/img/bannr-img.jpg');"></div>
+  <div class="container position-relative" style="z-index: 3;">
+    <div class="bannr-text">
+      <div class="d-flex align-items-center flex-wrap gap-2 mb-3" id="article-banner-badge-row">
+        <span class="badge" id="article-banner-badge" style="background-color: var(--theme-colour, #FFC80B); color: #0b1420; font-weight: 800; font-size: 12.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 4px; letter-spacing: 0.5px; display: inline-block;">Technical Insight</span>
+        <span class="badge text-white" id="article-banner-readtime" style="background-color: rgba(255, 255, 255, 0.15); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); font-weight: 600; font-size: 12.5px; padding: 6px 14px; border-radius: 4px;">
+          <i class="fa-regular fa-clock me-1"></i> <span id="article-banner-readtime-text">6 min read</span>
+        </span>
+        <span class="badge text-white" id="article-banner-date" style="background-color: rgba(255, 255, 255, 0.15); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); font-weight: 600; font-size: 12.5px; padding: 6px 14px; border-radius: 4px;">
+          <i class="fa-regular fa-calendar me-1"></i> <span id="article-banner-date-text">Oct 2026</span>
+        </span>
+      </div>
+      
+      <h1 id="article-banner-title" class="article-banner-h1">Article Loading...</h1>
+      <p id="article-banner-desc" class="article-banner-p">In-depth technical breakdown and industrial performance verification</p>
+      
+      <ol class="breadcrumb" id="article-banner-breadcrumb" style="margin-top: 24px;">
+        <li class="breadcrumb-item"><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
+        <li class="breadcrumb-item active text-truncate" id="article-banner-breadcrumb-active" aria-current="page" style="max-width: 420px;">Article</li>
+      </ol>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- ==========================================================================
      Article Main Viewport Container
@@ -177,170 +201,278 @@
 </main>
 
 <!-- ==========================================================================
-     Related Articles Section
+     Related Articles Section (1-Row Horizontal Swiper Slider)
      ========================================================================== -->
 <section class="related-articles-section" id="related-articles-section" style="display: none;">
   <div class="container">
-    <div class="related-section-header text-center">
-      <span>Continue Reading</span>
-      <h3>Related Engineering Insights</h3>
+    <div class="related-section-header text-center mb-4">
+      <span class="related-sub-badge"><i class="fa-solid fa-layer-group me-1"></i> Continue Reading</span>
+      <h3 class="related-title">Related Engineering Insights &amp; Case Studies</h3>
     </div>
-    <div class="row justify-content-center" id="related-articles-grid">
-      <!-- Related cards injected via JS -->
-    </div>
-  </div>
-</section>
 
-<!-- ==========================================================================
-     Subscribe Newsletter & Company Overview (Full-Width Green Banner)
-     ========================================================================== -->
-<section class="crony-newsletter-section">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <div class="logo">
-          <img src="assets/img/logo.png" alt="Crony Electronics">
-          <p>Crony Electronics Pvt Ltd is involved into energy saving products &amp; activities since 1993. We pledge to give the best and involve ourselves in innovations that optimize safety and energy efficiency of our customers at minimum cost.</p>
-        </div>
+    <!-- 1-Row Horizontal Swiper Slider Container -->
+    <div class="swiper related-blog-cards-slider" id="related-blog-cards-slider">
+      <div class="swiper-wrapper" id="related-articles-grid">
+        <!-- Related cards injected via JS as .swiper-slide -->
       </div>
-      <div class="col-lg-6">
-        <div class="subscribe">
-          <h3>Subscribe Newsletter</h3>
-          <p>Stay up to date with our energy saving products and technical rubber flooring catalogues.</p>
-          <form role="form" class="get-subscribee" id="subscribe-form" method="post"> 
-            <input type="email" name="Email_Address" placeholder="Enter your corporate email here" required="">
-            <button type="submit" class="btn-subscribe">
-              <i class="fa-solid fa-paper-plane me-1"></i> Subscribe
-            </button>
-          </form>
-          <div class="footer-brochure-box">
-            <div>
-              <h5><i class="fa-solid fa-file-pdf text-warning me-1"></i> Crony Official Brochure</h5>
-              <p>Download our complete 30+ years energy solutions catalog (PDF)</p>
-            </div>
-            <button type="button" class="btn-download-brochure open-brochure-modal-btn">
-              <i class="fa-solid fa-download me-1"></i> Download Brochure
-            </button>
-          </div>
-        </div>
+    </div>
+
+    <!-- Dual Yellow & Green Rectangular Navigation Box -->
+    <div class="d-flex justify-content-center my-4" id="related-slider-nav-box">
+      <div class="cert-swiper-nav-box blog-related-swiper-nav-box">
+        <button type="button" class="cert-nav-btn related-slider-prev" aria-label="Previous Article" title="Previous Slide">
+          <i class="flaticon-left-arrow"></i>
+        </button>
+        <button type="button" class="cert-nav-btn related-slider-next" aria-label="Next Article" title="Next Slide">
+          <i class="flaticon-right-arrow"></i>
+        </button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==========================================================================
-     Footer Main (Dark Theme)
-     ========================================================================== -->
-<footer style="background-image: url(assets/img/footer-line.png);">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-6">
-        <div class="widget-title">
-          <h3>Contact Us</h3>
-          <div class="boder"></div>
-          <div class="get-in-touch">
-            <div><i>
-              <svg width="23" height="23" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_94_1733)">
-                <path d="M15.31 0H7.65726C6.30674 0.00153143 5.21234 1.09593 5.211 2.44646V20.5537C5.21234 21.9042 6.30674 22.9986 7.65726 22.9999H15.31C16.6605 22.9986 17.7549 21.9042 17.7565 20.5537V2.44646C17.7549 1.09593 16.6605 0.00153143 15.31 0ZM11.4837 20.9092C10.9062 20.9092 10.4381 20.4411 10.4381 19.8636C10.4381 19.2862 10.9062 18.8182 11.4837 18.8182C12.0611 18.8182 12.5291 19.2862 12.5291 19.8636C12.5291 20.4411 12.0611 20.9092 11.4837 20.9092ZM13.0519 3.13636H9.91554C9.62687 3.13636 9.39275 2.90225 9.39275 2.61357C9.39275 2.3249 9.62687 2.09097 9.91554 2.09097H13.0519C13.3406 2.09097 13.5745 2.3249 13.5745 2.61357C13.5745 2.90225 13.3406 3.13636 13.0519 3.13636Z" fill="black"/>
-                </g>
-              </svg>
-            </i></div>
-            <div>
-              <span>Phone:</span> 
-              <h6><a href="tel:+912222032030">91-22-22032030</a></h6>
+<!-- Footer -->
+  <footer style="background-image: url(assets/img/footer-line.png);">
+    <div class="container">
+      <div class="footer-top">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="logo">
+              <img src="assets/img/logo.png" alt="Crony Electronics Logo" style="height: 60px; width: auto; object-fit: contain;">
+              <p><b>Crony Electronics Pvt Ltd.</b><br>We are involved into energy saving products &amp; activities since 1993.</p>
             </div>
           </div>
-          <div class="get-in-touch">
-            <div><i>
-              <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_94_1722)">
-                <path d="M1.49888 15.54C1.09073 15.54 0.759857 15.8709 0.759857 16.2791C0.759857 16.6872 1.09073 17.0181 1.49888 17.0181H4.45496C4.8631 17.0181 5.19398 16.6872 5.19398 16.2791C5.19398 15.8709 4.8631 15.54 4.45496 15.54H1.49888Z" fill="black"/>
-                <path d="M1.49888 18.4961C1.09073 18.4961 0.759857 18.827 0.759857 19.2351C0.759857 19.6433 1.09073 19.9741 1.49888 19.9741H7.41104C7.81919 19.9741 8.15006 19.6433 8.15006 19.2351C8.15006 18.827 7.81919 18.4961 7.41104 18.4961H1.49888Z" fill="black"/>
-                <path d="M3.57686 5.5292L3.4696 5.44045C3.77349 5.02219 4.09688 4.71454 4.51514 4.41066C5.81023 3.46973 7.65765 3.46973 11.3525 3.46973H13.3232C17.018 3.46973 18.8655 3.46973 20.1605 4.41066C20.5788 4.71454 20.8767 4.98848 21.1806 5.40674L21.0568 5.52982L18.7827 7.80394C17.1256 9.46098 15.9343 10.65 14.9068 11.4341C13.8963 12.205 13.1316 12.5142 12.3377 12.5142C11.5438 12.5142 10.7791 12.205 9.76863 11.4341C8.74109 10.65 7.54977 9.46098 5.89273 7.80394L3.97792 5.88913L3.57686 5.5292Z" fill="black"/>
-                <path d="M2.48424 12.3383C2.48424 9.737 2.48424 8.05142 2.81258 6.82958L2.961 6.96279L4.88757 8.88935C6.49594 10.4977 7.7564 11.7582 8.87207 12.6094C10.014 13.4807 11.0908 13.9926 12.3377 13.9926C13.5846 13.9926 14.6614 13.4807 15.8034 12.6094C16.919 11.7582 18.1795 10.4977 19.7879 8.88937L21.8598 6.81738C22.1914 8.04019 22.1914 9.72833 22.1914 12.3383C22.1914 16.0331 22.1914 17.8805 21.2505 19.1756C20.9466 19.5939 20.5788 19.9617 20.1605 20.2656C18.8655 21.2065 17.018 21.2065 13.3232 21.2065H11.3525C9.94503 21.2065 8.80564 21.2065 7.86274 21.1545C8.73343 20.9503 9.38176 20.1687 9.38176 19.2358C9.38176 18.1474 8.49944 17.2651 7.41104 17.2651H6.16204C6.32971 16.9752 6.42568 16.6387 6.42568 16.2797C6.42568 15.1913 5.54336 14.309 4.45496 14.309H2.49134C2.48424 13.7167 2.48424 13.063 2.48424 12.3383Z" fill="black"/>
-                </g>
-              </svg>
-            </i></div>
-            <div>
-              <span>Mobile:</span> 
-              <h6><a href="tel:+919323566600">91-9323566600</a></h6>
-            </div>
-          </div>
-          <div class="get-in-touch">
-            <div><i>
-              <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_94_1710)">
-                <path d="M12.3379 7.11523C10.6713 7.11523 9.31538 8.47115 9.31538 10.1377C9.31538 11.8043 10.6713 13.1602 12.3379 13.1602C14.0045 13.1602 15.3604 11.8043 15.3604 10.1377C15.3604 8.47115 14.0045 7.11523 12.3379 7.11523Z" fill="black"/>
-                <path d="M19.4104 3.44324C17.5213 1.55407 15.0095 0.513672 12.3379 0.513672C9.66623 0.513672 7.15444 1.55407 5.26532 3.44324C3.37611 5.33245 2.33571 7.8442 2.33571 10.5158C2.33571 15.9205 7.44603 20.4158 10.1915 22.8309C10.573 23.1665 10.9024 23.4563 11.1648 23.7014C11.4937 24.0087 11.9157 24.1623 12.3378 24.1623C12.7599 24.1623 13.182 24.0087 13.5108 23.7015C13.7733 23.4563 14.1028 23.1665 14.4842 22.8309C17.2297 20.4159 22.34 15.9205 22.34 10.5159C22.34 7.8442 21.2996 5.33245 19.4104 3.44324ZM12.3379 14.5457C9.90739 14.5457 7.93009 12.5684 7.93009 10.1379C7.93009 7.70739 9.90739 5.73009 12.3379 5.73009C14.7684 5.73009 16.7457 7.70739 16.7457 10.1379C16.7457 12.5684 14.7683 14.5457 12.3379 14.5457Z" fill="black"/>
-                </g>
-              </svg>
-            </i></div>
-            <div>
-              <span>Website:</span> 
-              <h6><a href="https://cronyelectronics.com">www.cronyelectronics.com</a></h6>
+          <div class="col-lg-6">
+            <div class="subscribe">
+              <h3>Connect With Us</h3>
+              <p>Get in touch with our technical sales team for quotations, site audits, and product datasheets.</p>
+              <form role="form" class="get-subscribee" id="subscribe-form" method="post"> 
+                <input type="email" name="Email_Address" placeholder="Enter your business email" required="">
+                <button type="submit" class="btn bk">Inquire</button>
+              </form>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="widget-title">
-          <h3>Useful Links</h3>
-          <div class="boder"></div>
+      <div class="row">
+        <!-- Contact Us Column -->
+        <div class="col-lg-4 col-md-6">
+          <div class="widget-title">
+            <h3>contact us</h3>
+            <div class="boder"></div>
+            <div class="get-in-touch">
+              <div><i>
+                <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_94_1710)">
+                    <path d="M12.3379 7.11523C10.6713 7.11523 9.31538 8.47115 9.31538 10.1377C9.31538 11.8043 10.6713 13.1602 12.3379 13.1602C14.0045 13.1602 15.3604 11.8043 15.3604 10.1377C15.3604 8.47115 14.0045 7.11523 12.3379 7.11523Z" fill="black"/>
+                    <path d="M19.4104 3.44324C17.5213 1.55407 15.0095 0.513672 12.3379 0.513672C9.66623 0.513672 7.15444 1.55407 5.26532 3.44324C3.37611 5.33245 2.33571 7.8442 2.33571 10.5158C2.33571 15.9205 7.44603 20.4158 10.1915 22.8309C10.573 23.1665 10.9024 23.4563 11.1648 23.7014C11.4937 24.0087 11.9157 24.1623 12.3378 24.1623C12.7599 24.1623 13.182 24.0087 13.5108 23.7015C13.7733 23.4563 14.1028 23.1665 14.4842 22.8309C17.2297 20.4159 22.34 15.9205 22.34 10.5159C22.34 7.8442 21.2996 5.33245 19.4104 3.44324ZM12.3379 14.5457C9.90739 14.5457 7.93009 12.5684 7.93009 10.1379C7.93009 7.70739 9.90739 5.73009 12.3379 5.73009C14.7684 5.73009 16.7457 7.70739 16.7457 10.1379C16.7457 12.5684 14.7683 14.5457 12.3379 14.5457Z" fill="black"/>
+                  </g>
+                </svg>
+              </i></div>
+              <div>
+                <span>Website:</span>
+                <h6><a href="https://cronyelectronics.com">www.cronyelectronics.com</a></h6>
+              </div>
+            </div>
+            <div class="get-in-touch">
+              <div><i>
+                <svg width="23" height="23" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_94_1733)">
+                    <path d="M15.31 0H7.65726C6.30674 0.00153143 5.21234 1.09593 5.211 2.44646V20.5537C5.21234 21.9042 6.30674 22.9986 7.65726 22.9999H15.31C16.6605 22.9986 17.7549 21.9042 17.7565 20.5537V2.44646C17.7549 1.09593 16.6605 0.00153143 15.31 0ZM11.4837 20.9092C10.9062 20.9092 10.4381 20.4411 10.4381 19.8636C10.4381 19.2862 10.9062 18.8182 11.4837 18.8182C12.0611 18.8182 12.5291 19.2862 12.5291 19.8636C12.5291 20.4411 12.0611 20.9092 11.4837 20.9092ZM13.0519 3.13636H9.91554C9.62687 3.13636 9.39275 2.90225 9.39275 2.61357C9.39275 2.3249 9.62687 2.09097 9.91554 2.09097H13.0519C13.3406 2.09097 13.5745 2.3249 13.5745 2.61357C13.5745 2.90225 13.3406 3.13636 13.0519 3.13636Z" fill="black"/>
+                  </g>
+                </svg>
+              </i></div>
+              <div>
+                <span>Phone:</span> 
+                <h6><a href="tel:+912222032030">91-22-22032030</a></h6>
+              </div>
+            </div>
+            <div class="get-in-touch">
+              <div><i>
+                <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_94_1722)">
+                    <path d="M1.49888 15.54C1.09073 15.54 0.759857 15.8709 0.759857 16.2791C0.759857 16.6872 1.09073 17.0181 1.49888 17.0181H4.45496C4.8631 17.0181 5.19398 16.6872 5.19398 16.2791C5.19398 15.8709 4.8631 15.54 4.45496 15.54H1.49888Z" fill="black"/>
+                    <path d="M1.49888 18.4961C1.09073 18.4961 0.759857 18.827 0.759857 19.2351C0.759857 19.6433 1.09073 19.9741 1.49888 19.9741H7.41104C7.81919 19.9741 8.15006 19.6433 8.15006 19.2351C8.15006 18.827 7.81919 18.4961 7.41104 18.4961H1.49888Z" fill="black"/>
+                    <path d="M3.57686 5.5292L3.4696 5.44045C3.77349 5.02219 4.09688 4.71454 4.51514 4.41066C5.81023 3.46973 7.65765 3.46973 11.3525 3.46973H13.3232C17.018 3.46973 18.8655 3.46973 20.1605 4.41066C20.5788 4.71454 20.8767 4.98848 21.1806 5.40674L21.0568 5.52982L18.7827 7.80394C17.1256 9.46098 15.9343 10.65 14.9068 11.4341C13.8963 12.205 13.1316 12.5142 12.3377 12.5142C11.5438 12.5142 10.7791 12.205 9.76863 11.4341C8.74109 10.65 7.54977 9.46098 5.89273 7.80394L3.97792 5.88913L3.57686 5.5292Z" fill="black"/>
+                    <path d="M2.48424 12.3383C2.48424 9.737 2.48424 8.05142 2.81258 6.82958L2.961 6.96279L4.88757 8.88935C6.49594 10.4977 7.7564 11.7582 8.87207 12.6094C10.014 13.4807 11.0908 13.9926 12.3377 13.9926C13.5846 13.9926 14.6614 13.4807 15.8034 12.6094C16.919 11.7582 18.1795 10.4977 19.7879 8.88937L21.8598 6.81738C22.1914 8.04019 22.1914 9.72833 22.1914 12.3383C22.1914 16.0331 22.1914 17.8805 21.2505 19.1756C20.9466 19.5939 20.5788 19.9617 20.1605 20.2656C18.8655 21.2065 17.018 21.2065 13.3232 21.2065H11.3525C9.94503 21.2065 8.80564 21.2065 7.86274 21.1545C8.73343 20.9503 9.38176 20.1687 9.38176 19.2358C9.38176 18.1474 8.49944 17.2651 7.41104 17.2651H6.16204C6.32971 16.9752 6.42568 16.6387 6.42568 16.2797C6.42568 15.1913 5.54336 14.309 4.45496 14.309H2.49134C2.48424 13.7167 2.48424 13.063 2.48424 12.3383Z" fill="black"/>
+                  </g>
+                </svg>
+              </i></div>
+              <div>
+                <span>Mobile:</span> 
+                <h6><a href="tel:+919323566600">91-9323566600</a></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- use full link Column -->
+        <div class="col-lg-4 col-md-6">
+          <div class="widget-title">
+            <h3>use full link</h3>
+            <div class="boder"></div>
+            <ul>
+              <li><i class="fa-solid fa-caret-right"></i><a href="index.html">Home</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="about.html">About Us</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="blog.html">Blog</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="contact.html">Contact Us</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="Crony introduction letter.pdf" download="Crony-Electronics-Company-Brochure.pdf" class="open-brochure-modal-btn" style="color: #FFC80B; font-weight: 700;"><i class="fa-solid fa-file-pdf me-1"></i> Download Brochure</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Our Products Column -->
+        <div class="col-lg-4 col-md-6">
+          <div class="widget-title mb-0">
+            <h3>Our Products</h3>
+            <div class="boder"></div>
+            <ul>
+              <li><i class="fa-solid fa-caret-right"></i><a href="products.html#sleeves">Insulation Cover</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="products.html#thermal">Elastoclad HR</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="products.html#digiguard">Digi Guard &amp; Eco Max</a></li>
+              <li><i class="fa-solid fa-caret-right"></i><a href="products.html#power">Servo &amp; Step up stabilizer</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-text">
+          <h6><b>&copy; Copyright 2017-23 Crony Elecrtronics Pvt. Ltd.</b> - Designed and developed by Digital Vigyapan</h6>
           <ul>
-            <li><i class="fa-solid fa-caret-right"></i><a href="index.html">Home</a></li>
-            <li><i class="fa-solid fa-caret-right"></i><a href="about.html">About Us</a></li>
-            <li><i class="fa-solid fa-caret-right"></i><a href="products.html">Products</a></li>
-            <li><i class="fa-solid fa-caret-right"></i><a href="blog.html">Blog</a></li>
-            <li><i class="fa-solid fa-caret-right"></i><a href="faq.html">FAQs</a></li>
-            <li><i class="fa-solid fa-caret-right"></i><a href="contact.html">Contact Us</a></li>
-            <li><i class="fa-solid fa-caret-right"></i><a href="javascript:void(0)" class="open-brochure-modal-btn" style="color: #FFC80B; font-weight: 700;"><i class="fa-solid fa-file-pdf me-1"></i> Download Brochure</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="widget-title mb-0">
-          <h3>Featured Insights</h3>
-          <div class="boder"></div>
-          <ul class="recent-news mb-0">
-            <li>
-              <figure>
-                <img src="assets/img/heat-reflective-roof-transformation.png" alt="Elastoclad HR" style="width: 70px; height: 60px; object-fit: cover; border-radius: 4px;">
-              </figure>
-              <div>
-                <span>Energy Study</span>
-                <a href="blog-details.html?slug=elastoclad-hr-thermal-insulation" style="font-size: 14px; line-height: 1.4;">Elastoclad HR: Cutting Roof Heat by 10–12°C</a>
-              </div>
-            </li>
-            <li class="pb-0">
-              <figure>
-                <img src="assets/img/vrp-voltage-regulator-transformation.png" alt="VRP Regulators" style="width: 70px; height: 60px; object-fit: cover; border-radius: 4px;">
-              </figure>
-              <div>
-                <span>Power Protection</span>
-                <a href="blog-details.html?slug=vrp-solid-state-voltage-regulators" style="font-size: 14px; line-height: 1.4;">20ms VRP Solid State Regulators for CNC</a>
-              </div>
-            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="Crony introduction letter.pdf" download="Crony-Electronics-Company-Brochure.pdf" class="open-brochure-modal-btn"><i class="fa-solid fa-file-pdf text-warning me-1"></i> Download Brochure</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom-text">
-        <h6>&copy; 2026 Crony Electronics Pvt Ltd. All Rights Reserved. Engineered for Performance &amp; Safety.</h6>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Privacy &amp; Contact</a></li>
-        </ul>
+    <img src="assets/img/footer-icon.png" alt="footer-icon" class="footer-icon">
+  </footer> 
+
+  <!-- Modal: Information Fill-up Form for Brochure Download (Gated Content) -->
+  <div class="modal fade" id="brochureDownloadModal" tabindex="-1" aria-labelledby="brochureDownloadModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,26,46,0.35);">
+        <div class="modal-header modal-header-crony">
+          <div>
+            <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #FFC80B; margin-bottom: 4px;">Crony Electronics Pvt Ltd</div>
+            <h4 class="modal-title" id="brochureDownloadModalLabel" style="color: #ffffff; margin: 0; font-weight: 700; font-size: 20px;">Download Company Brochure</h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <!-- Form Container -->
+        <div id="brochureFormContainer">
+          <form id="brochureDownloadForm">
+            <div class="modal-body modal-body-crony">
+              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px 14px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                <div>
+                  <strong style="font-size: 13px; color: #166534; display: block;"><i class="fa-solid fa-bolt me-1 text-warning"></i> Need it right now?</strong>
+                  <span style="font-size: 12px; color: #15803d;">You can download the brochure directly:</span>
+                </div>
+                <a href="Crony introduction letter.pdf" download="Crony-Electronics-Company-Brochure.pdf" class="btn btn-sm" style="background: #16a34a; color: #ffffff; font-weight: 700; font-size: 12px; border-radius: 6px; padding: 6px 14px; white-space: nowrap;">
+                  <i class="fa-solid fa-download me-1"></i> Instant PDF
+                </a>
+              </div>
+
+              <p style="font-size: 13px; color: #64748b; margin-bottom: 18px; line-height: 1.5;">
+                Please fill in your details below to instantly download our corporate profile, energy-saving case studies, and engineering catalogs (PDF).
+              </p>
+              
+              <div class="brochure-form-group">
+                <label for="brochureFullName">Full Name <span style="color: #ef4444;">*</span></label>
+                <input type="text" class="brochure-form-control" id="brochureFullName" name="full_name" placeholder="e.g. Rajesh Sharma" required>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6 brochure-form-group">
+                  <label for="brochureEmail">Work / Personal Email <span style="color: #ef4444;">*</span></label>
+                  <input type="email" class="brochure-form-control" id="brochureEmail" name="email" placeholder="name@company.com" required>
+                </div>
+                <div class="col-md-6 brochure-form-group">
+                  <label for="brochurePhone">Mobile / WhatsApp <span style="color: #ef4444;">*</span></label>
+                  <input type="tel" class="brochure-form-control" id="brochurePhone" name="phone" placeholder="+91 98765 43210" required>
+                </div>
+              </div>
+              
+              <div class="brochure-form-group">
+                <label for="brochureCompany">Company / Organization <span style="color: #ef4444;">*</span></label>
+                <input type="text" class="brochure-form-control" id="brochureCompany" name="company" placeholder="e.g. Larsen &amp; Toubro / ONGC / Plant" required>
+              </div>
+
+              <div class="brochure-form-group">
+                <label for="brochureProductInterest">Product Area of Interest</label>
+                <select class="brochure-form-control" id="brochureProductInterest" name="product_interest">
+                  <option value="All Solutions &amp; Company Overview">All Products &amp; Solutions (Complete Profile)</option>
+                  <option value="Elastoclad HR Heat Reflective Coating">Elastoclad HR Heat Reflective Coating</option>
+                  <option value="Removable Thermal Insulation Jackets">Removable Thermal Insulation Jackets &amp; Sleeves</option>
+                  <option value="20ms High-Speed VRP Voltage Regulators">20ms VRP Voltage Regulators &amp; Stabilizers</option>
+                  <option value="Industrial Rubber Floorings">Industrial Rubber Floorings (nora®)</option>
+                  <option value="Microprocessor AC Energy Optimization">Microprocessor AC Energy Optimization</option>
+                  <option value="Natural Daylight &amp; Industrial Robotics">Natural Daylight &amp; Industrial Robotics</option>
+                </select>
+              </div>
+
+              <div style="font-size: 11.5px; color: #94a3b8; display: flex; align-items: center; gap: 6px; margin-top: 10px;">
+                <i class="fa-solid fa-lock" style="color: #10b981;"></i> Your information is kept strictly confidential.
+              </div>
+            </div>
+            
+            <div class="modal-footer" style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 14px 28px; display: flex; justify-content: space-between; align-items: center;">
+              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal" style="border-radius: 6px;">Close</button>
+              <button type="submit" class="btn btn-brochure-submit" id="btnSubmitBrochure" style="width: auto; padding: 10px 24px;">
+                <i class="fa-solid fa-download me-1"></i> Submit &amp; Download Brochure
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Success State Container (Shown after form submission) -->
+        <div id="brochureSuccessContainer" style="display: none; padding: 36px 28px; text-align: center; background: #ffffff;">
+          <div style="width: 70px; height: 70px; border-radius: 50%; background: #ecfdf5; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 18px;">
+            <i class="fa-solid fa-circle-check" style="font-size: 42px; color: #10b981;"></i>
+          </div>
+          <h4 style="font-size: 22px; font-weight: 800; color: #0f172a; margin-bottom: 8px;" id="brochureSuccessName">Thank You!</h4>
+          <p style="font-size: 14px; color: #475569; margin-bottom: 20px;">
+            Your details have been submitted successfully.<br>
+            <strong style="color: #0f172a;">Your brochure download has started automatically!</strong>
+          </p>
+          <div style="background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 14px; margin-bottom: 20px;">
+            <p style="font-size: 12.5px; color: #64748b; margin-bottom: 8px;">If your download didn't begin automatically, click the button below:</p>
+            <a href="Crony introduction letter.pdf" download="Crony-Electronics-Company-Brochure.pdf" id="brochureManualDownloadLink" class="btn btn-sm" style="background: #FFC80B; color: #000; font-weight: 700; border-radius: 6px; padding: 7px 16px;">
+              <i class="fa-solid fa-file-arrow-down me-1"></i> Click to Download PDF
+            </a>
+          </div>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal" style="border-radius: 6px; padding: 6px 20px;">Close Window</button>
+        </div>
       </div>
     </div>
   </div>
-</footer>
 
-<!-- Scripts -->
-<script src="assets/js/bootstrap.bundle.min.js"></script>
+<!-- Search Popup -->
+<div class="search-popup">
+  <button class="close-search"><i class="fa-solid fa-xmark"></i></button>
+  <form method="post" action="#">
+    <p>What energy saving solution are you looking for?</p>
+    <div class="form-group">
+      <input type="search" name="search-field" placeholder="Search products, coatings, stabilizers..." required="">
+      <button type="submit"><i class="fa fa-search"></i></button> 
+    </div>
+  </form>
+</div>
+
+<!-- Progress Back to Top -->
+<div id="progress">
+  <span id="progress-value"><i class="fa-solid fa-up-long"></i></span>
+</div>
+
+<!-- Core Scripts -->
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.fancybox.min.js"></script>
+<script src="assets/js/swiper.js"></script>
 <script src="assets/js/custom.js"></script>
 <script src="assets/js/blog-data.js"></script>
 
@@ -353,11 +485,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const urlParams = new URLSearchParams(window.location.search);
   const slug = urlParams.get('slug');
   const container = document.getElementById('article-content-column');
-  const breadcrumbTitle = document.getElementById('breadcrumb-article-title');
   const relatedSection = document.getElementById('related-articles-section');
   const relatedGrid = document.getElementById('related-articles-grid');
 
   if (!slug) {
+    const defaultArticle = blogData.articles && blogData.articles[0];
+    if (defaultArticle) {
+      window.location.replace(`blog-details.html?slug=${defaultArticle.slug}`);
+      return;
+    }
     renderNotFound('No article specified. Please select an engineering article from our knowledge base.');
     return;
   }
@@ -373,10 +509,32 @@ document.addEventListener('DOMContentLoaded', function () {
   const metaDesc = document.getElementById('page-meta-desc');
   if (metaDesc) metaDesc.setAttribute('content', article.metaDescription);
 
-  // Update Breadcrumb
-  if (breadcrumbTitle) {
-    breadcrumbTitle.textContent = article.title;
+  // Update Hero Banner (Side-by-Side: Text & Image in One Line Manner)
+  const heroBg = document.getElementById('article-banner-bg');
+  const heroBadge = document.getElementById('article-banner-badge');
+  const heroTitle = document.getElementById('article-banner-title');
+  const heroDesc = document.getElementById('article-banner-desc');
+  const heroBreadcrumb = document.getElementById('article-banner-breadcrumb-active');
+  const heroFeaturedImg = document.getElementById('article-banner-featured-img');
+  const heroFeaturedImgLink = document.getElementById('article-banner-img-link');
+  const heroReadTimeText = document.getElementById('article-banner-readtime-text');
+  const heroDateText = document.getElementById('article-banner-date-text');
+
+  if (heroBg) heroBg.style.backgroundImage = `url('${article.featuredImage}')`;
+  if (heroBadge) heroBadge.textContent = article.category;
+  if (heroTitle) heroTitle.textContent = article.title;
+  if (heroDesc) heroDesc.textContent = article.excerpt || article.summary;
+  if (heroBreadcrumb) heroBreadcrumb.textContent = article.title.length > 36 ? article.title.substring(0, 33) + '...' : article.title;
+  if (heroFeaturedImg) {
+    heroFeaturedImg.src = article.featuredImage;
+    heroFeaturedImg.alt = article.title;
   }
+  if (heroFeaturedImgLink) {
+    heroFeaturedImgLink.href = article.featuredImage;
+    heroFeaturedImgLink.setAttribute('data-caption', `${article.title} — Crony Electronics Industrial Application`);
+  }
+  if (heroReadTimeText) heroReadTimeText.textContent = article.readingTime;
+  if (heroDateText) heroDateText.textContent = article.publishedDate;
 
   // Render Full Article
   let sectionsHTML = '';
@@ -405,11 +563,62 @@ document.addEventListener('DOMContentLoaded', function () {
     if (idx === 2 && article.supportingImage) {
       sectionsHTML += `
         <figure class="article-supporting-media">
-          <img src="${article.supportingImage}" alt="${article.title} Supporting Diagram">
+          <a href="${article.supportingImage}" data-fancybox="article-supporting-media" data-caption="${article.title} &mdash; Technical Application Verification" class="d-block" style="cursor: zoom-in;" title="Click to view full image in high resolution">
+            <img src="${article.supportingImage}" alt="${article.title} Supporting Diagram">
+          </a>
           <figcaption class="article-supporting-caption">
             <i class="fa-solid fa-microscope me-1"></i> Technical Application &middot; Crony Electronics Field Engineering Verification
           </figcaption>
         </figure>
+      `;
+    }
+
+    // Insert Official Audit Proof Certificate (Wockhardt 10-12°C Drop Proof) after Section 3
+    if (idx === 3 && article.auditProof) {
+      const metricsHTML = article.auditProof.metrics.map(m => `
+        <div class="blog-audit-metric-pill">
+          <strong>${m.value}</strong>
+          <span>${m.label}</span>
+        </div>
+      `).join('');
+
+      sectionsHTML += `
+        <div class="blog-audit-proof-card my-4">
+          <div class="blog-audit-proof-header">
+            <div class="d-flex align-items-center gap-2">
+              <span class="blog-audit-badge"><i class="fa-solid fa-certificate text-warning me-1"></i> Official Client Audit Proof</span>
+              <span class="blog-audit-verified-tag"><i class="fa-solid fa-circle-check text-success me-1"></i> Verified Performance</span>
+            </div>
+            <span class="text-muted small"><i class="fa-regular fa-calendar-check me-1"></i> ${article.auditProof.date}</span>
+          </div>
+
+          <div class="row align-items-center g-4 mt-1">
+            <div class="col-lg-5 col-md-5">
+              <a href="${article.auditProof.image}" data-fancybox="blog-audit-letter" data-caption="${article.auditProof.client} — Official Commendation Letter for 10–12°C Temperature Drop Proof" class="blog-cert-thumb-link" title="Click to view full official letter in high resolution">
+                <div class="blog-cert-thumb-frame">
+                  <img src="${article.auditProof.image}" alt="${article.auditProof.client} Official Commendation Letter" class="img-fluid" loading="lazy">
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-7 col-md-7">
+              <div class="blog-cert-info-wrap">
+                <h4 class="blog-audit-client-name">${article.auditProof.client}</h4>
+                <p class="blog-audit-signer-text text-muted mb-3">
+                  <i class="fa-solid fa-user-tie me-1"></i> <strong>${article.auditProof.signatory}</strong> &middot; <i class="fa-solid fa-location-dot me-1"></i> ${article.auditProof.location}
+                </p>
+                
+                <div class="blog-audit-metrics-grid mb-3">
+                  ${metricsHTML}
+                </div>
+
+                <blockquote class="blog-audit-quote">
+                  <i class="fa-solid fa-quote-left text-success me-2"></i>
+                  "${article.auditProof.quote}"
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
       `;
     }
   });
@@ -448,28 +657,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const articleHTML = `
     <article>
-      <!-- Article Header -->
-      <header class="article-header">
-        <div class="article-header-meta">
-          <span class="article-badge">${article.category}</span>
-          <span class="article-reading-time"><i class="fa-regular fa-clock"></i> ${article.readingTime}</span>
-          <span class="article-reading-time"><i class="fa-regular fa-calendar"></i> ${article.publishedDate}</span>
-        </div>
-        <h1 class="article-main-title">${article.title}</h1>
-        
-        <!-- Author Bar -->
-        <div class="article-author-bar">
+      <!-- Author Bar & Meta Info -->
+      <div class="article-author-bar d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <div class="d-flex align-items-center gap-3">
           <div class="article-author-avatar-lg">${authorInitials}</div>
           <div class="article-author-details">
-            <h5>${article.author}</h5>
-            <p>${article.authorTitle}</p>
+            <h5 class="mb-0 fw-bold">${article.author}</h5>
+            <p class="mb-0 text-muted small">${article.authorTitle}</p>
           </div>
         </div>
-      </header>
+        <div class="article-header-meta mb-0">
+          <span class="article-badge">${article.category}</span>
+          <span class="article-reading-time"><i class="fa-regular fa-clock me-1"></i> ${article.readingTime}</span>
+          <span class="article-reading-time"><i class="fa-regular fa-calendar me-1"></i> ${article.publishedDate}</span>
+        </div>
+      </div>
 
-      <!-- Featured Image Banner -->
-      <figure class="article-featured-media">
-        <img src="${article.featuredImage}" alt="${article.title}">
+      <!-- Featured Full-Page Cover Media -->
+      <figure class="article-featured-media full-page-cover">
+        <a href="${article.featuredImage}" 
+           data-fancybox="article-fullpage-cover" 
+           data-caption="${article.title} &mdash; Industrial Field Verification" 
+           class="article-cover-zoom-link" 
+           title="Click to view full screen high-resolution cover">
+          <img src="${article.featuredImage}" alt="${article.title}">
+          <span class="cover-zoom-indicator">
+            <i class="fa-solid fa-expand me-1"></i> Full Page Cover View
+          </span>
+        </a>
         <figcaption class="article-media-caption">
           <i class="fa-solid fa-camera me-1"></i> Industrial Field Imagery &middot; Crony Electronics Solutions
         </figcaption>
@@ -519,23 +734,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   container.innerHTML = articleHTML;
 
-  // Render Related Articles
-  const relatedArticles = blogData.getRelatedArticles(article.slug, 2);
+  // Render Related Articles in 1-Row Horizontal Slider
+  const relatedArticles = blogData.getRelatedArticles(article.slug, 4);
   if (relatedArticles && relatedArticles.length > 0) {
     relatedSection.style.display = 'block';
     let relatedCardsHTML = '';
     relatedArticles.forEach(rel => {
       const relInitials = rel.author.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
       relatedCardsHTML += `
-        <div class="col-md-6 col-lg-5 mb-4">
-          <div class="crony-blog-card h-100">
+        <div class="swiper-slide h-auto">
+          <div class="crony-blog-card h-100 d-flex flex-column">
             <div class="crony-blog-card-thumb">
               <a href="blog-details.html?slug=${rel.slug}">
-                <img src="${rel.featuredImage}" alt="${rel.title}">
+                <img src="${rel.featuredImage}" alt="${rel.title}" loading="lazy">
               </a>
               <span class="crony-blog-category-badge">${rel.category}</span>
             </div>
-            <div class="crony-blog-card-body">
+            <div class="crony-blog-card-body d-flex flex-column flex-grow-1">
               <div class="crony-blog-meta-row">
                 <span><i class="fa-regular fa-calendar"></i> ${rel.publishedDate}</span>
                 <span><i class="fa-regular fa-clock"></i> ${rel.readingTime}</span>
@@ -544,7 +759,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <a href="blog-details.html?slug=${rel.slug}">${rel.title}</a>
               </h4>
               <p class="crony-blog-card-excerpt">${rel.excerpt}</p>
-              <div class="crony-blog-card-footer">
+              <div class="crony-blog-card-footer mt-auto">
                 <div class="crony-blog-author-info">
                   <div class="crony-blog-author-avatar">${relInitials}</div>
                   <span class="crony-blog-author-name">${rel.author}</span>
@@ -559,14 +774,59 @@ document.addEventListener('DOMContentLoaded', function () {
       `;
     });
     relatedGrid.innerHTML = relatedCardsHTML;
+
+    // Initialize 1-Row Horizontal Swiper Slider
+    if (typeof Swiper !== 'undefined') {
+      const relatedSwiper = new Swiper('#related-blog-cards-slider', {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        loop: relatedArticles.length > 2,
+        speed: 700,
+        autoplay: relatedArticles.length > 1 ? {
+          delay: 3500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        } : false,
+        navigation: {
+          nextEl: '.related-slider-next',
+          prevEl: '.related-slider-prev'
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 22
+          },
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: 28
+          }
+        }
+      });
+
+      document.querySelectorAll('.related-slider-prev').forEach(btn => {
+        btn.onclick = function (e) {
+          e.preventDefault();
+          if (relatedSwiper) relatedSwiper.slidePrev();
+        };
+      });
+      document.querySelectorAll('.related-slider-next').forEach(btn => {
+        btn.onclick = function (e) {
+          e.preventDefault();
+          if (relatedSwiper) relatedSwiper.slideNext();
+        };
+      });
+    }
   }
 
   // Not Found State
   function renderNotFound(msg) {
     document.title = 'Article Not Found | Crony Electronics Pvt Ltd';
-    if (breadcrumbTitle) breadcrumbTitle.textContent = 'Not Found';
+    const heroTitle = document.getElementById('article-banner-title');
+    const heroBreadcrumb = document.getElementById('article-banner-breadcrumb-active');
+    if (heroTitle) heroTitle.textContent = 'Engineering Article Not Found';
+    if (heroBreadcrumb) heroBreadcrumb.textContent = 'Not Found';
     container.innerHTML = `
-      <div class="blog-empty-state my-5">
+      <div class="blog-empty-state my-5 text-center">
         <i class="fa-solid fa-triangle-exclamation text-warning" style="font-size: 54px; margin-bottom: 20px;"></i>
         <h2>Engineering Article Not Found</h2>
         <p class="max-w-600 mx-auto text-muted mb-4">${msg}</p>

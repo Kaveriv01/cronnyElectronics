@@ -230,19 +230,128 @@
   }
 }
 
-.homepage-product-col {
-  transition: all 0.3s ease;
+/* ==========================================================================
+   Homepage Products Slider (One-Way Continuous Carousel)
+   ========================================================================== */
+.product-slider-nav-arrows {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.homepage-product-col .services {
-  height: calc(100% - 93px);
+.prod-arrow-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  color: #0b1420;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.prod-arrow-btn:hover {
+  background: var(--ce-green, #009a4e);
+  color: #ffffff;
+  border-color: var(--ce-green, #009a4e);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 154, 78, 0.25);
+}
+
+.prod-arrow-btn:active {
+  transform: translateY(0);
+}
+
+/* Slick List & Track Overrides for Products Slider */
+.homepage-products-slider {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.homepage-products-slider .slick-list {
+  width: 100% !important;
+  margin: 0 !important;
+  text-align: left !important;
+  padding: 50px 0 65px 0 !important;
+  overflow: hidden !important;
+}
+
+.homepage-products-slider .slick-track {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.homepage-products-slider .slick-slide {
+  height: auto !important;
+  display: flex !important;
+  padding: 0 14px;
+  outline: none !important;
+  box-sizing: border-box;
+}
+
+.homepage-product-slide {
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+
+.homepage-products-slider .services {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: 45px;
+  margin-bottom: 50px;
+  height: calc(100% - 95px);
+  background: #ffffff;
+  border: 1px solid #dbe4ec;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
 }
 
-.homepage-product-col .services p {
+.homepage-products-slider .services:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0, 154, 78, 0.14);
+  border-color: #009a4e;
+}
+
+.homepage-products-slider .services p {
   flex-grow: 1;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.homepage-products-slider .services > img {
+  width: calc(100% + 82px);
+  max-width: calc(100% + 82px);
+  height: 200px;
+  object-fit: cover;
+  margin-left: -41px;
+  margin-bottom: -50px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+/* Slick Dots Customization for Products Slider - Removed per user request */
+.homepage-products-slider .slick-dots,
+.services-settings .slick-dots,
+#homepage-product-slider .slick-dots,
+.slick-dots {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: none !important;
 }
 
 /* ==========================================================================
