@@ -921,6 +921,18 @@
   }
 }
 
+/* Deep Link Product Target Anchoring & Pulsing Highlight */
+.product-card-col {
+  scroll-margin-top: 140px;
+}
+
+.product-card-col.target-card-pulse .product-card {
+  box-shadow: 0 0 0 4px #009A4E, 0 12px 32px rgba(0, 154, 78, 0.35) !important;
+  transform: translateY(-8px) !important;
+  border-color: #009A4E !important;
+  transition: all 0.4s ease-in-out !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

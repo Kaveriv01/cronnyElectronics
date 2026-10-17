@@ -201,7 +201,7 @@
         <div class="row g-3 g-lg-3" id="product-grid-container">
 
           <!-- Product Card 1: Rubber Flooring (Flooring & ESD) -->
-          <div class="col-lg-4 col-md-6 product-card-col" data-category="flooring">
+          <div class="col-lg-4 col-md-6 product-card-col" id="flooring" data-category="flooring">
             <div class="product-card">
               <div class="product-card-topbar">
                 <span class="product-card-cat"><i class="fa-solid fa-layer-group"></i> Flooring &amp; ESD</span>
@@ -243,7 +243,8 @@
           </div>
 
           <!-- Product Card 2: Elastoclad HR (Thermal Solutions) -->
-          <div class="col-lg-4 col-md-6 product-card-col" data-category="thermal">
+          <div class="col-lg-4 col-md-6 product-card-col" id="thermal" data-category="thermal">
+            <span id="elastoclad" class="product-anchor-target" style="display:block; position:relative; top:-120px; visibility:hidden;"></span>
             <div class="product-card">
               <div class="product-card-topbar">
                 <span class="product-card-cat"><i class="fa-solid fa-temperature-arrow-down"></i> Thermal Solutions</span>
@@ -285,7 +286,8 @@
           </div>
 
           <!-- Product Card 3: Removable Thermal Insulation Jackets (Thermal Solutions) -->
-          <div class="col-lg-4 col-md-6 product-card-col" data-category="thermal">
+          <div class="col-lg-4 col-md-6 product-card-col" id="sleeves" data-category="thermal">
+            <span id="jackets" class="product-anchor-target" style="display:block; position:relative; top:-120px; visibility:hidden;"></span>
             <div class="product-card">
               <div class="product-card-topbar">
                 <span class="product-card-cat"><i class="fa-solid fa-shield-halved"></i> Thermal Solutions</span>
@@ -327,7 +329,8 @@
           </div>
 
           <!-- Product Card 4: 20ms High-Speed VRP Voltage Regulators (Power Protection) -->
-          <div class="col-lg-4 col-md-6 product-card-col" data-category="power">
+          <div class="col-lg-4 col-md-6 product-card-col" id="power" data-category="power">
+            <span id="vrp" class="product-anchor-target" style="display:block; position:relative; top:-120px; visibility:hidden;"></span>
             <div class="product-card">
               <div class="product-card-topbar">
                 <span class="product-card-cat"><i class="fa-solid fa-bolt"></i> Power Protection</span>
@@ -369,7 +372,9 @@
           </div>
 
           <!-- Product Card 5: Digi Guard & Eco Max (Energy Efficiency) -->
-          <div class="col-lg-4 col-md-6 product-card-col" data-category="energy">
+          <div class="col-lg-4 col-md-6 product-card-col" id="energy" data-category="energy">
+            <span id="digiguard" class="product-anchor-target" style="display:block; position:relative; top:-120px; visibility:hidden;"></span>
+            <span id="ecomax" class="product-anchor-target" style="display:block; position:relative; top:-120px; visibility:hidden;"></span>
             <div class="product-card">
               <div class="product-card-topbar">
                 <span class="product-card-cat"><i class="fa-solid fa-microchip"></i> Energy Efficiency</span>
@@ -411,7 +416,8 @@
           </div>
 
           <!-- Product Card 6: Brilantor Natural Daylight Systems (Daylighting) -->
-          <div class="col-lg-4 col-md-6 product-card-col" data-category="daylight">
+          <div class="col-lg-4 col-md-6 product-card-col" id="daylight" data-category="daylight">
+            <span id="brilantor" class="product-anchor-target" style="display:block; position:relative; top:-120px; visibility:hidden;"></span>
             <div class="product-card">
               <div class="product-card-topbar">
                 <span class="product-card-cat"><i class="fa-solid fa-sun"></i> Daylighting</span>
@@ -453,7 +459,7 @@
           </div>
 
           <!-- Product Card 7: Industrial Robotics (Industrial Robotics) -->
-          <div class="col-lg-4 col-md-6 product-card-col" data-category="robotics">
+          <div class="col-lg-4 col-md-6 product-card-col" id="robotics" data-category="robotics">
             <div class="product-card">
               <div class="product-card-topbar">
                 <span class="product-card-cat"><i class="fa-solid fa-robot"></i> Industrial Robotics</span>
@@ -1372,6 +1378,66 @@
           hero.style.backgroundPositionY = (scrolled * 0.28) + 'px';
         }
       }, { passive: true });
+
+      // 7. URL Anchor Deep-Linking Handler (Redirects directly to clicked product with filter and scroll highlight)
+      function handleProductUrlHash() {
+        const hash = window.location.hash.replace('#', '').toLowerCase();
+        if (!hash) return;
+
+        const productTargetMap = {
+          'flooring': { id: 'flooring', filter: 'flooring' },
+          'rubber-flooring': { id: 'flooring', filter: 'flooring' },
+          'thermal': { id: 'thermal', filter: 'thermal' },
+          'elastoclad': { id: 'thermal', filter: 'thermal' },
+          'sleeves': { id: 'sleeves', filter: 'thermal' },
+          'jackets': { id: 'sleeves', filter: 'thermal' },
+          'power': { id: 'power', filter: 'power' },
+          'vrp': { id: 'power', filter: 'power' },
+          'energy': { id: 'energy', filter: 'energy' },
+          'digiguard': { id: 'energy', filter: 'energy' },
+          'ecomax': { id: 'energy', filter: 'energy' },
+          'daylight': { id: 'daylight', filter: 'daylight' },
+          'brilantor': { id: 'daylight', filter: 'daylight' },
+          'robotics': { id: 'robotics', filter: 'robotics' }
+        };
+
+        const target = productTargetMap[hash];
+        if (!target) return;
+
+        // Activate corresponding category filter button
+        const targetBtn = document.querySelector(`.category-nav-btn[data-filter="${target.filter}"]`);
+        if (targetBtn) {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          targetBtn.classList.add('active');
+
+          productCards.forEach(col => {
+            const cardCategory = col.getAttribute('data-category');
+            if (cardCategory === target.filter) {
+              col.style.display = 'block';
+            } else {
+              col.style.display = 'none';
+            }
+          });
+        }
+
+        // Smoothly scroll and highlight target card
+        setTimeout(function () {
+          const el = document.getElementById(target.id) || document.getElementById(hash);
+          if (el) {
+            const yOffset = -140;
+            const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+
+            el.classList.remove('target-card-pulse');
+            void el.offsetWidth;
+            el.classList.add('target-card-pulse');
+            setTimeout(() => el.classList.remove('target-card-pulse'), 3500);
+          }
+        }, 220);
+      }
+
+      handleProductUrlHash();
+      window.addEventListener('hashchange', handleProductUrlHash);
     });
   </script>
 </body>
