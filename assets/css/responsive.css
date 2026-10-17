@@ -354,8 +354,10 @@
     width: 106%;
   }
   .need-expert h4 {
-    font-size: 40px;
-    width: 81%;
+    font-size: 38px;
+    line-height: 1.25;
+    width: 100%;
+    max-width: 520px;
   }
   .phone-number i {
     width: 60px;
