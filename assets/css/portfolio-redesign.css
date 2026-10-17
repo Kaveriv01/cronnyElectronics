@@ -43,17 +43,17 @@
 
 .bannr.portfolio-hero-banner .bannr-bg-wrap {
   position: absolute;
-  inset: -12px;
+  inset: -20px;
   background-size: cover;
   background-position: center;
   z-index: 0;
-  transition: filter 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: filter 0.55s ease, transform 0.55s ease;
   will-change: filter, transform;
 }
 
 .bannr.portfolio-hero-banner:hover .bannr-bg-wrap {
-  filter: blur(5px);
-  transform: scale(1.03);
+  filter: blur(8px) brightness(0.92);
+  transform: scale(1.05);
 }
 
 .bannr.portfolio-hero-banner::before {
@@ -76,21 +76,7 @@
 }
 
 .portfolio-hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 4px 12px;
-  background: rgba(255, 200, 11, 0.15);
-  border: 1px solid rgba(255, 200, 11, 0.4);
-  border-radius: 4px;
-  color: var(--ce-yellow);
-  font-family: var(--font-montserrat);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  animation: heroFadeUp 0.5s ease-out forwards;
+  display: none !important;
 }
 
 .bannr.portfolio-hero-banner .bannr-text h2 {

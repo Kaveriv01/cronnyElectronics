@@ -55,11 +55,17 @@
 
 #blog-hero .bannr-bg-wrap {
   position: absolute;
-  inset: -10px;
+  inset: -20px;
   background-size: cover;
   background-position: center 35%;
   z-index: 0;
-  transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: filter 0.55s ease, transform 0.55s ease;
+  will-change: filter, transform;
+}
+
+#blog-hero:hover .bannr-bg-wrap {
+  filter: blur(8px) brightness(0.92);
+  transform: scale(1.05);
 }
 
 #blog-hero::before {
@@ -81,23 +87,9 @@
   animation: blogHeroFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.blog-hero-badge-wrap {
-  margin-bottom: 12px;
-}
-
+.blog-hero-badge-wrap,
 .blog-hero-badge {
-  background-color: var(--blog-yellow) !important;
-  color: var(--blog-navy) !important;
-  font-weight: 800 !important;
-  font-size: 12px !important;
-  text-transform: uppercase !important;
-  padding: 6px 16px !important;
-  border-radius: var(--blog-radius-sm) !important;
-  letter-spacing: 0.6px !important;
-  display: inline-flex !important;
-  align-items: center;
-  gap: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  display: none !important;
 }
 
 .blog-hero-title {
