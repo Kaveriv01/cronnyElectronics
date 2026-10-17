@@ -1627,9 +1627,14 @@ span#progress-value i {
 .need-expert {
     display: flex;
     justify-content: space-between;
-    padding: 70px;
+    padding: 60px 70px;
     align-items: center;
     margin-bottom: 120px;
+    gap: 30px;
+}
+.need-expert > div:first-child {
+    flex: 1 1 auto;
+    max-width: 600px;
 }
 form input,form textarea {
     width: 100%;
@@ -1644,7 +1649,9 @@ form input,form textarea {
     margin-bottom: 20px;
 }
 .need-expert form {
-    width: 50%;
+    flex: 0 0 460px;
+    width: 460px;
+    max-width: 46%;
 }
 .inputbox:before,.textareabox:before {
     position: absolute;
@@ -1666,12 +1673,13 @@ form textarea {
 }
 .need-expert h4 {
     color: #fff;
-    font-size: 42px;
-    line-height: 1.25;
+    font-size: 34px;
+    line-height: 1.3;
     width: 100%;
-    max-width: 560px;
+    max-width: 580px;
     font-weight: 800;
-    padding-bottom: 27px;
+    padding-bottom: 24px;
+    letter-spacing: -0.01em;
 }
 .textareabox:before {
     bottom: 10px;
